@@ -65,7 +65,6 @@ class Signin extends React.Component {
           value="send"
           onClick={this.sendName}
         />
-        <p>{this.state.errorMessage}</p>
       </div>
     );
   }
