@@ -8,7 +8,7 @@ class App extends React.Component {
   };
 
   getName = (name) => {
-    this.setState({ userName: name });
+    this.setState({ userName: name });    
   };
 
   render() {

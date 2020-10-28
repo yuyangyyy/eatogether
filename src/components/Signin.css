@@ -1,5 +1,5 @@
 .wrapper-signin {
-  background-color: rgb(180, 0, 0);
+  border: 1px solid black;
   padding: 1em 0 1em 0;
   position: absolute;
   width: 80%;
@@ -11,31 +11,40 @@
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 50px;
 }
 
 input[type="text"] {
-  background-color: rgb(180, 0, 0);
-  border: none;
-  padding: 1em;
+  outline: 0;
+  border-width: 0 0 1px;
+  padding-bottom: 1em;
+  transition: 0.4s;
 }
 
 input[type="text"]:focus {
   outline: none;
+  padding: 0;
 }
 
 ::placeholder {
-  color: white;
-  font-size: 18px;
+  color: black;
+  font-family: "Cormorant", serif;
 }
 
 input[type="text"]:nth-child(1) {
   border-right: 1px solid yellow;
 }
 
-
-.disabled{
+.disabled {
   pointer-events: none;
   background-color: grey;
   transition: 0.4s;
+  color: red;
 }
+
+input[type="button"] {
+  background-color: white;
+  outline: 0;
+  border-width: 0 0 2px;  
+  transition: 0.4s;
+}
+
