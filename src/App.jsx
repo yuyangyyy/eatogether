@@ -1,11 +1,25 @@
-import './App.css';
-import React from 'react';
+import "./App.css";
+import React from "react";
+import Navigation from "./components/Navigation";
 
-function App () {
-  return (
-    <div className="App">
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    userName: {}
+  };
+
+  getName = (name) => {
+    this.setState({ userName: name });
+    console.log(name)
+  };
+
+  render () {
+   
+    return (
+      <div className="App">
+        <Navigation getName={this.getName}/>
+      </div>
+    );
+  }
 }
 
 export default App;

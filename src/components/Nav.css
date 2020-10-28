@@ -1,0 +1,33 @@
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: red;
+    padding: 1em;
+}
+
+.current {
+    background-color: yellow;
+}
+
+a {
+    transition: 1s;
+}
+
+.my-node-enter {
+    transform: scale(0);
+}
+
+.my-node-enter-active {
+    transform: scale(1);
+    transition: 200ms ease-in-out;
+}
+
+.my-node-exit {
+    transform: scale(1);
+}
+
+.my-node-exit-active {
+    transform: scale(0);
+    transition: 200ms ease-in-out;
+}
