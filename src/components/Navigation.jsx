@@ -5,7 +5,6 @@ import Signin from "./Signin";
 class Navigation extends React.Component {
   state = {
     signInIsDisplayed: false,
-    navHeight: 0,
   };
 
   signCard = () => {
@@ -17,7 +16,7 @@ class Navigation extends React.Component {
   };
 
   render() {
-    const menu = ["Accueil", "Contact", "Portfolio", "Logger"];    
+    const menu = ["Accueil", "Contact", "Portfolio", "Logger"];
     return (
       <nav>
         <ul>
@@ -35,5 +34,3 @@ class Navigation extends React.Component {
 }
 
 export default Navigation;
-
-

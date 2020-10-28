@@ -4,19 +4,18 @@ import Navigation from "./components/Navigation";
 
 class App extends React.Component {
   state = {
-    userName: {}
+    userName: {},
   };
 
   getName = (name) => {
     this.setState({ userName: name });
-    console.log(name)
   };
 
-  render () {
-   
+  render() {
+    console.log(this.state.userName)
     return (
       <div className="App">
-        <Navigation getName={this.getName}/>
+        <Navigation getName={this.getName} />
       </div>
     );
   }
