@@ -26,7 +26,7 @@ class Navigation extends React.Component {
   }
 
   render() {
-    const menu = ["Home", "Contact", "Portfolio"];
+    const menu = ["Home", "Guest", "Host", "Messages"];
     return (
       <nav ref={this.nav}>
         <ul>

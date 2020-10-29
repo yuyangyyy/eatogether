@@ -1,0 +1,32 @@
+nav {
+    border-bottom: 1px solid black;
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 1em;
+    font-family: 'Cormorant', serif;
+    list-style: none;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 8000px;
+}
+
+.signInButton {
+    font-family: 'Montserrat', sans-serif;
+}
+
+li {
+    transition: 0.3s;
+}
+
+.scaled:hover {
+    font-size: 18px;
+    font-weight: ;
+    border-bottom: 1px solid tomato;
+}
+
