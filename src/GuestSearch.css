@@ -26,4 +26,6 @@
   width: 60px;
   height: 60px;
   margin: 20px auto 20px auto;
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
 }
