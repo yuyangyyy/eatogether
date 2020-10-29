@@ -19,3 +19,13 @@ h1 {
 .signInButton {
     font-family: 'Montserrat', sans-serif;
 }
+
+li {
+    transition: 0.3s;
+}
+
+.scaled:hover {
+    font-size: 18px;
+    border-bottom: 1px solid tomato;
+}
+
