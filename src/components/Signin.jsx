@@ -5,11 +5,19 @@ class Signin extends React.Component {
   state = {
     inputs: [
       {
-        placeholder: "firstName",
+        placeholder: "First Name",
         value: "",
       },
       {
-        placeholder: "lastName",
+        placeholder: "Last Name",
+        value: "",
+      },
+      {
+        placeholder: "Email",
+        value: "",
+      },
+      {
+        placeholder: "Attatch Photo",
         value: "",
       },
     ],
@@ -18,11 +26,10 @@ class Signin extends React.Component {
   };
 
   inputHandler = (e) => {
-    const regInputs = /^[a-zA-Z\s]*$/;
     const inputsTemp = [...this.state.inputs];
     inputsTemp[e.target.id].value = e.target.value;
     const test = inputsTemp.every((name) => {
-      return name.value.length > 2 && regInputs.test(name.value);
+      return name.value.length > 2;
     });
     if (test) {
       this.setState({ errorMessage: false, sendAuthorisation: true });
@@ -38,6 +45,8 @@ class Signin extends React.Component {
     const signInfo = {
       firstName: infoSend[0],
       lastName: infoSend[1],
+      email: infoSend[2],
+      photo: infoSend[3],
     };
     if (this.state.sendAuthorisation) {
       this.props.getName(signInfo);
@@ -45,9 +54,11 @@ class Signin extends React.Component {
     }
   };
 
-
-  componentDidMount(){
-    document.body.style.setProperty('--hauteur',(this.props.navHeight + 10) + 'px')
+  componentDidMount() {
+    document.body.style.setProperty(
+      "--hauteur",
+      this.props.navHeight + 10 + "px"
+    );
   }
 
   render() {
@@ -66,6 +77,7 @@ class Signin extends React.Component {
         })}
         <input
           className={this.state.errorMessage && "disabled"}
+          id="submitInfo"
           type="button"
           value="send"
           onClick={this.sendName}

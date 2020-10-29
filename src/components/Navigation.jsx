@@ -1,6 +1,7 @@
 import React from "react";
 import "./Nav.css";
 import Signin from "./Signin";
+import { CSSTransition } from "react-transition-group";
 
 class Navigation extends React.Component {
   state = {
@@ -29,18 +30,29 @@ class Navigation extends React.Component {
     return (
       <nav ref={this.nav}>
         <ul>
+          <h1>EaTogether</h1>
           {menu.map((x, index) => (
             <li key={index}>{x}</li>
           ))}
-          <input type="button" value="sign in" onClick={this.signCard} />
+          <input
+            className="signInButton"
+            type="button"
+            value="sign in"
+            onClick={this.signCard}
+          />
         </ul>
-        {this.state.signInIsDisplayed && (
+        <CSSTransition
+          in={this.state.signInIsDisplayed}
+          timeout={200}
+          classNames="my-node"
+          unmountOnExit
+        >
           <Signin
             getName={this.props.getName}
             closeSign={this.closeSign}
             navHeight={this.state.navHeight}
           />
-        )}
+        </CSSTransition>
       </nav>
     );
   }
