@@ -4,20 +4,23 @@
     justify-content: center;
   }
   
-  .item-card {
-    
+  .item-card {    
     margin: 1em;    
     width: fit-content;
+    display : flex ;
+    flex-direction : column ;
+    align-items: flex-start;
   }
   
   .item-card p {
     height: 18px;
+    align-self: center;
+    
   }
   
   .item-card img {
     max-width: 100%;
     height : 8em ;
-    border-radius : 1em
   }
   
   

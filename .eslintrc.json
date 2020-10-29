@@ -6,7 +6,8 @@
   "extends": [
     "plugin:react/recommended",
     "react-app/jest",
-    "semistandard"
+    "semistandard",
+    "prettier"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
