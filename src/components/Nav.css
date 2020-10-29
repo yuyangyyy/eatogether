@@ -26,6 +26,7 @@ li {
 
 .scaled:hover {
     font-size: 18px;
+    font-weight: ;
     border-bottom: 1px solid tomato;
 }
 

@@ -26,11 +26,10 @@ class Signin extends React.Component {
   };
 
   inputHandler = (e) => {
-    const regInputs = /^[a-zA-Z\s]*$/;
     const inputsTemp = [...this.state.inputs];
     inputsTemp[e.target.id].value = e.target.value;
     const test = inputsTemp.every((name) => {
-      return name.value.length > 2 && regInputs.test(name.value);
+      return name.value.length > 2;
     });
     if (test) {
       this.setState({ errorMessage: false, sendAuthorisation: true });
