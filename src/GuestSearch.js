@@ -8,7 +8,7 @@ class GuestSearch extends React.Component {
     return (
       <div className="guest-header">
         <div>
-          <label>Ville</label>
+          <label>City</label>
           <select>
             <option>Paris</option>
             <option>Lyon</option>
@@ -19,12 +19,12 @@ class GuestSearch extends React.Component {
         </div>
 
         <div>
-          <label>Quand</label>
+          <label>Date</label>
           <DatePicker />
         </div>
 
         <div>
-          <label>Type de Repas</label>
+          <label>Type of meal</label>
           <select>
             <option>Plat 1</option>
             <option>Plat 2</option>
