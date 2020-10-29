@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Display from './Components/Display';
-
 import Display2 from './Components/Display2';
 
 function App () {
