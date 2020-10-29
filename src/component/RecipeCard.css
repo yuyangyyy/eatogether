@@ -15,12 +15,17 @@
   .item-card p {
     height: 18px;
     align-self: center;
-    
+    font-family: Cormorant;    
   }
   
   .item-card img {
     max-width: 100%;
     height : 8em ;
   }
+  
+  .item-card h1 {
+    font-family: Montserrat;
+  }
+
   
   
