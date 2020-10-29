@@ -41,8 +41,7 @@ class RecipeCard extends React.Component {
             food: [
               ...this.state.food,
               {
-                image: data.hits[0].recipe.image,
-                name: data.hits[0].recipe.label,
+                image: data.hits[0].recipe.image,                
               },
             ],
           });
@@ -61,8 +60,7 @@ class RecipeCard extends React.Component {
         {this.state.food.length > 0 &&
           this.state.food.map((para, index) => {
             return (
-              <div className="item-card" key={index}>
-                <h2>{para.name}</h2>
+              <div className="item-card" key={index}>              
                 <img src={para.image} alt={para.name} />
                 <p>{foods[index].toUpperCase()}</p>
               </div>

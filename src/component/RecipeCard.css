@@ -14,12 +14,14 @@
   
   .item-card p {
     align-self: center;
-    font-family: Cormorant;    
+    font-family: Cormorant; 
+    font-size: 18px;  
+  
   }
   
   .item-card img {
     max-width: 100%;
-    height : 8em ;
+   
   }
   
   .item-card h2 {
