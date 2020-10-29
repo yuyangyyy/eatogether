@@ -30,10 +30,6 @@ input[type="text"]:focus {
   font-family: "Cormorant", serif;
 }
 
-input[type="text"]:nth-child(1) {
-  border-right: 1px solid yellow;
-}
-
 .disabled {
   pointer-events: none;
   background-color: grey;
@@ -46,5 +42,9 @@ input[type="button"] {
   outline: 0;
   border-width: 0 0 2px;  
   transition: 0.4s;
+}
+
+#submitInfo {
+  font-family: 'Montserrat', sans-serif;
 }
 

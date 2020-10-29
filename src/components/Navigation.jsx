@@ -20,10 +20,11 @@ class Navigation extends React.Component {
     return (
       <nav>
         <ul>
+          <h1>EaTogether</h1>
           {menu.map((x, index) => (
             <li key={index}>{x}</li>
           ))}
-          <input type="button" value="sign in" onClick={this.signCard} />
+          <input className="signInButton" type="button" value="sign in" onClick={this.signCard} />
         </ul>
         {this.state.signInIsDisplayed && (
           <Signin getName={this.props.getName} closeSign={this.closeSign} />

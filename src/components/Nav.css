@@ -13,5 +13,9 @@ ul {
 
 h1 {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 8000px;
 }
 
+.signInButton {
+    font-family: 'Montserrat', sans-serif;
+}

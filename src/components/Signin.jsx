@@ -5,11 +5,19 @@ class Signin extends React.Component {
   state = {
     inputs: [
       {
-        placeholder: "firstName",
+        placeholder: "First Name",
         value: "",
       },
       {
-        placeholder: "lastName",
+        placeholder: "Last Name",
+        value: "",
+      },
+      {
+        placeholder: "Email",
+        value: "",
+      },
+      {
+        placeholder: "Attatch Photo",
         value: "",
       },
     ],
@@ -38,6 +46,8 @@ class Signin extends React.Component {
     const signInfo = {
       firstName: infoSend[0],
       lastName: infoSend[1],
+      email: infoSend[2],
+      photo : infoSend[3]
     };
     if (this.state.sendAuthorisation) {
       this.props.getName(signInfo);
@@ -61,6 +71,7 @@ class Signin extends React.Component {
         })}
         <input
           className={this.state.errorMessage && "disabled"}
+          id="submitInfo"
           type="button"
           value="send"
           onClick={this.sendName}
