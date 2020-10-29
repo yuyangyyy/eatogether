@@ -1,5 +1,5 @@
 import React from 'react';
-import GuestSearch from './GuestSearch.js';
+import GuestSearch from './components/GuestSearch.js';
 
 class App extends React.Component {
   render() {

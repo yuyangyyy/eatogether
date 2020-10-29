@@ -4,7 +4,8 @@
   justify-content: space-evenly;
   background-color: black;
   color: white;
-  font-size: 20px;
+  width: 80%;
+  height: fit-content;
 }
 
 .guest-header > div {
@@ -17,15 +18,25 @@
 }
 
 .guest-header select {
-  height: 32px;
+  height: 33px;
   background-color: white;
   color: black;
+  border-radius: 3px;
 }
 
 .guest-img {
-  width: 60px;
-  height: 60px;
+  max-width: 40%;
   margin: 20px auto 20px auto;
   -ms-transform: rotate(60deg);
   transform: rotate(60deg);
+}
+
+
+.wrapper-search-guest{
+  height: 25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+
 }
