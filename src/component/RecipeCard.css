@@ -13,7 +13,6 @@
   }
   
   .item-card p {
-    height: 18px;
     align-self: center;
     font-family: Cormorant;    
   }
@@ -25,6 +24,7 @@
   
   .item-card h1 {
     font-family: Montserrat;
+    font-size: 1em;
   }
 
   

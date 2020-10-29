@@ -7,8 +7,9 @@ const foods = ["fish", "chicken", "vegetables", "potato", "mexican"];
 
 class RecipeCard extends React.Component {
   state = {
-    food: [
-      {
+    food: []
+  }
+  /**    {
         image: 'https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search-v2_297x176.jpg',
         name: 'image test'
       },
@@ -26,16 +27,16 @@ class RecipeCard extends React.Component {
       }
     ]
   }
-
+*/
 
   getRecipe = () => {
-    foods.forEach((para) => {
+    foods.forEach((food) => {
       fetch(
-        `https://api.edamam.com/search?q=${para}&app_id=${id}&app_key=${key}`
+        `https://api.edamam.com/search?q=${food}&app_id=${id}&app_key=${key}`
       )
         .then((response) => response.json())
         .then((data) => {
-          // const random = Math.floor(Math.random() * 10);
+        // const random = Math.floor(Math.random() * 10);
           this.setState({
             food: [
               ...this.state.food,
@@ -49,9 +50,9 @@ class RecipeCard extends React.Component {
     });
   };
 
-  /** componentDidMount() {
+  componentDidMount() {
     this.getRecipe();
-  } */
+  } 
 
   render() {
     console.log(this.state.food);
@@ -59,7 +60,6 @@ class RecipeCard extends React.Component {
       <div className="recipe-card ">
         {this.state.food.length > 0 &&
           this.state.food.map((para, index) => {
-            console.log("truc");
             return (
               <div className="item-card" key={index}>
                 <h1>{para.name}</h1>
