@@ -1,0 +1,23 @@
+.recipe-card {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
+  }
+  
+  .item-card {
+    
+    margin: 1em;    
+    width: fit-content;
+  }
+  
+  .item-card p {
+    height: 18px;
+  }
+  
+  .item-card img {
+    max-width: 100%;
+    height : 8em ;
+    border-radius : 1em
+  }
+  
+  
