@@ -1,5 +1,5 @@
 import React from "react";
-import "./Nav.css";
+import "./Nav.scss";
 import Signin from "./Signin";
 import { CSSTransition } from "react-transition-group";
 
@@ -26,13 +26,13 @@ class Navigation extends React.Component {
   }
 
   render() {
-    const menu = ["Accueil", "Contact", "Portfolio", "Logger"];
+    const menu = ["Home", "Contact", "Portfolio"];
     return (
       <nav ref={this.nav}>
         <ul>
-          <h1>EaTogether</h1>
+          <h1 id="Logo">EaTogether</h1>
           {menu.map((x, index) => (
-            <li key={index}>{x}</li>
+            <li key={index} className="scaled">{x}</li>
           ))}
           <input
             className="signInButton"
