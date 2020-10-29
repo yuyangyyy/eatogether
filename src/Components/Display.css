@@ -1,0 +1,32 @@
+.App {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background-color: #eee;
+  
+  }
+  
+  .App-image {
+    border-radius: 10%;
+    margin: 100px;
+  
+  }
+  
+  .App-soiréé {
+  
+    text-align: center;
+    margin: 100px;
+    
+  }
+  
+  
+  #btn {
+  
+    height: 30px;
+    width: 200px;
+    margin: 100px;
+    border-radius: 10px;
+    
+  }
+  
+  
