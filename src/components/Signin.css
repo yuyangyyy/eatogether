@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  top: 4em;
+  top: var(--hauteur);
   left: 0;
   right: 0;
   margin-left: auto;
@@ -30,9 +30,7 @@ input[type="text"]:focus {
   font-family: "Cormorant", serif;
 }
 
-input[type="text"]:nth-child(1) {
-  border-right: 1px solid yellow;
-}
+
 
 .disabled {
   pointer-events: none;

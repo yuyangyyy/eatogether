@@ -45,6 +45,11 @@ class Signin extends React.Component {
     }
   };
 
+
+  componentDidMount(){
+    document.body.style.setProperty('--hauteur',(this.props.navHeight + 10) + 'px')
+  }
+
   render() {
     return (
       <div className="wrapper-signin">
