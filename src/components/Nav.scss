@@ -27,6 +27,9 @@ nav {
     &:hover {
       font-size: 18px;
       border-bottom: 1px solid black;
+    &:hover {
+      font-size: 18px;
+      border-bottom: 1px solid black;
     }
   }
   .signInButton {
@@ -50,4 +53,5 @@ nav {
     opacity: 0;
     transition: opacity 200ms;
   }
+}
 }

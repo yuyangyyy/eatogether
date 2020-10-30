@@ -3,7 +3,6 @@ import React from "react";
 import Home from "./components/Home"
 import Navigation from "./components/Navigation"
 
-
 class App extends React.Component {
   state = {
     userName: {},
