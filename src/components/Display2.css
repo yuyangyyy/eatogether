@@ -1,0 +1,28 @@
+.siteDetails {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    font-size: 18px;
+    line-height: 42px;
+    font-family: "";
+  
+  }
+  
+  .Proposer {
+    text-align: center;
+    margin: 10%;
+  }
+  
+  .Manger {
+    text-align: center;
+    margin: 10%;
+  }
+
+  h2 {
+
+    font-family:"Cormorant", sans-serif;
+  }
+
+  p {
+    font-family: "Montserrat", sans-serif;
+  }
