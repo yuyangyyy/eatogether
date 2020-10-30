@@ -4,12 +4,14 @@ nav {
   top: 0;
   width: 100%;
   box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  padding: 1em;
   z-index: 10000;
+  background-color: white;
   ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    
     padding: 1em;
     font-family: "Cormorant", serif;
     list-style: none;
@@ -24,7 +26,7 @@ nav {
     cursor: pointer;
     &:hover {
       font-size: 18px;
-      border-bottom: 1px solid tomato;
+      border-bottom: 1px solid black;
     }
   }
   .signInButton {

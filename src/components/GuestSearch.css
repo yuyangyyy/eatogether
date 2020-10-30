@@ -10,7 +10,7 @@
   font-size: medium;
 }
 
-.guest-header > div {
+.guest-header div {
   display: flex;
   align-items: center;
 }
