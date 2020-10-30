@@ -36,8 +36,7 @@ class RecipeCard extends React.Component {
       )
         .then((response) => response.json())
         .then((data) => {
-        // const random = Math.floor(Math.random() * 10);
-          this.setState({
+        this.setState({
             food: [
               ...this.state.food,
               {
@@ -53,8 +52,7 @@ class RecipeCard extends React.Component {
     this.getRecipe();
   } 
 
-  render() {
-    console.log(this.state.food);
+  render() {    
     return (
       <div className="recipe-card ">
         {this.state.food.length > 0 &&
