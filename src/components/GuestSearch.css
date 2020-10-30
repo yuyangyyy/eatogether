@@ -1,0 +1,43 @@
+.guest-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: black;
+  color: white;
+  width: 80%;
+  margin-top: 6em;
+  
+}
+
+.guest-header > div {
+  display: flex;
+  align-items: center;
+}
+
+.guest-header label {
+  margin-right: 10px;
+}
+
+.guest-header select {
+  height: 33px;
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+}
+
+.guest-img {
+  max-width: 40%;
+  margin: 20px auto 20px auto;
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+
+.wrapper-search-guest{
+  height: 25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+
+}
