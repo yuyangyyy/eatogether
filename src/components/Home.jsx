@@ -12,9 +12,7 @@ class Home extends React.Component{
             <div className="home">
                 <GuestSearch />
                 <Display />
-                <RecipeCard />
-
-               
+                <RecipeCard />               
             </div>
         )
     }

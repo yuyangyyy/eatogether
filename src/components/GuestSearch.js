@@ -1,14 +1,14 @@
-import React from 'react';
-import 'antd/dist/antd.css';
-import './GuestSearch.css';
-import DatePicker from 'antd/es/date-picker';
+import React from "react";
+import "./GuestSearch.css";
 
 class GuestSearch extends React.Component {
   render() {
-
     return (
-      <div className="wrapper-search-guest" style={{backgroundImage: "url('./image/bann.jpg')"}}>
-        <div className="guest-header" >
+      <div
+        className="wrapper-search-guest"
+        style={{ backgroundImage: "url('./image/bann.jpg')" }}
+      >
+        <div className="guest-header">
           <div>
             <label>City</label>
             <select>
@@ -22,7 +22,6 @@ class GuestSearch extends React.Component {
 
           <div>
             <label>Date</label>
-            <DatePicker />
           </div>
 
           <div>
