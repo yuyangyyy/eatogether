@@ -1,0 +1,50 @@
+nav {
+  border-bottom: 1px solid black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 2px 2px 0px rgba(210,210,210,0.6);
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 1em;
+    font-family: "Cormorant", serif;
+    list-style: none;
+  }
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 8000px;
+  }
+  li {
+    transition: 0.3s;
+    align-self: flex;
+    cursor: pointer;
+    &:hover {
+      font-size: 18px;
+      border-bottom: 1px solid tomato;
+    }
+  }
+  .signInButton {
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    transition: 0.4s;
+  }
+  .my-node-enter {
+    opacity: 0;
+  }
+  .my-node-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+  .my-node-exit {
+    opacity: 1;
+  }
+  .my-node-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+  }
+}

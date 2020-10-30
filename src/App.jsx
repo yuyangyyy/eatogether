@@ -1,13 +1,26 @@
-import './App.css';
-import React from 'react';
-import RecipeCard from './component/RecipeCard';
+import "./App.css";
+import React from "react";
+import Navigation from "./components/Navigation";
+import RecipeCard from "./components/RecipeCard";
 
-function App () {
-  return (
-    <div className="App">
-      <RecipeCard />
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    userName: {},
+  };
+
+  getName = (name) => {
+    this.setState({ userName: name });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Navigation getName={this.getName} />
+        <RecipeCard />
+
+      </div>
+    );
+  }
 }
 
 export default App;
