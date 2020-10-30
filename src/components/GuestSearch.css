@@ -6,8 +6,8 @@
   color: black;
   width: 80%;    
   border: 1px solid black;
-  font-family: Montserrat;
-  font-size: small;
+  font-family: Cormorant;
+  font-size: medium;
 }
 
 .guest-header > div {
@@ -23,7 +23,12 @@
   height: 33px;
   background-color: white;
   color: black;
-  border-radius: 3px;
+  border-width: 0 0 2px;
+  font-family: Montserrat;
+}
+
+.guest-header select:focus {
+  outline: none;
 }
 
 .guest-img {
