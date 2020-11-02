@@ -30,7 +30,8 @@ class Navigation extends React.Component {
     return (
       <nav ref={this.nav}>
         <ul>
-          <h1 id="Logo">EaTogether</h1>
+          <figure>
+        <img className="logo" src="./image/logoEat.png" alt="c" /></figure>
           {menu.map((x, index) => (
             <li key={index} className="scaled">{x}</li>
           ))}
