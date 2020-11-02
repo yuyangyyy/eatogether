@@ -1,9 +1,8 @@
 import React from "react";
 import "./RecipeCard.css";
 
-const key = "103f7895318eab82a99d13cab66cde64";
-const id = "874300a6";
-const foods = ["fish", "chicken", "vegetables", "potato", "mexican"];
+const key = "4635f9fdb39249728221bd61584cf5d4";
+const foods = ["chicken","noodles","olives","zucchini"];
 
 class RecipeCard extends React.Component {
   state = {
@@ -29,21 +28,22 @@ class RecipeCard extends React.Component {
   }
 */
 
+
   getRecipe = () => {
-    foods.forEach((food) => {
-      fetch(
-        `https://api.edamam.com/search?q=${food}&app_id=${id}&app_key=${key}`
-      )
+    foods.map((food) => {
+      const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${food}&number=1&addRecipeInformation=true&apiKey=${key}`
+      fetch(url)
         .then((response) => response.json())
-        .then((data) => {
-        this.setState({
+        .then((data) => {console.log(data)
+        this.setState({   
             food: [
               ...this.state.food,
               {
-                image: data.hits[0].recipe.image,                
+                image: data[0].image,
+                title : data[0].title ,               
               },
             ],
-          });
+         });
         });
     });
   };
@@ -60,7 +60,7 @@ class RecipeCard extends React.Component {
             return (
               <div className="item-card" key={index}>              
                 <img src={para.image} alt={para.name} />
-                <p>{foods[index].toUpperCase()}</p>
+                <p>{para.title}</p>
               </div>
             );
           })}
