@@ -1,8 +1,10 @@
 import "./SearchRecipeRight.scss";
 import React, { useState } from "react";
 import Axios from "axios";
+import autoComplete from "./autoComplete";
 
 const SearchRecipeRight = (props) => {
+  const key = "d9cb3dbac9f6460d84cc266e0ac2105d";
   const [inputsValue, setInputsValue] = useState([
     { value: "" },
     { value: "" },
@@ -11,15 +13,15 @@ const SearchRecipeRight = (props) => {
   const [authorise, setAuthorisation] = useState(false);
 
   const inputHandler = (e) => {
+    autoComplete(e.target.value, e.target.id, key);
     const tempState = [...inputsValue];
     tempState[e.target.id].value = e.target.value;
+    setInputsValue(tempState);
 
     const regL = /^[a-zA-Z\s]*$/;
     const testIn = tempState.every((ing) => {
       return regL.test(ing.value);
     });
-
-    setInputsValue(tempState);
     if (inputsValue[0].value.length > 2 && testIn) {
       setAuthorisation(true);
     } else {
@@ -27,9 +29,8 @@ const SearchRecipeRight = (props) => {
     }
   };
 
-  const apiCall = () => {
+  const searchIngcall = () => {
     const ingredients = [...inputsValue];
-    const key = "d9cb3dbac9f6460d84cc266e0ac2105d";
     const path = `findByIngredients?ingredients=${ingredients[0].value}${
       ingredients[1].value !== "" ? ",+" + ingredients[1].value : ""
     }${
@@ -44,7 +45,9 @@ const SearchRecipeRight = (props) => {
         data.map((recipe) => searchRes.push(recipe.id));
         props.recipeResult(searchRes);
       });
+
     setInputsValue([{ value: "" }, { value: "" }, { value: "" }]);
+    setAuthorisation(false);
   };
 
   return (
@@ -59,6 +62,7 @@ const SearchRecipeRight = (props) => {
             value={input.value}
             onChange={inputHandler}
             key={index}
+            autoComplete="off"
           />
         );
       })}
@@ -66,7 +70,7 @@ const SearchRecipeRight = (props) => {
         className={authorise ? null : "disabled"}
         type="button"
         value="send"
-        onClick={apiCall}
+        onClick={searchIngcall}
       />
     </div>
   );
