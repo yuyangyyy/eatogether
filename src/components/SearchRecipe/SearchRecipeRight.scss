@@ -1,0 +1,38 @@
+.search-recipe-right-wrapper {
+  background-color: white;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em;
+  padding: 1em;
+  font-family: Montserrat;
+  input[type="text"] {
+    margin: 2em;
+    outline: 0;
+    border-width: 0 0 1px;
+    padding-bottom: 1em;
+    transition: 0.4s;
+    &:focus {
+      outline: none;
+      padding: 0;
+    }
+  }
+  ::placeholder {
+    color: black;
+    font-family: "Cormorant", serif;
+  }
+  input[type="button"] {
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    transition: 0.4s;
+  }
+}
+
+.disabled {
+  pointer-events: none;  
+  transition: 0.4s;
+  color: tomato;
+}
