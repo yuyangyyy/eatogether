@@ -3,14 +3,11 @@ import React from "react";
 import SearchRecipeLeft from "./SearchRecipeLeft";
 import SearchRecipeRight from "./SearchRecipeRight";
 
-const SearchRecipe = (props) => {  
-
+const SearchRecipe = (props) => {
   return (
-    <div className="search-recipe-wrapper">
+    <div className="search-recipe-wrapper">     
       <SearchRecipeLeft />
-      <SearchRecipeRight
-        recipeResult={props.recipeResult}       
-      />
+      <SearchRecipeRight recipeResult={props.recipeResult} />
     </div>
   );
 };

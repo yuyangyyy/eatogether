@@ -8,7 +8,7 @@
   padding: 1em;
   font-family: Montserrat;
   input[type="text"] {
-    margin: 2em;
+    margin: 2em 2em 0 2em;
     outline: 0;
     border-width: 0 0 1px;
     padding-bottom: 1em;
@@ -29,10 +29,24 @@
     border-width: 0 0 2px;
     transition: 0.4s;
   }
+  p {
+    margin-left: 1.6em;
+    width: 72%;
+    padding: 0.4em;
+    font-family: "Cormorant", serif;
+    transition: 0.2s;
+    &:hover {
+      color:red;
+    }
+    user-select: none;
+  }
+  .inputs-wraper {
+    margin-bottom: 3em;
+  }
 }
 
 .disabled {
-  pointer-events: none;  
+  pointer-events: none;
   transition: 0.4s;
   color: tomato;
 }

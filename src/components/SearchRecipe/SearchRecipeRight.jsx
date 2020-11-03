@@ -1,34 +1,43 @@
-import "./SearchRecipeRight.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import autoComplete from "./autoComplete";
+
+import "./SearchRecipeRight.scss";
 
 const SearchRecipeRight = (props) => {
-  const key = "d9cb3dbac9f6460d84cc266e0ac2105d";
+
+  // STATE //
   const [inputsValue, setInputsValue] = useState([
     { value: "" },
     { value: "" },
     { value: "" },
   ]);
   const [authorise, setAuthorisation] = useState(false);
+  const [autoDiv, setAutoDiv] = useState(["", "", ""]);
 
+  const key = "09f27a029fc24e95b119d240ae00475a";
+
+  // HANDLE INPUT AND AUTOCOMPLETION //
   const inputHandler = (e) => {
-    autoComplete(e.target.value, e.target.id, key);
+    const path = `food/ingredients/autocomplete?query=${e.target.value}&number=1&metaInformation=false`;
+    const url = `https://api.spoonacular.com/${path}&apiKey=${key}`;
+
+    Axios(url)
+      .then((res) => res.data)
+      .then((data) => {
+        setAutoDiv(["", "", ""]);
+        if (data[0]) {
+          const tempDivarr = [...autoDiv];
+          tempDivarr[e.target.id] = data[0].name;
+          setAutoDiv(tempDivarr);
+        }
+      });
+
     const tempState = [...inputsValue];
     tempState[e.target.id].value = e.target.value;
     setInputsValue(tempState);
-
-    const regL = /^[a-zA-Z\s]*$/;
-    const testIn = tempState.every((ing) => {
-      return regL.test(ing.value);
-    });
-    if (inputsValue[0].value.length > 2 && testIn) {
-      setAuthorisation(true);
-    } else {
-      setAuthorisation(false);
-    }
   };
 
+  // API CALL AND LIFT RESULT TO PARENT //
   const searchIngcall = () => {
     const ingredients = [...inputsValue];
     const path = `findByIngredients?ingredients=${ingredients[0].value}${
@@ -48,30 +57,67 @@ const SearchRecipeRight = (props) => {
 
     setInputsValue([{ value: "" }, { value: "" }, { value: "" }]);
     setAuthorisation(false);
+    setAutoDiv(["", "", ""]);
   };
+
+  // SEND AUTOCOMPLETION TO INPUTVALUE AND RESET STATE //
+  const sendAutoC = (e) => {
+    const tempAutoValue = [...inputsValue];
+    tempAutoValue[e.target.id].value = e.target.innerText;
+    setInputsValue(tempAutoValue);
+    const tempAutoDiv = [...autoDiv];
+    tempAutoDiv[e.target.id] = "";
+    setAutoDiv(tempAutoDiv);
+  };
+
+  // LITTLE PROTECTION //
+  useEffect(() => {
+    const regL = /^[a-zA-Z\s]*$/;
+    const testIn = inputsValue.every((ing) => {
+      return regL.test(ing.value);
+    });
+    if (inputsValue[0].value.length > 2 && testIn) {
+      setAuthorisation(true);
+    } else {
+      setAuthorisation(false);
+    }
+  });
 
   return (
     <div className="search-recipe-right-wrapper">
+      
       <h2>In my fridge ...</h2>
+
       {inputsValue.map((input, index) => {
         return (
-          <input
-            type="text"
-            id={index}
-            placeholder={"Ingredients " + (index + 1)}
-            value={input.value}
-            onChange={inputHandler}
-            key={index}
-            autoComplete="off"
-          />
+
+          <div className="inputs-wraper" key={index}>
+            <input
+              type="text"
+              id={index}
+              placeholder={"Ingredients " + (index + 1)}
+              value={input.value}
+              onChange={inputHandler}
+              autoComplete="off"
+            />
+
+            {autoDiv[index] !== "" && (
+              <p id={index} onClick={sendAutoC}>
+                {autoDiv[index]}
+              </p>
+            )}
+
+          </div>
         );
       })}
+
       <input
         className={authorise ? null : "disabled"}
         type="button"
         value="send"
         onClick={searchIngcall}
       />
+
     </div>
   );
 };
