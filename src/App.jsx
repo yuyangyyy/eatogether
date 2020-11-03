@@ -1,7 +1,8 @@
 import "./App.css";
 import React from "react";
-import Home from "./components/Home"
+// import Home from "./components/Home"
 import Navigation from "./components/Navigation"
+import Host from "./components/Host";
 
 
 class App extends React.Component {
@@ -17,7 +18,8 @@ class App extends React.Component {
     return (
       <div className="App">
       <Navigation getName={this.getName}/>
-      <Home />        
+      <Host/>
+           
       </div>
     );
   }

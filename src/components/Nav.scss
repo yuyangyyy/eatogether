@@ -3,7 +3,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
   padding: 1em;
   z-index: 10000;
   background-color: white;
@@ -11,7 +11,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+
     padding: 1em;
     font-family: "Cormorant", serif;
     list-style: none;
@@ -19,6 +19,9 @@ nav {
   h1 {
     font-family: "Montserrat", sans-serif;
     font-weight: 8000px;
+  }
+  img {
+    width: 5%;
   }
   li {
     transition: 0.3s;
@@ -51,18 +54,17 @@ nav {
     transition: opacity 200ms;
   }
 }
- .logo {
-
+.logo {
   height: 100px;
   width: 180px;
-  border-radius: 10% ; 
+  border-radius: 10%;
 }
 figure {
-  position: relative; 
-overflow: hidden;
-margin: 0;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
 
-filter: grayscale(.8);
+  filter: grayscale(0.8);
 }
 
 figure::before {
@@ -71,44 +73,43 @@ figure::before {
   left: 50%;
   z-index: 2;
   display: block;
-  content: '';
+  content: "";
   width: 0;
   height: 0;
-  background: rgba(0,0,0,.2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 100%;
   transform: translate(-50%, -50%);
   opacity: 0;
 }
-figure:hover{
-animation: bloom ease-in-out .75s forwards;
+figure:hover {
+  animation: bloom ease-in-out 0.75s forwards;
 }
 figure:hover::before {
-  animation: circle .75s;
+  animation: circle 0.75s;
 }
 @keyframes bloom {
   0% {
-      filter: grayscale(.8);
+    filter: grayscale(0.8);
   }
   40% {
-      filter: grayscale(.5);
+    filter: grayscale(0.5);
   }
   100% {
-      filter: grayscale(0);
+    filter: grayscale(0);
   }
 }
 @keyframes circle {
   0% {
-      opacity: .5;
-  background: rgba(213,156,34,.2);
-  
+    opacity: 0.5;
+    background: rgba(213, 156, 34, 0.2);
   }
   40% {
-      opacity: 1;
-  background: rgba(213,34,160,.2);
+    opacity: 1;
+    background: rgba(213, 34, 160, 0.2);
   }
   100% {
-      width: 200%;
-      height: 200%;
-      opacity: 0;
+    width: 200%;
+    height: 200%;
+    opacity: 0;
   }
 }

@@ -29,11 +29,12 @@ class Navigation extends React.Component {
     const menu = ["Home", "Guest", "Host", "Messages"];
     return (
       <nav ref={this.nav}>
-        <ul>
-          <figure>
-        <img className="logo" src="./image/logoEat.png" alt="c" /></figure>
+        <ul>          
+          <h1>EaTogether</h1>
           {menu.map((x, index) => (
-            <li key={index} className="scaled">{x}</li>
+            <li key={index} className="scaled">
+              {x}
+            </li>
           ))}
           <input
             className="signInButton"

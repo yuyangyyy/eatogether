@@ -1,8 +1,8 @@
 import React from 'react'
-import Display from './Display'
+import Display from '../Display'
 import './Home.css'
-import RecipeCard from './RecipeCard'
-import GuestSearch from './GuestSearch'
+import RecipeCard from '../RecipeCard'
+import GuestSearch from '../GuestSearch'
 
                 
 
