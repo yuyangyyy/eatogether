@@ -1,7 +1,7 @@
 import React from 'react';
 import './Display.css';
 
-function Display () {
+function Display () { 
   return (
     <section className="display-container">      
           <div className="display-evening">
