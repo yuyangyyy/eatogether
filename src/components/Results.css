@@ -1,0 +1,9 @@
+.guest-result {
+  width: 500px;
+  height: 500px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: black;
+  border-radius: 8px;
+  color: white;
+}
