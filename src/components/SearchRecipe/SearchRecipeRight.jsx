@@ -13,12 +13,11 @@ const SearchRecipeRight = (props) => {
   const [authorise, setAuthorisation] = useState(false);
   const [autoDiv, setAutoDiv] = useState(["", "", ""]);
 
-
   // HANDLE INPUT AND AUTOCOMPLETION //
   const inputHandler = (e) => {
     const path = `food/ingredients/autocomplete?query=${e.target.value}&number=1&metaInformation=false`;
     const url = `https://api.spoonacular.com/${path}&apiKey=${props.keyApi}`;
-   
+
     Axios(url)
       .then((res) => res.data)
       .then((data) => {
@@ -60,8 +59,11 @@ const SearchRecipeRight = (props) => {
 
   // SEND AUTOCOMPLETION TO INPUTVALUE AND RESET STATE //
   const sendAutoC = (e) => {
-    const tempAutoValue = [...inputsValue];    
-    tempAutoValue[e.target.id].value = e.target.innerText.split('').splice(1,e.target.innerText.length).join('');
+    const tempAutoValue = [...inputsValue];
+    tempAutoValue[e.target.id].value = e.target.innerText
+      .split("")
+      .splice(1, e.target.innerText.length)
+      .join("");
     setInputsValue(tempAutoValue);
     const tempAutoDiv = [...autoDiv];
     tempAutoDiv[e.target.id] = "";
@@ -87,27 +89,29 @@ const SearchRecipeRight = (props) => {
 
       <p>Look for a recipe with some ingredients you got. </p>
       <p>Put at least one ingredient</p>
-      
-      {inputsValue.map((input, index) => {
-        return (
-          <div className="inputs-wraper" key={index}>
-            <input
-              type="text"
-              id={index}
-              placeholder={"Ingredients " + (index + 1)}
-              value={input.value}
-              onChange={inputHandler}
-              autoComplete="off"
-            />
 
-            {autoDiv[index] !== "" && (
-              <p id={index} onClick={sendAutoC}>
-                • {autoDiv[index]}
-              </p>
-            )}
-          </div>
-        );
-      })}
+      <div className="input-container">
+        {inputsValue.map((input, index) => {
+          return (
+            <div className="inputs-wraper" key={index}>
+              <input
+                type="text"
+                id={index}
+                placeholder={"Ingredients " + (index + 1)}
+                value={input.value}
+                onChange={inputHandler}
+                autoComplete="off"
+              />
+
+              {autoDiv[index] !== "" && (
+                <p id={index} onClick={sendAutoC}>
+                  • {autoDiv[index]}
+                </p>
+              )}
+            </div>
+          );
+        })}
+      </div>
 
       <input
         className={authorise ? null : "disabled"}

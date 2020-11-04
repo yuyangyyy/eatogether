@@ -69,7 +69,6 @@ const SearchRecipeLeft = (props) => {
   };
 
   // API CALL AND RESET FIELD //
-
   const searchRecipe = () => {
     const path = `complexSearch?query=${recipeName}&number=5`;
     const url = `https://api.spoonacular.com/recipes/${path}&apiKey=${props.keyApi}`;
@@ -78,7 +77,6 @@ const SearchRecipeLeft = (props) => {
       .then((res) => res.data)
       .then((data) => {
         const searchRes = [];
-        console.log(data);
         props.recipeResult(searchRes);
       });
 
@@ -92,19 +90,23 @@ const SearchRecipeLeft = (props) => {
   useEffect(() => {
     const noEmptySelect = selects.some((x) => x.value !== "");
     const noMoreThanOneS = selects.every((x) => x.value !== "");
+    const allSelectOff = selects.every((x) => x.value === "");
     const onlyOneTest = noEmptySelect && !noMoreThanOneS;
     const regL = /^[a-zA-Z\s]*$/;
 
-    if (noMoreThanOneS || (noEmptySelect && recipeName.length > 0)) {
-      setErrorMessage("Use only one filter");
-    } else {
-      setErrorMessage("");
-    }
-
-    if ((recipeName.length > 2 && regL.test(recipeName)) || onlyOneTest) {
+    if (
+      (onlyOneTest && recipeName === "") ||
+      (regL.test(recipeName) && recipeName.length > 0 && allSelectOff)
+    ) {
       setAuthorisation(true);
     } else {
       setAuthorisation(false);
+    }
+
+    if (noMoreThanOneS || (noEmptySelect && recipeName !== "")) {
+      setErrorMessage("Chose only one kind of filter");
+    } else {
+      setErrorMessage("");
     }
   });
 
@@ -115,29 +117,31 @@ const SearchRecipeLeft = (props) => {
       <p>Look for a recipe with many filters </p>
       <p>Select only one kind of filter</p>
 
-      <label forhtml="all-select">• Recipe name:</label>
-      <input
-        id="all-select"
-        type="text"
-        placeholder="Put a recipe name"
-        value={recipeName}
-        onChange={inputHandler}
-        autoComplete="off"
-      ></input>
+      <div className="inputs-wraper">
+        <label forhtml="all-select">• Recipe name:</label>
+        <input
+          id="all-select"
+          type="text"
+          placeholder="Put a recipe name"
+          value={recipeName}
+          onChange={inputHandler}
+          autoComplete="off"
+        ></input>
 
-      {autoDiv.length > 0 && (
-        <div className="input-wraper">
-          {autoDiv.map((recipe) => {
-            return (
-              <p key={recipe} onClick={sendAutoC}>
-                • {recipe}
-              </p>
-            );
-          })}
-        </div>
-      )}
+        {autoDiv.length > 0 && (
+          <div className="input-wraper">
+            {autoDiv.map((recipe) => {
+              return (
+                <p key={recipe} onClick={sendAutoC}>
+                  • {recipe}
+                </p>
+              );
+            })}
+          </div>
+        )}
+      </div>
 
-      <p>or</p>
+      <span>or</span>
 
       {selects.map((select, index) => {
         return (
@@ -152,7 +156,7 @@ const SearchRecipeLeft = (props) => {
               value={select.value}
               onChange={selectHandler}
             >
-              <option value="">--Please choose an option--</option>
+              <option value="">Please choose an option</option>
 
               {select.option.map((type) => {
                 return (
@@ -162,6 +166,7 @@ const SearchRecipeLeft = (props) => {
                 );
               })}
             </select>
+            {index !== selects.length - 1 && <span>or</span>}
           </div>
         );
       })}
