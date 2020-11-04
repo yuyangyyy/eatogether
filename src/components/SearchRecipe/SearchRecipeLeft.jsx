@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios";
 
 import { diet, foodType } from "./foodList";
@@ -6,12 +6,34 @@ import { diet, foodType } from "./foodList";
 import "./SearchRecipeBlocs.scss";
 
 const SearchRecipeLeft = (props) => {
+  const selectInit = [
+    {
+      name: "foodtype",
+      value: "",
+      option: foodType,
+      label: "style of cuisine",
+    },
+    {
+      name: "diettype",
+      value: "",
+      option: diet,
+      label: "diet type",
+    },
+  ];
+
   // STATE //
   const [recipeName, setRecipeName] = useState("");
   const [autoDiv, setAutoDiv] = useState([]);
+  const [authorise, setAuthorisation] = useState(false);
+  const [selects, setSelects] = useState(selectInit);
+  const [errorMessage, setErrorMessage] = useState("");
 
   // HANDLE INPUT AND AUTOCOMPLETION //
   const inputHandler = (e) => {
+    if (recipeName.length > 1) {
+      setSelects(selectInit);
+    }
+
     const path = `recipes/autocomplete?query=${e.target.value}&number=3&metaInformation=false`;
     const url = `https://api.spoonacular.com/${path}&apiKey=${props.keyApi}`;
 
@@ -33,12 +55,58 @@ const SearchRecipeLeft = (props) => {
 
   // SEND AUTOCOMPLETION TO INPUTVALUE AND RESET STATE //
   const sendAutoC = (e) => {
-    setRecipeName(e.target.innerText
-      .split("")
-      .splice(1, e.target.innerText.length)
-      .join(""))    
+    setRecipeName(
+      e.target.innerText.split("").splice(1, e.target.innerText.length).join("")
+    );
     setAutoDiv([]);
   };
+
+  // HANDLE SELECT VALUE //
+  const selectHandler = (e) => {
+    const tempSelect = [...selects];
+    tempSelect[e.target.id].value = e.target.value;
+    setSelects(tempSelect);
+  };
+
+  // API CALL AND RESET FIELD //
+
+  const searchRecipe = () => {
+    const path = `complexSearch?query=${recipeName}&number=5`;
+    const url = `https://api.spoonacular.com/recipes/${path}&apiKey=${props.keyApi}`;
+
+    Axios.get(url)
+      .then((res) => res.data)
+      .then((data) => {
+        const searchRes = [];
+        console.log(data);
+        props.recipeResult(searchRes);
+      });
+
+    setSelects(selectInit);
+    setRecipeName("");
+    setAuthorisation(false);
+    setAutoDiv([]);
+  };
+
+  // LITTLE PROTECTION //
+  useEffect(() => {
+    const noEmptySelect = selects.some((x) => x.value !== "");
+    const noMoreThanOneS = selects.every((x) => x.value !== "");
+    const onlyOneTest = noEmptySelect && !noMoreThanOneS;
+    const regL = /^[a-zA-Z\s]*$/;
+
+    if (noMoreThanOneS || (noEmptySelect && recipeName.length > 0)) {
+      setErrorMessage("Use only one filter");
+    } else {
+      setErrorMessage("");
+    }
+
+    if ((recipeName.length > 2 && regL.test(recipeName)) || onlyOneTest) {
+      setAuthorisation(true);
+    } else {
+      setAuthorisation(false);
+    }
+  });
 
   return (
     <div className="search-recipe-right-wrapper">
@@ -47,7 +115,7 @@ const SearchRecipeLeft = (props) => {
       <p>Look for a recipe with many filters </p>
       <p>Select only one kind of filter</p>
 
-      <label forhtml="all-select">Recipe name:</label>
+      <label forhtml="all-select">• Recipe name:</label>
       <input
         id="all-select"
         type="text"
@@ -71,37 +139,40 @@ const SearchRecipeLeft = (props) => {
 
       <p>or</p>
 
-      <label formhtml="foodtype-select">Choose a cuisine type:</label>
-      <select name="foodtype" id="foodtype-select">
-        <option value="">--Please choose an option--</option>
-        {foodType.map((type) => {
-          return (
-            <option value={type} key={type}>
-              {type}
-            </option>
-          );
-        })}
-      </select>
+      {selects.map((select, index) => {
+        return (
+          <div className="inputs-wraper" key={select.name}>
+            <label formhtml={`${select.name}-select`}>
+              • Choose a {select.label}
+            </label>
 
-      <p>or</p>
+            <select
+              name={select.name}
+              id={index}
+              value={select.value}
+              onChange={selectHandler}
+            >
+              <option value="">--Please choose an option--</option>
 
-      <label htmlFor="diet-select">Chose a diet type:</label>
-      <select name="diet" id="diet-select">
-        <option value="">--Please choose an option--</option>
-        {diet.map((type) => {
-          return (
-            <option value={type} key={type}>
-              {type}
-            </option>
-          );
-        })}
-      </select>
+              {select.option.map((type) => {
+                return (
+                  <option value={type} key={type}>
+                    {type}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+        );
+      })}
+
+      <p className="errormessage">{errorMessage}</p>
 
       <input
-        // className={authorise ? null : "disabled"}
+        className={authorise ? null : "disabled"}
         type="button"
         value="send"
-        // onClick={searchIngcall}
+        onClick={searchRecipe}
       />
     </div>
   );

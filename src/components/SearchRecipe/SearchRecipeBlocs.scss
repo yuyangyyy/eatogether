@@ -18,17 +18,18 @@
     &:focus {
       outline: none;
       padding: 0;
-    }    
+    }
   }
 
   #all-select {
     margin: 0;
+    width: 88%;
     outline: 0;
     border-width: 0 0 1px;
-    padding-bottom: 1em;    
+    padding-bottom: 1em;
     &:focus {
-      outline: none;      
-    }    
+      outline: none;
+    }
   }
 
   select {
@@ -64,12 +65,15 @@
   p {
     font-family: "Cormorant", serif;
   }
-  .inputs-wraper {       
-    text-align:center;    
+  .inputs-wraper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     width: 100%;
     margin-bottom: 3em;
-    p {      
-      width: 72%;
+    p {     
+      text-align: start;
+      margin-left: 2em;
       padding: 0.4em;
       transition: 0.2s;
       &:hover {
@@ -78,9 +82,10 @@
       user-select: none;
     }
   }
-  .input-wraper{   
-    width: 35%;
-    p {           
+  .input-wraper {
+    width:88%;
+
+    p {
       padding: 0.4em;
       transition: 0.2s;
       &:hover {
@@ -88,6 +93,10 @@
       }
       user-select: none;
     }
+  }
+  .errormessage {
+    color: red;
+    margin-bottom: 1em;
   }
 }
 
