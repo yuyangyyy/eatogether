@@ -6,18 +6,25 @@ import { diet, foodType } from "./foodList";
 import "./SearchRecipeBlocs.scss";
 
 const SearchRecipeLeft = (props) => {
+
   const selectInit = [
     {
       name: "foodtype",
       value: "",
       option: foodType,
       label: "style of cuisine",
+      path: function () {
+        return `&cuisine=${this.value}`;
+      },
     },
     {
       name: "diettype",
       value: "",
       option: diet,
       label: "diet type",
+      path: function () {
+        return `&diet=${this.value}`;
+      },
     },
   ];
 
@@ -65,19 +72,27 @@ const SearchRecipeLeft = (props) => {
   const selectHandler = (e) => {
     const tempSelect = [...selects];
     tempSelect[e.target.id].value = e.target.value;
-    setSelects(tempSelect);
+    setSelects(tempSelect);    
   };
 
   // API CALL AND RESET FIELD //
   const searchRecipe = () => {
-    const path = `complexSearch?query=${recipeName}&number=5`;
-    const url = `https://api.spoonacular.com/recipes/${path}&apiKey=${props.keyApi}`;
+
+    let path = "";
+    if (recipeName.length > 0) {
+      path = `complexSearch?query=${recipeName}`;
+    } else {
+      path = `complexSearch?query=chicken
+      ${selects[0].value.length > 0 && selects[0].path()}
+      ${selects[1].value.length > 0 && selects[1].path()}`;
+    }
+    
+    const url = `https://api.spoonacular.com/recipes/${path}&number=5&apiKey=${props.keyApi}`;
 
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
-        const searchRes = [];
-        props.recipeResult(searchRes);
+        console.log(data)
       });
 
     setSelects(selectInit);
