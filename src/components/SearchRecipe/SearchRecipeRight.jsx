@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
-import "./SearchRecipeRight.scss";
+import "./SearchRecipeBlocs.scss";
 
 const SearchRecipeRight = (props) => {
-
   // STATE //
   const [inputsValue, setInputsValue] = useState([
     { value: "" },
@@ -14,13 +13,12 @@ const SearchRecipeRight = (props) => {
   const [authorise, setAuthorisation] = useState(false);
   const [autoDiv, setAutoDiv] = useState(["", "", ""]);
 
-  const key = "09f27a029fc24e95b119d240ae00475a";
 
   // HANDLE INPUT AND AUTOCOMPLETION //
   const inputHandler = (e) => {
     const path = `food/ingredients/autocomplete?query=${e.target.value}&number=1&metaInformation=false`;
-    const url = `https://api.spoonacular.com/${path}&apiKey=${key}`;
-
+    const url = `https://api.spoonacular.com/${path}&apiKey=${props.keyApi}`;
+   
     Axios(url)
       .then((res) => res.data)
       .then((data) => {
@@ -45,7 +43,7 @@ const SearchRecipeRight = (props) => {
     }${
       ingredients[2].value !== "" ? ",+" + ingredients[2].value : ""
     }&number=5&addRecipeInformation=true`;
-    const url = `https://api.spoonacular.com/recipes/${path}&apiKey=${key}`;
+    const url = `https://api.spoonacular.com/recipes/${path}&apiKey=${props.keyApi}`;
 
     Axios.get(url)
       .then((res) => res.data)
@@ -62,8 +60,8 @@ const SearchRecipeRight = (props) => {
 
   // SEND AUTOCOMPLETION TO INPUTVALUE AND RESET STATE //
   const sendAutoC = (e) => {
-    const tempAutoValue = [...inputsValue];
-    tempAutoValue[e.target.id].value = e.target.innerText;
+    const tempAutoValue = [...inputsValue];    
+    tempAutoValue[e.target.id].value = e.target.innerText.split('').splice(1,e.target.innerText.length).join('');
     setInputsValue(tempAutoValue);
     const tempAutoDiv = [...autoDiv];
     tempAutoDiv[e.target.id] = "";
@@ -85,12 +83,13 @@ const SearchRecipeRight = (props) => {
 
   return (
     <div className="search-recipe-right-wrapper">
-      
       <h2>In my fridge ...</h2>
 
+      <p>Look for a recipe with some ingredients you got. </p>
+      <p>Put at least one ingredient</p>
+      
       {inputsValue.map((input, index) => {
         return (
-
           <div className="inputs-wraper" key={index}>
             <input
               type="text"
@@ -103,10 +102,9 @@ const SearchRecipeRight = (props) => {
 
             {autoDiv[index] !== "" && (
               <p id={index} onClick={sendAutoC}>
-                {autoDiv[index]}
+                • {autoDiv[index]}
               </p>
             )}
-
           </div>
         );
       })}
@@ -117,7 +115,6 @@ const SearchRecipeRight = (props) => {
         value="send"
         onClick={searchIngcall}
       />
-
     </div>
   );
 };

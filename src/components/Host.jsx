@@ -18,7 +18,7 @@ class Host extends React.Component {
   render() {
     return (
       <div>
-        <SearchRecipe recipeResult={this.getRecipeResult} />
+        <SearchRecipe recipeResult={this.getRecipeResult} />       
       </div>
     );
   }
