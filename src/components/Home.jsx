@@ -3,8 +3,6 @@ import Display from './Display'
 import './Home.css'
 
 
-                
-
 class Home extends React.Component{
     render(){
         return(
