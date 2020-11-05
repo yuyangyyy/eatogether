@@ -1,7 +1,9 @@
 import React from "react";
-import Home from "./components/Home"
-import "./App.css";
 
+import Home from "./components/Home";
+import Navigation from "./components/Navigation";
+
+import "./App.css";
 
 class App extends React.Component {
   state = {
@@ -16,6 +18,8 @@ class App extends React.Component {
     return (
       <div className="App">
          <Home />        
+        <Navigation getName={this.getName} />
+          
       </div>
     );
   }
