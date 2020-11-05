@@ -1,8 +1,8 @@
-import "./App.css";
 import React from "react";
-import Home from "./components/Home"
 
+import Home from "./components/Home";
 
+import "./App.css";
 
 class App extends React.Component {
   state = {
@@ -16,7 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <Home />        
+        <Home />
       </div>
     );
   }

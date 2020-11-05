@@ -1,6 +1,8 @@
 import React from 'react'
-import './Home.css'
+
 import RecipeCard from './RecipeCard'
+
+import './Home.css'
 
 
                 
