@@ -12,18 +12,15 @@ class Host extends React.Component {
     this.setState({ recipeResult: result });
   };
 
-  getSearchClickState = (value) => {
-    this.setState({ topClickState: value });
-  };
-
   render() {
     return (
+
       <div>
-        <SearchRecipe
-          recipeResult={this.getRecipeResult}
-          clickState={this.getSearchClickState}
-        />
+
+        <SearchRecipe recipeResult={this.getRecipeResult} />
+
         <Test recipeId={this.state.recipeResult} />
+        
       </div>
     );
   }

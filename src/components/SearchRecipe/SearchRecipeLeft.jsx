@@ -6,7 +6,6 @@ import { diet, foodType } from "./foodList";
 import "./scss/SearchRecipeBlocs.scss";
 
 const SearchRecipeLeft = (props) => {
-
   const selectInit = [
     {
       name: "foodtype",
@@ -14,7 +13,7 @@ const SearchRecipeLeft = (props) => {
       option: foodType,
       label: "style of cuisine",
       path: function () {
-        return `&cuisine=${this.value}`;
+        return `cuisine=${this.value}`;
       },
     },
     {
@@ -23,7 +22,7 @@ const SearchRecipeLeft = (props) => {
       option: diet,
       label: "diet type",
       path: function () {
-        return `&diet=${this.value}`;
+        return `diet=${this.value}`;
       },
     },
   ];
@@ -72,19 +71,18 @@ const SearchRecipeLeft = (props) => {
   const selectHandler = (e) => {
     const tempSelect = [...selects];
     tempSelect[e.target.id].value = e.target.value;
-    setSelects(tempSelect);    
+    setSelects(tempSelect);
   };
 
-  // API CALL LIFT RESULT TO PARENT  AND RESET FIELD //
+  // API CALL , LIFT RESULT TO PARENT  AND RESET FIELDS //
   const searchRecipe = () => {
-
     let path = "";
     if (recipeName.length > 0) {
       path = `complexSearch?query=${recipeName}`;
     } else {
-      path = `complexSearch?query=chicken
-      ${selects[0].value.length > 0 && selects[0].path()}
-      ${selects[1].value.length > 0 && selects[1].path()}`;
+      path = `complexSearch?${
+        selects[0].value.length > 0 ? selects[0].path() : ""
+      }${selects[1].value.length > 0 ? selects[1].path() : ""}`;
     }
     
     const url = `https://api.spoonacular.com/recipes/${path}&number=5&apiKey=${props.keyApi}`;
@@ -93,11 +91,12 @@ const SearchRecipeLeft = (props) => {
       .then((res) => res.data)
       .then((data) => {
         const searchRes = [];
-        data.results.map((recipe) => searchRes.push(recipe.id));
+        if (data.results) {
+          data.results.map((recipe) => searchRes.push(recipe.id));
+        }
         props.recipeResult(searchRes);
       });
 
-   
     setSelects(selectInit);
     setRecipeName("");
     setAuthorisation(false);
