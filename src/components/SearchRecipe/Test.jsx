@@ -7,17 +7,18 @@ class Test extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
+    /// TEST POUR EVITER BOUCLE INFINIE ////
     const test =
       prevProps.recipeId.length === this.props.recipeId.length &&
       this.props.recipeId.every(
         (value, index) => value === prevProps.recipeId[index]
       );
-
+    /// ///////////////////////////////////////
+    
     if (!test) {
-      console.log(this.state.info);
-      
-      this.props.recipeId.map((recette) => {        
-        const key = "c76085354dd741a3a62ee7906e9c0faf";
+      this.setState({ info: [] }); // reset de state  important !!
+      this.props.recipeId.map((recette) => {
+        const key = "1e780ebe14ef4d898f45bff9425a3fcb";
         const url = `https://api.spoonacular.com/recipes/${recette}/information?includeNutrition=false&apiKey=${key}`;
         Axios.get(url)
           .then((res) => res.data)

@@ -75,7 +75,7 @@ const SearchRecipeLeft = (props) => {
     setSelects(tempSelect);    
   };
 
-  // API CALL AND RESET FIELD //
+  // API CALL LIFT RESULT TO PARENT  AND RESET FIELD //
   const searchRecipe = () => {
 
     let path = "";
@@ -97,6 +97,7 @@ const SearchRecipeLeft = (props) => {
         props.recipeResult(searchRes);
       });
 
+   
     setSelects(selectInit);
     setRecipeName("");
     setAuthorisation(false);

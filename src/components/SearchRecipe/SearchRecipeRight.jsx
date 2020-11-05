@@ -51,7 +51,7 @@ const SearchRecipeRight = (props) => {
         data.map((recipe) => searchRes.push(recipe.id));
         props.recipeResult(searchRes);
       });
-
+    
     setInputsValue([{ value: "" }, { value: "" }, { value: "" }]);
     setAuthorisation(false);
     setAutoDiv(["", "", ""]);
