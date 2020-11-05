@@ -18,7 +18,7 @@ class Test extends React.Component {
     if (!test) {
       this.setState({ info: [] }); // reset de state  important !!
       this.props.recipeId.map((recette) => {
-        const key = "622b28d5939e4335a58e9ad6cee79034";
+        const key = "1734d5ded2604d979f0886c3d7182230";
         const url = `https://api.spoonacular.com/recipes/${recette}/information?includeNutrition=false&apiKey=${key}`;
         Axios.get(url)
           .then((res) => res.data)

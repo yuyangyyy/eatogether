@@ -6,13 +6,13 @@ import SearchRecipeRight from "./SearchRecipeRight";
 import "./scss/SearchRecipe.scss";
 
 const SearchRecipe = (props) => {
-  const key = "622b28d5939e4335a58e9ad6cee79034";
+  const key = "1734d5ded2604d979f0886c3d7182230";
 
   return (
 
     <div className="search-recipe-wrapper">
 
-      <h2>Search for a Recipe</h2>
+      <h2 className="search-recipe-wrapper-title">Search for a Recipe</h2>
 
       <div className="search-recipe-blocs">
 
