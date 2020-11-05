@@ -15,8 +15,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <Navigation getName={this.getName}/>
-      <Home />        
+        <Navigation getName={this.getName} />
+        <Home />        
       </div>
     );
   }
