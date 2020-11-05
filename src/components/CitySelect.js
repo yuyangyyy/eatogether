@@ -1,10 +1,10 @@
 import React from 'react';
 
 const CitySelect = (props) => {
-  const citys = ['Paris', 'Lyon', 'Marseille', 'Nice', 'Lille'];
+  const citys = ['Where', 'Paris', 'Lyon', 'Marseille', 'Nice', 'Lille'];
 
   return (
-    <select onChange={props.changeCity}>
+    <select className="guest-city" onChange={props.changeCity}>
       {citys.map((city) => {
         return <option key={city}>{city}</option>;
       })}
