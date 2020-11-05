@@ -1,17 +1,27 @@
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>React starter template</h1>
-        <p>Since React 17, you don&#39;t need this anymore:</p>
-        <pre>
-          <code>import React from &#39;react&#39;;</code>
-        </pre>
-      </header>
-    </div>
-  );
+import Home from "./components/Home"
+import Navigation from "./components/Navigation"
+
+import "./App.css";
+
+class App extends React.Component {
+  state = {
+    userName: {},
+  };
+
+  getName = (name) => {
+    this.setState({ userName: name });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Navigation getName={this.getName} />
+        <Home />        
+      </div>
+    );
+  }
 }
 
 export default App;
