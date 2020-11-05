@@ -3,10 +3,10 @@ import React from "react";
 import SearchRecipeLeft from "./SearchRecipeLeft";
 import SearchRecipeRight from "./SearchRecipeRight";
 
-import "./SearchRecipe.scss";
+import "./scss/SearchRecipe.scss";
 
 const SearchRecipe = (props) => {
-  const key = "09f27a029fc24e95b119d240ae00475a";
+  const key = "c76085354dd741a3a62ee7906e9c0faf";
   return (
     <div className="search-recipe-wrapper">
       <h2>Search for a Recipe</h2>

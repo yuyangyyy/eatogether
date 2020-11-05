@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
-import "./SearchRecipeBlocs.scss";
+import "./scss/SearchRecipeBlocs.scss";
 
 const SearchRecipeRight = (props) => {
   // STATE //

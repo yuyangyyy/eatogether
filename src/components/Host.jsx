@@ -1,8 +1,9 @@
 import React from "react";
+
 import SearchRecipe from "./SearchRecipe/SearchRecipe";
+import Test from "./SearchRecipe/Test";
 
 class Host extends React.Component {
-    
   state = {
     recipeResult: [],
   };
@@ -11,14 +12,11 @@ class Host extends React.Component {
     this.setState({ recipeResult: result });
   };
 
-  componentDidUpdate() {
-    console.log(this.state.recipeResult);
-  }
-
   render() {
     return (
       <div>
-        <SearchRecipe recipeResult={this.getRecipeResult} />       
+        <SearchRecipe recipeResult={this.getRecipeResult} />
+        <Test recipeId={this.state.recipeResult}/>
       </div>
     );
   }

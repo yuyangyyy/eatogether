@@ -3,7 +3,7 @@ import Axios from "axios";
 
 import { diet, foodType } from "./foodList";
 
-import "./SearchRecipeBlocs.scss";
+import "./scss/SearchRecipeBlocs.scss";
 
 const SearchRecipeLeft = (props) => {
 
@@ -92,7 +92,9 @@ const SearchRecipeLeft = (props) => {
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
-        console.log(data)
+        const searchRes = [];
+        data.results.map((recipe) => searchRes.push(recipe.id));
+        props.recipeResult(searchRes);
       });
 
     setSelects(selectInit);
@@ -119,7 +121,7 @@ const SearchRecipeLeft = (props) => {
     }
 
     if (noMoreThanOneS || (noEmptySelect && recipeName !== "")) {
-      setErrorMessage("Chose only one kind of filter");
+      setErrorMessage("Choose only one kind of filter");
     } else {
       setErrorMessage("");
     }
