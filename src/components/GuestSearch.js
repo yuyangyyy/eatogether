@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
@@ -16,7 +17,6 @@ class GuestSearch extends React.Component {
   };
 
   setCity = (event) => {
-    // console.log('set City', event.target.value);
     this.setState({ city: event.target.value });
   };
 
@@ -25,11 +25,10 @@ class GuestSearch extends React.Component {
   };
 
   onChange = (date) => {
-    // console.log('date?', date);
     this.setState({
+      date,
       showCalendar: false,
     });
-    // console.log('state?', this.state);
   };
 
   componentDidUpdate() {
@@ -38,31 +37,32 @@ class GuestSearch extends React.Component {
 
   render() {
     return (
-      <div className="guest-header">
-        <CitySelect changeCity={this.setCity} />
-        <input
-          className="guest-calendar"
-          type="button"
-          value="Calendar"
-          onClick={() =>
-            this.setState({ showCalendar: !this.state.showCalendar })
-          }
-        />
+      <div>
+        <div className="guest-header">
+          <CitySelect changeCity={this.setCity} />
+          <input
+            className="guest-calendar"
+            type="button"
+            value="Calendar"
+            onClick={() =>
+              this.setState({ showCalendar: !this.state.showCalendar })
+            }
+          />
 
-        {this.state.showCalendar && (
-          <Calendar onChange={this.onChange} value={this.state.date} />
-        )}
+          {this.state.showCalendar && (
+            <Calendar onChange={this.onChange} value={this.state.date} />
+          )}
 
-        <PlatSelect changePlat={this.setPlat} />
-        <input
-          className="guest-search"
-          type="button"
-          value="Search"
-          onClick={() => this.setState({ search: !this.state.search })}
-        />
-        {this.state.search && <Results {...this.state} />}
+          <PlatSelect changePlat={this.setPlat} />
+          <input
+            className="guest-search"
+            type="button"
+            value="Search"
+            onClick={() => this.setState({ search: !this.state.search })}
+          />
 
-        {/* <Results city={this.state.city} date={this.state.date} plat={this.state.plat} /> */}
+          <div>{this.state.search && <Results {...this.state} />}</div>
+        </div>
       </div>
     );
   }
