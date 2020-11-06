@@ -5,11 +5,11 @@ import "./scss/SearchRecipeBlocs.scss";
 
 const SearchRecipeRight = (props) => {
   // STATE //
-  const [inputsValue, setInputsValue] = useState([
-    { value: "" },
-    { value: "" },
-    { value: "" },
-  ]);
+  const [inputsValue, setInputsValue] = useState({
+    ing0: "",
+    ing1: "",
+    ing2: "",
+  });
   const [authorise, setAuthorisation] = useState(false);
   const [autoDiv, setAutoDiv] = useState(["", "", ""]);
 
@@ -29,18 +29,15 @@ const SearchRecipeRight = (props) => {
         }
       });
 
-    const tempState = [...inputsValue];
-    tempState[e.target.id].value = e.target.value;
-    setInputsValue(tempState);
+    setInputsValue({ ...inputsValue, [e.target.name]: e.target.value });
   };
 
   // API CALL AND LIFT RESULT TO PARENT //
   const searchIngcall = () => {
-    const ingredients = [...inputsValue];
-    const path = `findByIngredients?ingredients=${ingredients[0].value}${
-      ingredients[1].value !== "" ? ",+" + ingredients[1].value : ""
+    const path = `findByIngredients?ingredients=${inputsValue.ing0}${
+      inputsValue.ing1 !== "" ? ",+" + inputsValue.ing1 : ""
     }${
-      ingredients[2].value !== "" ? ",+" + ingredients[2].value : ""
+      inputsValue.ing2 !== "" ? ",+" + inputsValue.ing2 : ""
     }&number=5&addRecipeInformation=true`;
     const url = `https://api.spoonacular.com/recipes/${path}&apiKey=${props.keyApi}`;
 
@@ -52,19 +49,23 @@ const SearchRecipeRight = (props) => {
         props.recipeResult(searchRes);
       });
 
-    setInputsValue([{ value: "" }, { value: "" }, { value: "" }]);
+    setInputsValue({
+      ing0: "",
+      ing1: "",
+      ing2: "",
+    });
     setAuthorisation(false);
     setAutoDiv(["", "", ""]);
   };
 
   // SEND AUTOCOMPLETION TO INPUTVALUE AND RESET STATE //
   const sendAutoC = (e) => {
-    const tempAutoValue = [...inputsValue];
-    tempAutoValue[e.target.id].value = e.target.innerText
+    const autoValue = e.target.innerText
       .split("")
       .splice(1, e.target.innerText.length)
       .join("");
-    setInputsValue(tempAutoValue);
+    setInputsValue({ ...inputsValue, ["ing" + [e.target.id]]: autoValue });
+
     const tempAutoDiv = [...autoDiv];
     tempAutoDiv[e.target.id] = "";
     setAutoDiv(tempAutoDiv);
@@ -73,10 +74,10 @@ const SearchRecipeRight = (props) => {
   // LITTLE PROTECTION //
   useEffect(() => {
     const regL = /^[a-zA-Z\s]*$/;
-    const testIn = inputsValue.every((ing) => {
+    const testIn = Object.values(inputsValue).every((ing) => {
       return regL.test(ing.value);
     });
-    if (inputsValue[0].value.length > 2 && testIn) {
+    if (inputsValue.ing0.length > 2 && testIn) {
       setAuthorisation(true);
     } else {
       setAuthorisation(false);
@@ -91,14 +92,15 @@ const SearchRecipeRight = (props) => {
       <p>Put at least one ingredient</p>
 
       <div className="input-container">
-        {inputsValue.map((input, index) => {
+        {Object.keys(inputsValue).map((input, index) => {
           return (
             <div className="inputs-wraper" key={index}>
               <input
                 type="text"
                 id={index}
+                name={"ing" + index}
                 placeholder={"Ingredients " + (index + 1)}
-                value={input.value}
+                value={inputsValue["ing" + index]}
                 onChange={inputHandler}
                 autoComplete="off"
               />
