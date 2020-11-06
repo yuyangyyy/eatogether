@@ -80,9 +80,9 @@ const SearchRecipeLeft = (props) => {
     if (recipeName.length > 0) {
       path = `complexSearch?query=${recipeName}`;
     } else {
-      path = `complexSearch?${
-        selects[0].value.length > 0 ? selects[0].path() : ""
-      }${selects[1].value.length > 0 ? selects[1].path() : ""}`;
+      path = selects.map((select) => {
+        return `complexSearch?${select.value.length > 0 ? select.path() : ""}`;
+      });
     }
     
     const url = `https://api.spoonacular.com/recipes/${path}&number=5&apiKey=${props.keyApi}`;
@@ -162,6 +162,7 @@ const SearchRecipeLeft = (props) => {
 
       {selects.map((select, index) => {
         return (
+
           <div className="inputs-wraper" key={select.name}>
             <label formhtml={`${select.name}-select`}>
               • Choose a {select.label}
@@ -182,8 +183,11 @@ const SearchRecipeLeft = (props) => {
                   </option>
                 );
               })}
+
             </select>
+
             {index !== selects.length - 1 && <span>or</span>}
+            
           </div>
         );
       })}
