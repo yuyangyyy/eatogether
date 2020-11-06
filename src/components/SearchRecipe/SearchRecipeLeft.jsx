@@ -84,7 +84,7 @@ const SearchRecipeLeft = (props) => {
         return `complexSearch?${select.value.length > 0 ? select.path() : ""}`;
       });
     }
-    
+
     const url = `https://api.spoonacular.com/recipes/${path}&number=5&apiKey=${props.keyApi}`;
 
     Axios.get(url)
@@ -162,7 +162,6 @@ const SearchRecipeLeft = (props) => {
 
       {selects.map((select, index) => {
         return (
-
           <div className="inputs-wraper" key={select.name}>
             <label formhtml={`${select.name}-select`}>
               • Choose a {select.label}
@@ -183,11 +182,9 @@ const SearchRecipeLeft = (props) => {
                   </option>
                 );
               })}
-
             </select>
 
             {index !== selects.length - 1 && <span>or</span>}
-            
           </div>
         );
       })}

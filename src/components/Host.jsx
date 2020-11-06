@@ -1,7 +1,6 @@
 import React from "react";
 
 import SearchRecipe from "./SearchRecipe/SearchRecipe";
-import Test from "./SearchRecipe/Test";
 
 class Host extends React.Component {
   state = {
@@ -14,13 +13,8 @@ class Host extends React.Component {
 
   render() {
     return (
-
       <div>
-
         <SearchRecipe recipeResult={this.getRecipeResult} />
-
-        <Test recipeId={this.state.recipeResult} />
-        
       </div>
     );
   }
