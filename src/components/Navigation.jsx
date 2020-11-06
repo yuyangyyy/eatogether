@@ -38,7 +38,7 @@ class Navigation extends React.Component {
 
           {menu.map((x, index) => (
             <li key={index} className="scaled">
-              <Link to={x}>{x}</Link>
+              <Link to={x !== "Home" ? x : "/"}>{x}</Link>
             </li>
           ))}
 

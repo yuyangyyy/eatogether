@@ -18,14 +18,15 @@ class App extends React.Component {
 
   render() {
     return (
+
       <div className="App">
         <Navigation getName={this.getName} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/Home" component={Home} />
           <Route path="/Host" component={Host} />
         </Switch>
       </div>
+      
     );
   }
 }
