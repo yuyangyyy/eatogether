@@ -37,23 +37,32 @@ class GuestSearch extends React.Component {
 
   render() {
     return (
-      <div>
+      <div
+        className="guest-handing"
+        style={{ backgroundImage: "url('./image/bann.jpg')" }}
+      >
         <div className="guest-header">
           <CitySelect changeCity={this.setCity} />
-          <input
-            className="guest-calendar"
-            type="button"
-            value="Calendar"
-            onClick={() =>
-              this.setState({ showCalendar: !this.state.showCalendar })
-            }
-          />
-
-          {this.state.showCalendar && (
-            <Calendar onChange={this.onChange} value={this.state.date} />
-          )}
 
           <PlatSelect changePlat={this.setPlat} />
+
+          <div className="calendar-container">
+            <input
+              className="guest-calendar"
+              type="button"
+              value="Calendar"
+              onClick={() =>
+                this.setState({ showCalendar: !this.state.showCalendar })
+              }
+            />
+
+            {this.state.showCalendar && (
+              <div className="calendar-fixed-position">
+                <Calendar onChange={this.onChange} value={this.state.date} />
+              </div>
+            )}
+          </div>
+
           <input
             className="guest-search"
             type="button"

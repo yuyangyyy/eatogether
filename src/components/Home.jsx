@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Display from './Display';
+import RecipeCard from './RecipeCard';
 import GuestSearch from './GuestSearch';
 
 import './Home.css';
@@ -9,6 +11,8 @@ class Home extends React.Component {
     return (
       <div className="home">
         <GuestSearch />
+        <Display />
+        <RecipeCard />
       </div>
     );
   }

@@ -1,3 +1,8 @@
+.guest-handing {
+  background-size: cover;
+  width: 100%;
+}
+
 .guest-header {
   display: flex;
   justify-content: space-evenly;
@@ -5,6 +10,21 @@
   height: 70px;
   background-color: black;
   padding-top: 32px;
+  margin-top: 32em;
+}
+
+.calendar-container {
+  position: relative;
+}
+
+.calendar-container div.calendar-fixed-position {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+}
+
+.calendar-container div.calendar-fixed-position > div.react-calendar {
+  position: absolute;
 }
 
 .guest-city {
@@ -34,8 +54,8 @@ input.guest-search {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  width: 300px;
-  height: 180px;
+  width: 350px;
+  height: 200px;
   font-size: 25px;
   padding: 10px;
   background-color: black;
