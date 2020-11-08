@@ -62,14 +62,16 @@ class GuestSearch extends React.Component {
             )}
           </div>
 
-          <input
-            className="guest-search"
-            type="button"
-            value="Search"
-            onClick={() => this.setState({ search: !this.state.search })}
-          />
+          <div className="guest-search-container">
+            <input
+              className="guest-search"
+              type="button"
+              value="Search"
+              onClick={() => this.setState({ search: !this.state.search })}
+            />
 
-          <div>{this.state.search && <Results {...this.state} />}</div>
+            <div>{this.state.search && <Results {...this.state} />}</div>
+          </div>
         </div>
       </>
     );

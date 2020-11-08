@@ -8,19 +8,13 @@ const Results = (props) => {
 
   console.log(props.date);
   return (
-    <div>
-      {/* <form>
-        <input type="text" name="search" placeholder="Search" />
-      </form> */}
+    <div className="guest-result">
+      <div className="guest-available">Your available search</div>
 
-      <div className="guest-result">
-        <div className="guest-available"> Your available search </div>
-
-        <div className="guest-result-affiche">
-          <div>City : {props.city} </div>
-          <div>Date : {props.date.toLocaleDateString()}</div>
-          <div>Meal : {props.plat}</div>
-        </div>
+      <div className="guest-result-affiche">
+        <div>City : {props.city} </div>
+        <div>Date : {props.date.toLocaleDateString()}</div>
+        <div>Meal : {props.plat}</div>
       </div>
     </div>
   );
