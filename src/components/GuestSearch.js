@@ -37,10 +37,9 @@ class GuestSearch extends React.Component {
 
   render() {
     return (
-      <div
-        className="guest-handing"
-        style={{ backgroundImage: "url('./image/bann.jpg')" }}
-      >
+      <>
+        <div className="guest-handing"></div>
+
         <div className="guest-header">
           <CitySelect changeCity={this.setCity} />
 
@@ -72,7 +71,7 @@ class GuestSearch extends React.Component {
 
           <div>{this.state.search && <Results {...this.state} />}</div>
         </div>
-      </div>
+      </>
     );
   }
 }
