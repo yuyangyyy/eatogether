@@ -10,7 +10,6 @@ class Host extends React.Component {
   };
 
   getRecipeResult = (result) => {
-    console.log(result)
     this.setState({ recipeResult: result });
   };
 
