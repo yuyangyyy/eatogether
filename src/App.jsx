@@ -7,6 +7,8 @@ import Host from "./components/Host";
 
 import "./App.css";
 
+export const UserContext = React.createContext({});
+
 class App extends React.Component {
   state = {
     userName: {},
@@ -18,15 +20,15 @@ class App extends React.Component {
 
   render() {
     return (
-
       <div className="App">
         <Navigation getName={this.getName} />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/Host" component={Host} />
+          <UserContext.Provider value={this.state.userName}>
+            <Route exact path="/" component={Home} />
+            <Route path="/Host" component={Host} />
+          </UserContext.Provider>
         </Switch>
       </div>
-      
     );
   }
 }
