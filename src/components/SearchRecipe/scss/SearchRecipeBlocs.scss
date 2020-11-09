@@ -74,7 +74,12 @@
     background-color: white;
     outline: 0;
     border-width: 0 0 2px;
+    padding: 0.2em;
     transition: 0.4s;
+    &:hover{
+      color:white;
+      background-color: black;
+    }
   }
   p {
     font-family: "Cormorant", serif;
