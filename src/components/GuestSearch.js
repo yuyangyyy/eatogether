@@ -31,49 +31,45 @@ class GuestSearch extends React.Component {
     });
   };
 
-  componentDidUpdate() {
-    console.log(this.state.search);
-  }
-
   render() {
     return (
-      <>
-        <div className="guest-handing"></div>
-
+      <div className="guest-handing">
         <div className="guest-header">
-          <CitySelect changeCity={this.setCity} />
+          <div className="guest-header-nav">
+            <CitySelect changeCity={this.setCity} />
 
-          <PlatSelect changePlat={this.setPlat} />
+            <PlatSelect changePlat={this.setPlat} />
 
-          <div className="calendar-container">
-            <input
-              className="guest-calendar"
-              type="button"
-              value="Calendar"
-              onClick={() =>
-                this.setState({ showCalendar: !this.state.showCalendar })
-              }
-            />
+            <div className="calendar-container">
+              <input
+                className="guest-calendar"
+                type="button"
+                value="Calendar"
+                onClick={() =>
+                  this.setState({ showCalendar: !this.state.showCalendar })
+                }
+              />
 
-            {this.state.showCalendar && (
-              <div className="calendar-fixed-position">
-                <Calendar onChange={this.onChange} value={this.state.date} />
-              </div>
-            )}
-          </div>
+              {this.state.showCalendar && (
+                <div className="calendar-fixed-position">
+                  <Calendar onChange={this.onChange} value={this.state.date} />
+                </div>
+              )}
+            </div>
 
-          <div className="guest-search-container">
-            <input
-              className="guest-search"
-              type="button"
-              value="Search"
-              onClick={() => this.setState({ search: !this.state.search })}
-            />
+            <div className="guest-search-container">
+              <input
+                className="guest-search"
+                type="button"
+                value="Search"
+                onClick={() => this.setState({ search: !this.state.search })}
+              />
 
-            <div>{this.state.search && <Results {...this.state} />}</div>
+              <div>{this.state.search && <Results {...this.state} />}</div>
+            </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

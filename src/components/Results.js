@@ -1,12 +1,6 @@
 import React from 'react';
 
 const Results = (props) => {
-  // if (pas de city, return null)
-  // if (!this.state.city) {
-  //   return null;
-  // }
-
-  console.log(props.date);
   return (
     <div className="guest-result">
       <div className="guest-available">Your available search</div>
