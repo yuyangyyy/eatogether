@@ -1,0 +1,57 @@
+.card p {     
+    font-family : Cormorant ;
+    text-decoration: none;
+    max-height: 5em ; 
+    overflow : hidden;
+    position: absolute;
+    width: 20%;        
+}
+
+.card a {
+    text-decoration: none;    
+}
+
+.card
+{
+    display :flex ;
+    flex-wrap: wrap;
+    justify-content: space-around;    
+    
+}
+
+.cardResult {
+    display: flex ;
+    flex-direction: column;
+    width : 20% ;   
+    margin: 20px 10px 60px 20px ;
+}
+.cardResultOn {
+    display: flex ;
+    flex-direction: column;
+    width : 20% ;   
+    margin: 20px 10px 60px 20px ;
+    border : black solid 3px;
+    zoom :1.1 ;
+    background-color : rgb(230, 223, 223)
+}
+
+.button {
+   
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.button button {
+    background-color: black;
+    color : white
+}
+
+.card img {
+    width : 100%;
+}
+
+.card h2 {
+
+    height :30px ;
+}
