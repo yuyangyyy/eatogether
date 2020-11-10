@@ -1,5 +1,6 @@
 import React from "react";
 import { CSSTransition } from "react-transition-group";
+import { Link } from "react-router-dom";
 
 import Signin from "./Signin";
 
@@ -36,7 +37,9 @@ class Navigation extends React.Component {
           <h1 id="Logo">EaTogether</h1>
 
           {menu.map((x, index) => (
-            <li key={index} className="scaled">{x}</li>
+            <li key={index} className="scaled">
+              <Link to={x !== "Home" ? x : "/"}>{x}</Link>
+            </li>
           ))}
 
           <input
