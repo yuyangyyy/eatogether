@@ -2,7 +2,7 @@ import React from "react";
 
 import "./RecipeCard.css";
 
-const key = "65762466b7104e4d92fda8a5f07dd86e";
+const key = "8cf7dc9a110a4285936a02cc800ad27a";
 const foods = ["chicken", "noodles", "olives", "zucchini"];
 
 class RecipeCard extends React.Component {
@@ -15,7 +15,8 @@ class RecipeCard extends React.Component {
       const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${food}&number=1&addRecipeInformation=true&apiKey=${key}`;
       fetch(url)
         .then((response) => response.json())
-        .then((data) => {
+        .then((data) => { console.log(data)
+          if (data) {
           this.setState({
             food: [
               ...this.state.food,
@@ -25,7 +26,7 @@ class RecipeCard extends React.Component {
               },
             ],
           });
-        });
+        }});
     });
   };
 
