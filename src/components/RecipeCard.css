@@ -1,0 +1,33 @@
+.recipe-card {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
+  }
+  
+  .item-card {    
+    margin: 1em;    
+    width: fit-content;
+    display : flex ;
+    flex-direction : column ;
+    align-items: flex-start;
+  }
+  
+  .item-card p {
+    align-self: center;
+    font-family: Cormorant; 
+    font-size: 18px;  
+  
+  }
+  
+  .item-card img {
+    max-width: 100%;
+   
+  }
+  
+  .item-card h2 {
+    font-family: Montserrat;
+    font-size: 1em;
+  }
+
+  
+  

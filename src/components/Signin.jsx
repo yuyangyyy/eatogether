@@ -62,6 +62,7 @@ class Signin extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="wrapper-signin">
         {this.state.inputs.map((input, index) => {
