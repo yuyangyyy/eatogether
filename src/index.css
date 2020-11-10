@@ -1,7 +1,13 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant&display=swap");

@@ -3,6 +3,9 @@ import React from 'react';
 import Display from './Display';
 import RecipeCard from './RecipeCard';
 import GuestSearch from './GuestSearch';
+import './GuestSearch2.css';
+
+
 
 import './Home.css';
 
