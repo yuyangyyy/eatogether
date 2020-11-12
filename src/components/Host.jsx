@@ -17,13 +17,12 @@ class Host extends React.Component {
   };
 
   selectRecipe = (results) => {
-    console.log(results);
     this.setState({
-      selectRecipe: results ,
+      selectRecipe: results,
     });
   };
 
-  key = "fe2cfff6a33d4ce4bd6cd22cbb8e166a";
+  key = "6bc7c501a2a141b7af441b12c0d7f236";
 
   render() {
     return (
@@ -41,10 +40,9 @@ class Host extends React.Component {
         <FilterRecipe
           recipeId={this.state.recipeResult}
           selectRecipe={this.selectRecipe}
-          keyApi={this.key} 
+          keyApi={this.key}
         />
-        < Test  selectRecipe={this.state.selectRecipe}  />
-
+        <Test selectRecipe={this.state.selectRecipe} />
       </div>
     );
   }
