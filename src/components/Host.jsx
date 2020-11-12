@@ -3,6 +3,7 @@ import React from "react";
 import SearchRecipe from "./SearchRecipe/SearchRecipe";
 import SearchRecipeLeft from "./SearchRecipe/SearchRecipeLeft";
 import SearchRecipeRight from "./SearchRecipe/SearchRecipeRight";
+import SearchLocalisation from "./SearchLocalisation"
 
 class Host extends React.Component {
   state = {
@@ -28,6 +29,7 @@ class Host extends React.Component {
             keyApi={this.key}
           />
         </SearchRecipe>
+        <SearchLocalisation />
       </div>
     );
   }
