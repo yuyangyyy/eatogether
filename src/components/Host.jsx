@@ -4,7 +4,8 @@ import SearchRecipe from "./SearchRecipe/SearchRecipe";
 import SearchRecipeLeft from "./SearchRecipe/SearchRecipeLeft";
 import SearchRecipeRight from "./SearchRecipe/SearchRecipeRight";
 import FilterRecipe from "./FilterRecipe/FilterRecipe";
-import Test from "./SearchRecipe/Test";
+import RecapResult from "./SearchRecipe/RecapResult";
+
 
 class Host extends React.Component {
   state = {
@@ -22,7 +23,7 @@ class Host extends React.Component {
     });
   };
 
-  key = "a42d7a22c6944c2791085f686d0ee406";
+  key = "8cf7dc9a110a4285936a02cc800ad27a";
 
   render() {
     return (
@@ -42,7 +43,7 @@ class Host extends React.Component {
           selectRecipe={this.selectRecipe}
           keyApi={this.key}
         />
-        <Test selectRecipe={this.state.selectRecipe} />
+        <RecapResult selectRecipe={this.state.selectRecipe} />
       </div>
     );
   }

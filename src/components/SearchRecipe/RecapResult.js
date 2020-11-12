@@ -1,6 +1,6 @@
 import React from "react";
 
-const Test = ({ selectRecipe }) => {
+const RecapResult = ({ selectRecipe }) => {
   return (
     <div>
       <p>Your choose this recipe : {selectRecipe.name} </p>
@@ -8,4 +8,4 @@ const Test = ({ selectRecipe }) => {
   );
 };
 
-export default Test;
+export default RecapResult;
