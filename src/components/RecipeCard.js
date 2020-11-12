@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import "./RecipeCard.css";
+import './RecipeCard.css';
 
-const key = "fe2cfff6a33d4ce4bd6cd22cbb8e166a";
-const foods = ["chicken", "noodles", "olives", "zucchini"];
+const key = 'd8b194b8239c4205a842268070e3dcc5';
+const foods = ['chicken', 'noodles', 'olives', 'zucchini'];
 
 class RecipeCard extends React.Component {
   state = {
@@ -16,7 +16,7 @@ class RecipeCard extends React.Component {
       fetch(url)
         .then((response) => response.json())
         .then((data) => { 
-          if (data) {
+          if (data[0]) {
           this.setState({
             food: [
               ...this.state.food,
