@@ -22,7 +22,7 @@ class Host extends React.Component {
     });
   };
 
-  key = "50fd5065676244d287fecc899057c8aa";
+  key = "a42d7a22c6944c2791085f686d0ee406";
 
   render() {
     return (
