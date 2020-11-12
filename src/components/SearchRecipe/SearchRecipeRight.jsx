@@ -38,7 +38,7 @@ const SearchRecipeRight = (props) => {
       inputsValue.ing1 !== "" ? ",+" + inputsValue.ing1 : ""
     }${
       inputsValue.ing2 !== "" ? ",+" + inputsValue.ing2 : ""
-    }&number=5&addRecipeInformation=true`;
+    }&number=6&addRecipeInformation=true`;
     const url = `https://api.spoonacular.com/recipes/${path}&apiKey=${props.keyApi}`;
 
     Axios.get(url)

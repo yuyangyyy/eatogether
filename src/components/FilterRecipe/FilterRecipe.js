@@ -14,7 +14,7 @@ class FilterRecipe extends React.Component {
   };
 
   getRecipe = () => {
-    const random = "random?&number=5";
+    const random = "random?&number=6";
     const url = `https://api.spoonacular.com/recipes/${random}&apiKey=${this.props.keyApi}`;
     axios
       .get(url)
@@ -103,18 +103,20 @@ class FilterRecipe extends React.Component {
 
   render() {
     return (
+      <div className={style.suggestion}>
+      <h2 className={style.suggetionTitle}>{this.props.recipeId.length > 0 ? "Search Results" : "Popular Recipes"}</h2>
       <div className={style.card}>
         {this.state.food.map((foods, index) => (
           <div
             key={foods.image}
             className={foods.style ? style.cardResultOn : style.cardResult}
           >
-            <h2>{foods.name}</h2>
             <img src={foods.image} alt={foods.name} />
+            <h2 className="cardTitle">{foods.name}</h2>
             <div className={style.button}>
               <button onClick={this.showRecipe} id={index}>
                 {" "}
-                See this recipe{" "}
+                See recipe{" "}
               </button>
               {
                 // I want to see the recipe only when I click on the button See the recipes
@@ -125,7 +127,7 @@ class FilterRecipe extends React.Component {
                 value={this.state.food}
               >
                 {" "}
-                Choose this recipe{" "}
+                Choose recipe{" "}
               </button>
             </div>
             {foods.seeRecipe && (
@@ -141,6 +143,7 @@ class FilterRecipe extends React.Component {
             )}
           </div>
         ))}
+      </div>
       </div>
     );
   }
