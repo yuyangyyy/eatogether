@@ -80,7 +80,7 @@ class FilterRecipe extends React.Component {
     this.setState({ idRecipe: e.target.id });
   };
 
-  closeRecipe = () => { 
+  closeRecipe = () => {
     this.setState({ popDisplay: false });
   };
 
@@ -88,8 +88,10 @@ class FilterRecipe extends React.Component {
     // create a new array with all objects
     const result = this.state.food;
     // reset all style to false
-    result.map((x) => (x.style = false));
-    result.map((x) => (x.seeRecipe = false)); // commment faire cela en une fois ?
+    result.map((x) => {
+      x.style = false;
+      x.seeRecipe = false;
+    });
     // change the style to the target
     result[event.target.id].style = !result[event.target.id].style;
 
