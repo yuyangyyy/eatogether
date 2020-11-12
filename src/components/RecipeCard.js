@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import "./RecipeCard.css";
+import './RecipeCard.css';
 
-const key = "65762466b7104e4d92fda8a5f07dd86e";
-const foods = ["chicken", "noodles", "olives", "zucchini"];
+const key = 'd8b194b8239c4205a842268070e3dcc5';
+const foods = ['chicken', 'noodles', 'olives', 'zucchini'];
 
 class RecipeCard extends React.Component {
   state = {
