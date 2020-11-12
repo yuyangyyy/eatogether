@@ -12,7 +12,6 @@ class RandomUser extends React.Component {
       .then((res) => res.json())
 
       .then((data) => {
-        console.log(data.results);
         this.setState({
           users: data.results,
         });

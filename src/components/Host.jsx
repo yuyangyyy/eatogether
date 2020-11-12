@@ -1,9 +1,9 @@
-import React from "react";
-import RandomUser from "./Random-user";
+import React from "react"
 
 import SearchRecipe from "./SearchRecipe/SearchRecipe";
 import SearchRecipeLeft from "./SearchRecipe/SearchRecipeLeft";
 import SearchRecipeRight from "./SearchRecipe/SearchRecipeRight";
+import RandomUser from "./Random-user";
 
 class Host extends React.Component {
   state = {
