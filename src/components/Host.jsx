@@ -1,4 +1,5 @@
 import React from "react";
+import RandomUser from "./Random-user";
 
 import SearchRecipe from "./SearchRecipe/SearchRecipe";
 import SearchRecipeLeft from "./SearchRecipe/SearchRecipeLeft";
@@ -28,6 +29,7 @@ class Host extends React.Component {
             keyApi={this.key}
           />
         </SearchRecipe>
+        <RandomUser/>
       </div>
     );
   }
