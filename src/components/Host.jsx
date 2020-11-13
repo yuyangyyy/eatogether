@@ -3,18 +3,27 @@ import React from "react"
 import SearchRecipe from "./SearchRecipe/SearchRecipe";
 import SearchRecipeLeft from "./SearchRecipe/SearchRecipeLeft";
 import SearchRecipeRight from "./SearchRecipe/SearchRecipeRight";
+import FilterRecipe from "./FilterRecipe/FilterRecipe";
+import RecapResult from "./SearchRecipe/RecapResult";
 import RandomUser from "./Random-user";
 
 class Host extends React.Component {
   state = {
     recipeResult: [],
+    selectRecipe: "",
   };
 
   getRecipeResult = (result) => {
     this.setState({ recipeResult: result });
   };
 
-  key = "1a44f438887545cc993645317074f023";
+  selectRecipe = (results) => {
+    this.setState({
+      selectRecipe: results,
+    });
+  };
+
+  key = "8cf7dc9a110a4285936a02cc800ad27a";
 
   render() {
     return (
@@ -29,6 +38,12 @@ class Host extends React.Component {
             keyApi={this.key}
           />
         </SearchRecipe>
+        <FilterRecipe
+          recipeId={this.state.recipeResult}
+          selectRecipe={this.selectRecipe}
+          keyApi={this.key}
+        />
+        <RecapResult selectRecipe={this.state.selectRecipe} />
         <RandomUser/>
       </div>
     );

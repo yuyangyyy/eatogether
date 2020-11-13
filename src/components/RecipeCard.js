@@ -15,7 +15,8 @@ class RecipeCard extends React.Component {
       const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${food}&number=1&addRecipeInformation=true&apiKey=${key}`;
       fetch(url)
         .then((response) => response.json())
-        .then((data) => {
+        .then((data) => { 
+          if (data[0]) {
           this.setState({
             food: [
               ...this.state.food,
@@ -25,7 +26,7 @@ class RecipeCard extends React.Component {
               },
             ],
           });
-        });
+        }});
     });
   };
 

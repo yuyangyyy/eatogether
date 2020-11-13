@@ -85,7 +85,7 @@ const SearchRecipeLeft = (props) => {
       });
     }
 
-    const url = `https://api.spoonacular.com/recipes/${path}&number=5&apiKey=${props.keyApi}`;
+    const url = `https://api.spoonacular.com/recipes/${path}&number=6&apiKey=${props.keyApi}`;
 
     Axios.get(url)
       .then((res) => res.data)
