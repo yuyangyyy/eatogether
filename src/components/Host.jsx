@@ -4,7 +4,7 @@ import SearchRecipe from "./SearchRecipe/SearchRecipe";
 import SearchRecipeLeft from "./SearchRecipe/SearchRecipeLeft";
 import SearchRecipeRight from "./SearchRecipe/SearchRecipeRight";
 import FilterRecipe from "./FilterRecipe/FilterRecipe";
-import RecapResult from "./SearchRecipe/RecapResult";
+import RecapResult from "./RecapResult";
 import RandomUser from "./Random-user";
 
 class Host extends React.Component {
@@ -23,7 +23,7 @@ class Host extends React.Component {
     });
   };
 
-  key = "8cf7dc9a110a4285936a02cc800ad27a";
+  key = "bafbbf6dc56b49fe80df2a1faf70a860";
 
   render() {
     return (

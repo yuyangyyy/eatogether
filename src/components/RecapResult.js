@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../App';
+import './RecapResult.css';
 
-class RecapResult extends React.Component {
-  render() {
-    return (
-      <div className="RecapResult">
-        <p>Votre invitation</p>
-        <img className="Recap-img" src="./image/bann1.jpg" />
+const RecapResult = ({ selectRecipe }) => {
+  // const [result, setResult] = useState('');
+  const userInfo = useContext(UserContext);
+  console.log(userInfo);
 
-        <p>Name:{}</p>
-        <p>City:{}</p>
-        <p>Date:{}</p>
+  return (
+    <div className="recap-container">
+      <div className="recap-result">
+        <p className="recap-invit">Votre invitation</p>
+
+        <img
+          className="Recap-img"
+          src={selectRecipe.image}
+          alt={selectRecipe.name}
+        />
+
+        <div className="recap-info">
+          <p>
+            Name :{' '}
+            {userInfo.userName.firstName + ' ' + userInfo.userName.lastName}
+          </p>
+          <p>Email:{userInfo.userName.email}</p>
+          <p>Date:{}</p>
+          <p>City:{}</p>
+        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default RecapResult;
