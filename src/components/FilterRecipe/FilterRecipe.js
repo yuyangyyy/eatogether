@@ -2,8 +2,9 @@ import React from "react";
 import axios from "axios";
 import ReactHtmlParser from "react-html-parser";
 
-import style from "./FilterRecipe.module.css";
 import PopRecipe from "../PopRecipe/PopRecipe";
+
+import style from "./FilterRecipe.module.css";
 
 class FilterRecipe extends React.Component {
   state = {
