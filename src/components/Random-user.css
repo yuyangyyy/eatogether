@@ -1,0 +1,50 @@
+.random-users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: 100%;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.random-users2:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.random-users2 {
+  padding: 20px 20px;
+}
+
+.random-users2 img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px 5px 0 0;
+}
+
+.random-users2 h4 {
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.random-users2 h5 {
+  font-family: "Cormorant", serif;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.random-users-h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.random-users-h2 h2 {
+  margin: 3em 0 2em 0;
+  font-family: "Cormorant", serif;
+  font-size: 32px;
+}

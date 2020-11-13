@@ -1,20 +1,24 @@
-import React from 'react'
+import React from 'react';
 
-import Display from './Display'
-import RecipeCard from './RecipeCard'
+import Display from './Display';
+import RecipeCard from './RecipeCard';
+import GuestSearch from './GuestSearch';
+import './GuestSearch2.css';
 
-import './Home.css'
 
-class Home extends React.Component{
-    render(){
-        return(
 
-            <div className="home">
-               <Display />
-               <RecipeCard />               
-            </div>
-        )
-    }
+import './Home.css';
+
+class Home extends React.Component {
+  render() {
+    return (
+      <div className="home">
+        <GuestSearch />
+        <Display />
+        <RecipeCard />
+      </div>
+    );
+  }
 }
 
-export default Home
+export default Home;
