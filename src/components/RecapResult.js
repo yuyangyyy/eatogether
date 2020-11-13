@@ -10,7 +10,7 @@ const RecapResult = ({ selectRecipe }) => {
   return (
     <div className="recap-container">
       <div className="recap-result">
-        <p className="recap-invit">Votre invitation</p>
+        <p className="recap-invit">Your Invitation</p>
 
         <img
           className="Recap-img"
