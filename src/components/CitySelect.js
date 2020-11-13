@@ -5,7 +5,7 @@ const CitySelect = (props) => {
   const citys = ['Paris', 'Lyon', 'Marseille', 'Nice', 'Lille'];
 
   return (
-    <div className="guest-city">
+    <div className="search-localisation-city-select">
 
       <select onChange={props.changeCity}>
         {citys.map((city) => {

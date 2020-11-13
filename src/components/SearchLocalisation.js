@@ -7,6 +7,7 @@ import 'react-calendar/dist/Calendar.css';
 
 
 class SearchLocalisation extends React.Component {
+   
     state = {
         city: null,
         date: new Date(),
@@ -30,12 +31,21 @@ class SearchLocalisation extends React.Component {
     
     render () {
         return (
-            <div>
 
-                <CitySelect changeCity={this.setCity} />
-                <Calendar onChange={this.onChange} value={this.state.date} />
-                <input type="button" value="Envoyer" onClick={this.onClick} />
+            <div className="search-localisation"> 
 
+                <div className="search-localisation-contain">
+                        <h2>Your Reservation</h2>  
+
+                        <div className="search-localisation-calendar"> 
+                            <CitySelect className="search-localisation-city-select" changeCity={this.setCity} />                       
+                            <Calendar onChange={this.onChange} value={this.state.date} />
+                        </div>
+
+                        <input className="search-localisation-btn" type="button" value="Let's Go" onClick={this.onClick} />
+
+                        {/* {this.state.search && <CompoYang {...this.state} />} */}
+                </div>
             </div>
         )
         }
