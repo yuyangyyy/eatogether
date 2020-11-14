@@ -1,0 +1,42 @@
+.guestContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; 
+    padding: 3em;
+    margin-top: 10em;
+  }
+  .guestResult {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3em;
+    border: 1px solid black;
+    background-color: white; 
+  }
+  
+  .guestInvit {
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Cormorant', serif;
+    padding-bottom: 1em;
+  }
+  img {
+    align-self: center;
+    height: auto;
+  }
+  
+  .guestInfo {
+    padding-top: 1em;
+    font-size: 25px;
+    font-family: 'Cormorant', serif;
+  }
+  
+  .users {
+    display :flex
+  }
+  
+  .recipeImage{
+    width : 60%;
+  }

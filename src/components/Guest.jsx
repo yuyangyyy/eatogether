@@ -1,20 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import GuestResult from "./GuestResult"
-
+import GuestResult from "./Guest-Result/GuestResult";
 
 const Guest = () => {
-    
-         
-      return (       
-        <div >
-          <GuestResult />
-          
-        
-        </div>
-      );
-    
-  }
-  
-  export default Guest;
-  
+  return (
+    <div>
+      <GuestResult />
+    </div>
+  );
+};
+
+export default Guest;
