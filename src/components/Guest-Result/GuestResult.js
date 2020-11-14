@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import recipeList from "./RecipeList";
+import Reservation from "./Reservation";
 
 import style from "./GuestResult.module.css";
 
@@ -20,6 +21,7 @@ const GuestResult = () => {
           const infoUser = {
             randomUser: result,
             booking: false,
+            message: false,
           };
           newUsers.push(infoUser);
         });
@@ -31,6 +33,12 @@ const GuestResult = () => {
   const booked = (e) => {
     const newUsers = [...users]; // use spread Operator if not it won't make new render
     newUsers[e.target.id].booking = !newUsers[e.target.id].booking;
+    newUsers[e.target.id].message = true;
+    setUsers(newUsers);
+  };
+  const closeBooked = () => {
+    const newUsers = [...users];
+    newUsers.map((user) => (user.message = false));
     setUsers(newUsers);
   };
 
@@ -47,12 +55,11 @@ const GuestResult = () => {
             />
             <div>
               <p>
-                Name :
                 {user.randomUser.name.first + " " + user.randomUser.name.last}
               </p>
-              <p>Email:{user.randomUser.email}</p>
-              <p>Date: {new Date().toLocaleDateString()}</p>
-              <p>City: {user.randomUser.location.city}</p>
+              <p>{user.randomUser.email} </p>
+              <p>Date of the event {new Date().toLocaleDateString()}</p>
+              <p> {user.randomUser.location.city}</p>
             </div>
           </div>
           <div>
@@ -64,9 +71,13 @@ const GuestResult = () => {
             />
           </div>
           <button id={index} onClick={booked}>
-            {" "}
-            {user.booking ? "Booked" : "Book now"}
+            {user.booking ? "Cancel your  booking" : "Book"}
           </button>
+          {user.message && (
+            <div>
+              <Reservation hostInfo={users} booked={closeBooked} index={index}/>
+            </div>
+          )}
         </div>
       ))}
     </div>

@@ -1,0 +1,45 @@
+
+.reservation {
+    position: absolute;
+    z-index: 100 ;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 20%;
+    padding: 1em ;
+    top : 30em ;
+    height: 20%;    
+    align-items: center;    
+}
+
+.reservationApprouved {
+    background-color :white;    
+    border: solid 1px black;
+    padding: 1em ;
+    height: 50%; 
+}
+
+
+
+/* 
+.pop-recipe-wrapper {
+    position: absolute;
+    top: var(--navH);
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Cormorant", serif;
+    background-color: rgba(0, 0, 0, 0.5);
+  
+    .pop-recipe-container {
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+      background-color: white;
+      border: solid 1px black;
+      width: 50%;
+      height: 45em;
+      overflow-y: scroll;
+    } */
