@@ -15,6 +15,10 @@ class Navigation extends React.Component {
   nav = React.createRef();
 
   signCard = () => {
+    this.setState({
+      navHeight: this.nav.current.clientHeight,
+    });
+
     this.setState({ signInIsDisplayed: !this.state.signInIsDisplayed });
   };
 
@@ -23,10 +27,7 @@ class Navigation extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({
-      navHeight: this.nav.current.offsetHeight + this.nav.current.offsetTop,
-    });
-    this.props.getNavHeight(this.nav.current.offsetHeight + this.nav.current.offsetTop)
+    this.props.getNavHeight(this.nav.current.clientHeight);
   }
 
   render() {
@@ -34,9 +35,9 @@ class Navigation extends React.Component {
 
     return (
       <nav ref={this.nav}>
+        <img src="./image/LOGO3.png" label="logo" />
+        <h1 id="Logo">EaTogether</h1>
         <ul>
-          <h1 id="Logo">EaTogether</h1>
-
           {menu.map((x, index) => (
             <li key={index} className="scaled">
               <Link to={x !== "Home" ? x : "/"}>{x}</Link>

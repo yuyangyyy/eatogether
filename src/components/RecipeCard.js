@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import './RecipeCard.css';
+import "./RecipeCard.css";
 
-const key = 'd8b194b8239c4205a842268070e3dcc5';
-const foods = ['chicken', 'noodles', 'olives', 'zucchini'];
+const key = "8cf7dc9a110a4285936a02cc800ad27a";
+const foods = ["chicken", "noodles", "mushrooms", "zucchini"];
 
 class RecipeCard extends React.Component {
   state = {
@@ -15,18 +15,19 @@ class RecipeCard extends React.Component {
       const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${food}&number=1&addRecipeInformation=true&apiKey=${key}`;
       fetch(url)
         .then((response) => response.json())
-        .then((data) => { 
+        .then((data) => {
           if (data[0]) {
-          this.setState({
-            food: [
-              ...this.state.food,
-              {
-                image: data[0].image,
-                title: data[0].title,
-              },
-            ],
-          });
-        }});
+            this.setState({
+              food: [
+                ...this.state.food,
+                {
+                  image: data[0].image,
+                  title: data[0].title,
+                },
+              ],
+            });
+          }
+        });
     });
   };
 
@@ -37,15 +38,20 @@ class RecipeCard extends React.Component {
   render() {
     return (
       <div className="recipe-card ">
-        {this.state.food.length > 0 &&
-          this.state.food.map((para, index) => {
-            return (
-              <div className="item-card" key={index}>
-                <img src={para.image} alt={para.name} />
-                <p>{para.title}</p>
-              </div>
-            );
-          })}
+        <div className="recipe-card-cont">
+          <h2>Our Hosts made those recipes</h2>
+          <div className="item-card">
+            {this.state.food.length > 0 &&
+              this.state.food.map((para, index) => {
+                return (
+                  <div className="recipe-items" key={index}>
+                    <img src={para.image} alt={para.name} />
+                    <h3>{para.title}</h3>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
       </div>
     );
   }

@@ -2,27 +2,43 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 }
-
+.recipe-card h2 {
+  font-family: "MontSerrat", serif;
+}
 .item-card {
-  margin: 1em;
-  width: fit-content;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
-.item-card p {
-  align-self: center;
-  font-family: Cormorant;
-  font-size: 18px;
+.recipe-card-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%;
 }
 
-.item-card img {
+.recipe-items {
+  margin: 1em 1em 1em 0;
+}
+
+.recipe-items img {
   max-width: 100%;
 }
 
-.item-card h2 {
-  font-family: Montserrat;
-  font-size: 1em;
+.item-card h3 {
+  font-family: "Cormorant", serif;
+  font-weight: 400;
+  font-size: large;
+}
+
+@media screen and (max-width: 640px) {
+  .item-card {
+    justify-content: center;
+  }
 }
