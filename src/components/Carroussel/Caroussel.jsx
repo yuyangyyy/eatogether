@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Carroussel.scss";
 
-const Caroussel = ({ children }) => {
+const Caroussel = ({ dotsNumber, children }) => {
   const [position, setPosition] = useState(0);
   const [move, setMove] = useState(0);
-  const [rSize, setRsize] = useState(312);
+  const [rSize, setRsize] = useState(0);
   const [dots, setDots] = useState([]);
 
   const arrowChange = (e) => {
@@ -25,7 +25,7 @@ const Caroussel = ({ children }) => {
   };
 
   const dotCreate = async () => {
-    const dotsLength = children.length || 4;
+    const dotsLength = dotsNumber;
     let result = [];
     for (let index = 0; index < dotsLength; index++) {
       result = [
@@ -39,14 +39,18 @@ const Caroussel = ({ children }) => {
     return result;
   };
 
-  useEffect(() => {
-    console.log(children.length);
+  const cardCreate = async () => {
     if (children) {
+      let cardSize = 0;
       children.forEach((x) => {
-        console.log(x.ref.current)
-        setRsize(x.ref.current.offsetWidth);
+        cardSize = x.ref.current.offsetWidth;
       });
+      return cardSize;
     }
+  };
+
+  useEffect(() => {
+    cardCreate().then((res) => setRsize(res));
     dotCreate().then((res) => setDots(res));
   }, []);
 
@@ -65,9 +69,6 @@ const Caroussel = ({ children }) => {
   return (
     <div className="carrou-all">
       <div className="carrou-wrapper">
-        <span id="previous" onClick={arrowChange}>
-          ➣
-        </span>
         <div className="carrou-container">
           <div
             className="carrou-anim"
@@ -76,11 +77,11 @@ const Caroussel = ({ children }) => {
             {children}
           </div>
         </div>
-        <span id="next" onClick={arrowChange}>
-          ➣
-        </span>
       </div>
       <div className="dots-cont">
+        <span id="previous" onClick={arrowChange}>
+          ➣
+        </span>
         {dots.map((dot, index) => {
           return (
             <p
@@ -93,6 +94,9 @@ const Caroussel = ({ children }) => {
             </p>
           );
         })}
+        <span id="next" onClick={arrowChange}>
+          ➣
+        </span>
       </div>
     </div>
   );

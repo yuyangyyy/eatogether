@@ -46,7 +46,7 @@ class RecipeCard extends React.Component {
           <h2>Our Hosts made those recipes</h2>
           <div className="item-card">
             
-            <MediaQuery minWidth={640}>
+            <MediaQuery minWidth={640} >
               {this.state.food.length > 0 &&
                 this.state.food.map((para, index) => {
                   return (
@@ -59,7 +59,7 @@ class RecipeCard extends React.Component {
             </MediaQuery>
 
             <MediaQuery maxWidth={640}>
-              <Carroussel>
+              <Carroussel dotsNumber={foods.length}>
                 {this.state.food.length > 0 &&
                   this.state.food.map((para, index) => {
                     return (
