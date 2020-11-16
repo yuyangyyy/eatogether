@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 80%;
+  width: 80%; 
 }
 
 .recipe-items {
@@ -39,6 +39,16 @@
 
 @media screen and (max-width: 640px) {
   .item-card {
+    justify-content: flex-start;
+  }
+  .recipe-items {
+    margin: 0;
+  }
+  .recipe-items img {
+    max-width: unset;
+  }
+  .recipe-card-cont{
     justify-content: center;
+    align-items: center;
   }
 }

@@ -1,8 +1,10 @@
 import React from "react";
 
+import Carroussel from "./Carroussel/Caroussel";
+
 import "./RecipeCard.css";
 
-const key = "8cf7dc9a110a4285936a02cc800ad27a";
+const key = "02c9d303d5b54e28b2b1854858d84765";
 const foods = ["chicken", "noodles", "mushrooms", "zucchini"];
 
 class RecipeCard extends React.Component {
@@ -35,21 +37,25 @@ class RecipeCard extends React.Component {
     this.getRecipe();
   }
 
+  rCard = React.createRef();
+
   render() {
     return (
       <div className="recipe-card ">
         <div className="recipe-card-cont">
           <h2>Our Hosts made those recipes</h2>
           <div className="item-card">
-            {this.state.food.length > 0 &&
-              this.state.food.map((para, index) => {
-                return (
-                  <div className="recipe-items" key={index}>
-                    <img src={para.image} alt={para.name} />
-                    <h3>{para.title}</h3>
-                  </div>
-                );
-              })}
+            <Carroussel>
+              {this.state.food.length > 0 &&
+                this.state.food.map((para, index) => {
+                  return (
+                    <div className="recipe-items" key={index} ref={this.rCard}>
+                      <img src={para.image} alt={para.name} />
+                      <h3>{para.title}</h3>
+                    </div>
+                  );
+                })}
+            </Carroussel>
           </div>
         </div>
       </div>
