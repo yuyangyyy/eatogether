@@ -41,11 +41,14 @@ const Caroussel = ({ dotsNumber, children }) => {
 
   const cardCreate = async () => {
     if (children) {
-      let cardSize = 0;
-      children.forEach((x) => {
-        cardSize = x.ref.current.offsetWidth;
-      });
-      return cardSize;
+      // let cardSize = 0;
+      // children.forEach((x) => {
+      //   cardSize = x.ref.current.offsetWidth;
+      // });
+      // return cardSize;
+      return 312
+    } else {
+      return 312
     }
   };
 
