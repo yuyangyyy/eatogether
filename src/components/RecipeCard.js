@@ -1,10 +1,10 @@
 import React from "react";
+import MediaQuery from "react-responsive";
 
 import Carroussel from "./Carroussel/Caroussel";
-
 import "./RecipeCard.css";
 
-const key = "02c9d303d5b54e28b2b1854858d84765";
+const key = "4f0243689f5c4d3aaa5ff94d863e92fa";
 const foods = ["chicken", "noodles", "mushrooms", "zucchini"];
 
 class RecipeCard extends React.Component {
@@ -45,7 +45,8 @@ class RecipeCard extends React.Component {
         <div className="recipe-card-cont">
           <h2>Our Hosts made those recipes</h2>
           <div className="item-card">
-            <Carroussel>
+            
+            <MediaQuery minWidth={640}>
               {this.state.food.length > 0 &&
                 this.state.food.map((para, index) => {
                   return (
@@ -55,7 +56,26 @@ class RecipeCard extends React.Component {
                     </div>
                   );
                 })}
-            </Carroussel>
+            </MediaQuery>
+
+            <MediaQuery maxWidth={640}>
+              <Carroussel>
+                {this.state.food.length > 0 &&
+                  this.state.food.map((para, index) => {
+                    return (
+                      <div
+                        className="recipe-items"
+                        key={index}
+                        ref={this.rCard}
+                      >
+                        <img src={para.image} alt={para.name} />
+                        <h3>{para.title}</h3>
+                      </div>
+                    );
+                  })}
+              </Carroussel>
+            </MediaQuery>
+
           </div>
         </div>
       </div>
