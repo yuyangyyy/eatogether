@@ -34,7 +34,7 @@
 .cardResult {
   display: flex;
   flex-direction: column;
-  width: 312px;
+  width: 20em;
   border: 1px solid black;
   transform: scale(1);
   transition: transform 0.8s;
@@ -44,7 +44,7 @@
 .cardResultOn {
   display: flex;
   flex-direction: column;
-  width: 312px;
+  width: 20em;
   border: 1px solid black;
   transform: scale(1.1);
   transition: transform 0.8s;

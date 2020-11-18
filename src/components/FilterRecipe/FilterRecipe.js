@@ -106,6 +106,8 @@ class FilterRecipe extends React.Component {
     this.props.selectRecipe(result[event.target.id]);
   };
 
+  rCard = React.createRef();
+
   render() {
     return (
       <div className={style.suggestion}>
@@ -130,6 +132,7 @@ class FilterRecipe extends React.Component {
                   className={
                     foods.style ? style.cardResultOn : style.cardResult
                   }
+                  ref={this.rCard}
                 >
                   <img src={foods.image} alt={foods.name} />
                   <h2 className="cardTitle">{foods.name}</h2>
@@ -162,6 +165,7 @@ class FilterRecipe extends React.Component {
                     className={
                       foods.style ? style.cardResultOn : style.cardResult
                     }
+                    ref={this.rCard}
                   >
                     <img src={foods.image} alt={foods.name} />
                     <h2 className="cardTitle">{foods.name}</h2>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Carroussel.scss";
 
-const Caroussel = ({ dotsNumber, children }) => {
+const Caroussel = ({ children }) => {
   const [position, setPosition] = useState(0);
   const [move, setMove] = useState(0);
   const [rSize, setRsize] = useState(0);
@@ -24,8 +24,8 @@ const Caroussel = ({ dotsNumber, children }) => {
     setMove(dotPos * rSize * -1);
   };
 
-  const dotCreate = async () => {
-    const dotsLength = dotsNumber;
+  const dotCreate = () => {
+    const dotsLength = children.length;
     let result = [];
     for (let index = 0; index < dotsLength; index++) {
       result = [
@@ -39,23 +39,18 @@ const Caroussel = ({ dotsNumber, children }) => {
     return result;
   };
 
-  const cardCreate = async () => {
-    if (children) {
-      // let cardSize = 0;
-      // children.forEach((x) => {
-      //   cardSize = x.ref.current.offsetWidth;
-      // });
-      // return cardSize;
-      return 312
-    } else {
-      return 312
-    }
+  const cardCreate = () => {
+    let cardSize = 0;
+    children.forEach((x) => {
+      x.ref && (cardSize = x.ref.current.offsetWidth);
+    });
+    return cardSize;
   };
 
   useEffect(() => {
-    cardCreate().then((res) => setRsize(res));
-    dotCreate().then((res) => setDots(res));
-  }, []);
+    children.length && setRsize(cardCreate());
+    setDots(dotCreate());
+  }, [children]);
 
   useEffect(() => {
     const tempDots = [...dots];
