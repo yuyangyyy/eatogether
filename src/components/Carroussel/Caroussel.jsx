@@ -55,11 +55,9 @@ const Caroussel = ({ children }) => {
   useEffect(() => {
     const tempDots = [...dots];
     tempDots.map((dot, index) => {
-      if (index === position) {
-        tempDots[index].bigger = true;
-      } else {
-        tempDots[index].bigger = false;
-      }
+      index === position
+        ? (tempDots[index].bigger = true)
+        : (tempDots[index].bigger = false);
     });
     setDots(tempDots);
   }, [position]);
