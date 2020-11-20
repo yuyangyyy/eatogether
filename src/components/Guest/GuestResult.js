@@ -12,8 +12,6 @@ const GuestResult = ({ info }) => {
   const [button, setButton] = useState(false);
   const [message, setMessage] = useState(false);
 
- 
-
   const booked = (e) => {
     setButton(!button);
     setMessage(true);
@@ -30,12 +28,11 @@ const GuestResult = ({ info }) => {
           <img src={info.user.photo} alt={info.user.firstName} />
           <div>
             <p>{info.user.firstName + " " + info.user.lastName}</p>
-            <p>{info.user.email} </p>
-            <p>Date of the event {new Date().toLocaleDateString()}</p>
-            <p> {info.user.city}</p>
+            <p>{info.user.city} </p>            
           </div>
         </div>
         <div>
+          <p>Date of the event : <b>{info.recipe.date}</b></p>
           <h3>{info.recipe.recipeName}</h3>
           <img
             className={style.recipeImage}

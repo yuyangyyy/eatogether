@@ -8,6 +8,7 @@ const GuestFilter = () => {
   const [info, setInfo] = useState({
     meal: "",
     city: "",
+    date : ""
   });
   const [result, setResult] = useState("");
   const [send , setSend] = useState(false) ;
@@ -40,7 +41,15 @@ const GuestFilter = () => {
           name="city"
           onChange={changeInfo}
         />
-        <input type="submit" value="send" />
+        <label>Date</label>
+         <input
+          type="text"
+          value={info.date}
+          name="date"
+          required
+          onChange={changeInfo}
+        />
+        <input type="submit" value={send ? "All" :"Filter" } />
       </form>
 
       <div>
