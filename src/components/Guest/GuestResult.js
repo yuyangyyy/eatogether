@@ -23,23 +23,26 @@ const GuestResult = ({ info }) => {
   return (
     <div className={style.guestContainer}>
       <div className={style.guestResult}>
-        <p className={style.guestInvit}> Invitation </p>
-        <div className={style.users}>
-          <img src={info.user.photo} alt={info.user.firstName} />
-          <div>
-            <p>{info.user.firstName + " " + info.user.lastName}</p>
-            <p>{info.user.city} </p>            
-          </div>
-        </div>
-        <div>
-          <p>Date of the event : <b>{info.recipe.date}</b></p>
-          <h3>{info.recipe.recipeName}</h3>
+        <h2 className={style.guestInvit}> Invitation </h2>
+        <div className={style.recipe}>
+          <h4>{info.recipe.recipeName}</h4>
           <img
             className={style.recipeImage}
             src={info.recipe.recipeImage}
             alt={info.recipe.recipeName}
           />
         </div>
+        <p> <b>By</b> </p>
+        <div className={style.users}>
+          <img src={info.user.photo} alt={info.user.firstName} />
+          <div>
+            <p>{info.user.firstName + " " + info.user.lastName}</p>
+            <p>{info.user.city} </p>
+          </div>
+        </div>
+        <h4>
+           {info.recipe.date}
+        </h4>
         <button onClick={booked}>
           {button ? "Cancel your  booking" : "Book"}
         </button>

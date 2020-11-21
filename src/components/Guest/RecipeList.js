@@ -41,7 +41,7 @@ const recipeList = [
       recipeImage: "https://spoonacular.com/recipeImages/648910-556x370.jpg",
       date : "30 Nov 2020"
     },
-  },
+  },  
 ];
 
 export default recipeList;
