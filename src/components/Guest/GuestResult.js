@@ -7,7 +7,7 @@ import Reservation from "./Reservation";
 import style from "./GuestResult.module.css";
 
 const GuestResult = ({ info }) => {
-  // const [recipes, setRecipes] = useState()
+  
 
   const [button, setButton] = useState(false);
   const [message, setMessage] = useState(false);
@@ -19,6 +19,7 @@ const GuestResult = ({ info }) => {
   const closeBooked = () => {
     setMessage(false);
   };
+  console.log(info)
 
   return (
     <div className={style.guestContainer}>
@@ -37,7 +38,7 @@ const GuestResult = ({ info }) => {
           <img src={info.user.photo} alt={info.user.firstName} />
           <div>
             <p>{info.user.firstName + " " + info.user.lastName}</p>
-            <p>{info.user.city} </p>
+            <h4>{info.user.city} </h4>
           </div>
         </div>
         <h4>
@@ -47,7 +48,7 @@ const GuestResult = ({ info }) => {
           {button ? "Cancel your  booking" : "Book"}
         </button>
         {message && (
-          <div>
+          <div className={style.modale}>
             <Reservation
               button={button}
               booked={closeBooked}

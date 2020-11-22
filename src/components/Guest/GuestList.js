@@ -7,10 +7,9 @@ import "./GuestList.css";
 import recipeList from "./RecipeList";
 
 function GuestList({ info }) {
-  const [recipes] = useState(recipeList);
+ const [recipes] = useState(recipeList);
 
-  console.log("africant".includes(""));
-
+  
   //   useEffect(() => {
   //     if (info.send) {
   //       setRecipes(
@@ -29,14 +28,17 @@ function GuestList({ info }) {
       {recipes
         .filter(
           (recipe) =>
-            !info.send || // if condition is OK it won't read the filter
-            (recipe.recipe.recipeName
+            
+              (!info.meal ||  // if condition is OK it won't read instruction after
+            recipe.recipe.recipeName
               .toLowerCase()
-              .includes(info.result.meal.toLowerCase()) &&
+              .includes(info.meal.toLowerCase()) )  &&
+              (!info.city || // if condition is OK it won't read instruction after
               recipe.user.city
                 .toLowerCase()
-                .includes(info.result.city.toLowerCase())) && 
-                recipe.recipe.date ===info.result.date
+                .includes(info.city.toLowerCase()) ) && 
+               (!info.date ||  // if condition is OK it won't read instruction after
+                recipe.recipe.date === info.date )
         )
         .map((recipe, index) => (
           <GuestResults info={recipe} key={index} />

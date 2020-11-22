@@ -15,7 +15,7 @@ const recipeList = [
   },
   {
     user: {
-      firstName: "hector ",
+      firstName: "Hector ",
       lastName: "phillips",
       email: "hector.phillips@gmail.com ",
       photo: "https://randomuser.me/api/portraits/men/30.jpg",

@@ -11,7 +11,7 @@ const GuestFilter = () => {
     date : ""
   });
   const [result, setResult] = useState("");
-  const [send , setSend] = useState(false) ;
+  
 
 
   const changeInfo = (e) => {
@@ -21,7 +21,7 @@ const GuestFilter = () => {
   const submit = (e) => {
     e.preventDefault();
     setResult(info);
-    setSend(!send)
+    
   };
   
   return (
@@ -46,14 +46,14 @@ const GuestFilter = () => {
           type="text"
           value={info.date}
           name="date"
-          required
+         
           onChange={changeInfo}
         />
-        <input type="submit" value={send ? "All" :"Filter" } />
+        <input type="submit" value="search" />
       </form>
 
       <div>
-        <GuestList info={{result,send}} />
+        <GuestList info={result} />
       </div>
     </div>
   );
