@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Display.css";
 
@@ -24,7 +25,7 @@ function Display() {
               malesuad. Lorem ipsum dolor sit amet, consectetur adipiscing e
             </p>
           </div>
-          <input type="button" value="Suggest meal" />
+         <Link to='/Host'><input type="button" value="Suggest meal" /></Link> 
         </div>
       </div>
       <hr className="dislay-hr-top" />
