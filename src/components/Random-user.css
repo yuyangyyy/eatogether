@@ -16,10 +16,7 @@
   border: 1px solid black;
   margin: 1em 0 3em 0;
   transition: 0.3s;
-}
-
-.random-users2 img {
- width: 13em;
+  width: 13em;
 }
 
 .random-users-h2 {
@@ -35,16 +32,14 @@
   font-family: "Montserrat", sans-serif;
 }
 
-
 input[type="button"] {
-
   align-self: flex-end;
   font-family: "Montserrat", sans-serif;
   background-color: white;
   outline: 0;
   border-width: 0 0 2px;
   padding: 0.2em;
-  transition: 0.4s; 
+  transition: 0.4s;
   align-self: center;
   margin-top: 0.5em;
 }
@@ -54,12 +49,16 @@ input[type="button"]:hover {
   background-color: black;
 }
 
-.random-user-info{
+.random-users2 img {
+  width: 100%;
+}
+
+.random-user-info {
   padding: 1em;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between; 
+  justify-content: space-between;
   height: fit-content;
 }
 
@@ -67,8 +66,8 @@ input[type="button"]:hover {
   margin: 0.1em;
 }
 
-@media screen and (max-width:640px){
-  .random-users2 img {
+@media screen and (max-width: 640px) {
+  .random-users2 {
     width: 8em;
-   } 
+  }
 }

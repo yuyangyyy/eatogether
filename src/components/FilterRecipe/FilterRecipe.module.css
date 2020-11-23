@@ -37,8 +37,12 @@
   width: 20em;
   border: 1px solid black;
   transform: scale(1);
-  transition: transform 0.8s;
+  transition: transform 0.4s;
   margin: 1em 0 1em 0;
+}
+.cardResult:hover {
+  transform: scale(1.03);
+  transition: transform 0.4s;
 }
 
 .cardResultOn {
@@ -47,7 +51,7 @@
   width: 20em;
   border: 1px solid black;
   transform: scale(1.1);
-  transition: transform 0.8s;
+  transition: transform 0.4s;
 }
 
 .button {
