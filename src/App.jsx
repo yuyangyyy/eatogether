@@ -12,7 +12,12 @@ export const UserContext = React.createContext({});
 class App extends React.Component {
   state = {
     userName: {},
+    navHeight : "",
   };
+
+  getNavHeight = (height) => {
+    this.setState({navHeight:height})
+  }
 
   getName = (name) => {
     this.setState({ userName: name });
@@ -21,9 +26,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Navigation getName={this.getName} />
+        <Navigation getName={this.getName} getNavHeight={this.getNavHeight} />
         <Switch>
-          <UserContext.Provider value={this.state.userName}>
+          <UserContext.Provider value={this.state}>
             <Route exact path="/" component={Home} />
             <Route path="/Host" component={Host} />
           </UserContext.Provider>

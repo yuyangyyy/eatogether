@@ -44,7 +44,7 @@ class SearchLocalisation extends React.Component {
 
                         <input className="search-localisation-btn" type="button" value="Let's Go" onClick={this.onClick} />
 
-                        {/* {this.state.search && <CompoYang {...this.state} />} */}
+                        {/* {this.state.search && <CompoYang {...this.state} />} */} 
                 </div>
             </div>
         )

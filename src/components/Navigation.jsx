@@ -26,6 +26,7 @@ class Navigation extends React.Component {
     this.setState({
       navHeight: this.nav.current.offsetHeight + this.nav.current.offsetTop,
     });
+    this.props.getNavHeight(this.nav.current.offsetHeight + this.nav.current.offsetTop)
   }
 
   render() {
