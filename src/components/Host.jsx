@@ -1,10 +1,9 @@
-import React from "react"
+import React from "react";
 
 import SearchRecipe from "./SearchRecipe/SearchRecipe";
 import SearchRecipeLeft from "./SearchRecipe/SearchRecipeLeft";
 import SearchRecipeRight from "./SearchRecipe/SearchRecipeRight";
 import FilterRecipe from "./FilterRecipe/FilterRecipe";
-import RecapResult from "./SearchRecipe/RecapResult";
 import RandomUser from "./Random-user";
 
 class Host extends React.Component {
@@ -43,8 +42,7 @@ class Host extends React.Component {
           selectRecipe={this.selectRecipe}
           keyApi={this.key}
         />
-        <RecapResult selectRecipe={this.state.selectRecipe} />
-        <RandomUser/>
+        <RandomUser />
       </div>
     );
   }

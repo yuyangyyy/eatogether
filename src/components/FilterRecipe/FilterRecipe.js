@@ -158,7 +158,7 @@ class FilterRecipe extends React.Component {
             </MediaQuery>
 
             <MediaQuery maxWidth={640}>
-              <Carroussel dotsNumber={this.state.foodRequest}>
+              <Carroussel>
                 {this.state.food.map((foods, index) => (
                   <div
                     key={foods.image}
