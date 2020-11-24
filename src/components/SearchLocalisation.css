@@ -22,6 +22,7 @@
 .search-localisation-city-select {
 
    width: 10em;
+   padding-right: 5em;
 
 }
 .search-localisation-city-select select {
@@ -47,10 +48,24 @@
     color: tomato;
     text-align: center;
     align-items: center;
+    margin-top: 9em;
 
 }
 
 .search-localisation-calendar {
     display: flex;
     flex-direction: row;
+}
+
+.search-localisation-h2 {
+    margin-bottom : 4em;
+}
+
+.guest-city {
+    margin-right : 5em;
+    margin-top : 8em;
+}
+
+.react-calendar {
+    margin-left : 10em;
 }

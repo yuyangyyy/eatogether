@@ -10,7 +10,7 @@ class SearchLocalisation extends React.Component {
    
     state = {
         city: null,
-        date: new Date(),
+        dater : new Date(),
         search: false,
     };
 
@@ -18,24 +18,25 @@ class SearchLocalisation extends React.Component {
         this.setState({ city: event.target.value });
       };
     
-      onChange = (date) => this.setState({ date });
+      onChange = (date) => {
+          this.setState({ dater : date.toLocaleDateString() })};
+
+       componentDidUpdate () {
+           console.log (this.state)
+       }   
+
 
       onClick = (e) => {
         this.setState({ search: true })
       }
 
-      componentDidUpdate () {
-          console.log(this.state);
-      }
-     
-    
     render () {
         return (
 
             <div className="search-localisation"> 
 
                 <div className="search-localisation-contain">
-                        <h2>Your Reservation</h2>  
+                        <h2 className="search-localisation-h2">Your Reservation</h2>  
 
                         <div className="search-localisation-calendar"> 
                             <CitySelect className="search-localisation-city-select" changeCity={this.setCity} />                       
