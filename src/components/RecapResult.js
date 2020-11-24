@@ -5,7 +5,26 @@ import './RecapResult.css';
 const RecapResult = ({ selectRecipe }) => {
   // const [result, setResult] = useState('');
   const userInfo = useContext(UserContext);
-  console.log(userInfo);
+
+  React.useEffect(() => {
+    console.log(selectRecipe);
+    const info = {
+      user: {
+        firstName: userInfo.userName.firstName,
+        lastName: userInfo.userName.lastName,
+        email: userInfo.userName.email,
+        photo: userInfo.userName.photo,
+        city: 'paris',
+      },
+      recipe: {
+        recipeName: selectRecipe.name,
+        recipeImage: selectRecipe.image,
+        date: '27 Nov 2020',
+        cuisine: selectRecipe.cuisine,
+      },
+    };
+    userInfo.getInvitation(info);
+  }, [userInfo.userName.firstName]);
 
   return (
     <div className="recap-container">
@@ -19,9 +38,11 @@ const RecapResult = ({ selectRecipe }) => {
         />
 
         <div className="recap-info">
+          <h3 className="recapnomplat">{selectRecipe.name}</h3>
           <p>
-            Name :{' '}
-            {userInfo.userName.firstName + ' ' + userInfo.userName.lastName}
+            Name :
+            {userInfo.userName.firstName &&
+              userInfo.userName.firstName + ' ' + userInfo.userName.lastName}
           </p>
           <p>Email:{userInfo.userName.email}</p>
           <p>Date:{}</p>
