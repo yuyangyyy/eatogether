@@ -21,55 +21,49 @@ function Displayanimation() {
               lacus, vitae sodales turpis. Maecenas finibus, urna id auctor
               ultrices, ante neque mattis erat, a dapibus arcu augue a mi. Nulla
               viverra leo mi, vitae laoreet purus pellentesque nec. Aenean
-              malesuad. Lorem ipsum dolor sit amet, consectetur adipiscing e
+              malesuad. Lorem ipsum dolor sit amet, consectetur adipiscinge.
             </p>
           </div>
           <input type="button" value="Suggest meal" />
         </div>
       </div>
       <hr className="dislay-hr-top" />
-
       <div className="team-area">
         <div className="container">
           <div className="row">
             <div className="col-md-6">
               <div className="img-area">
                 <a href="" className="liena">
-                  <img src="./image/image1.jpeg" />
-
+                  <img src="./image/images9.jpeg" />
                   <span className="text-t">
                     <h2> Host </h2>
-
                     <p>
-                      Components are the heart of Reacts powerful, declarative
-                      programming model. React Router is a collection of
-                      navigational components that compose declaratively with
-                      your application. Whether you want to have bookmarkable
-                      URLs for your web app or a composable way to navigate in
-                      React Native, React Router works wherever React is
-                      rendering--so take your pick!
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Ut rhoncus turpis eu molestie lacinia. Pellentesque eget
+                      rhoncus lacus, vitae sodales turpis. Maecenas finibus,
+                      urna id auctor ultrices, ante neque mattis erat, a dapibus
+                      arcu augue a mi. Nulla viverra leo mi, vitae laoreet purus
+                      pellentesque nec. Aenean malesuad. Lorem ipsum dolor sit
+                      amet, consectetur adipiscinge.
                     </p>
                   </span>
                 </a>
               </div>
             </div>
-
             <div className="col-md-6">
               <div className="img-area">
                 <a href="" className="liena">
-                  <img src="./image/image2.jpeg" />
-
+                  <img src="./image/host.jpg" />
                   <span className="text-t">
                     <h2> Guest</h2>
-
                     <p>
-                      Components are the heart of Reacts powerful, declarative
-                      programming model. React Router is a collection of
-                      navigational components that compose declaratively with
-                      your application. Whether you want to have bookmarkable
-                      URLs for your web app or a composable way to navigate in
-                      React Native, React Router works wherever React is
-                      rendering--so take your pick! /
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Ut rhoncus turpis eu molestie lacinia. Pellentesque eget
+                      rhoncus lacus, vitae sodales turpis. Maecenas finibus,
+                      urna id auctor ultrices, ante neque mattis erat, a dapibus
+                      arcu augue a mi. Nulla viverra leo mi, vitae laoreet purus
+                      pellentesque nec. Aenean malesuad. Lorem ipsum dolor sit
+                      amet, consectetur adipiscinge.
                     </p>
                   </span>
                 </a>
