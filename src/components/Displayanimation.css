@@ -75,9 +75,9 @@
   display: block;
   box-shadow: 0 5px 40px rgba(0, 0, 0, 0.6);
   position: relative;
-  background: black;
+  background: white;
   text-decoration: none;
-  color: teal;
+  color: black;
   padding-bottom: 30px;
   width: 500px;
   height: 300px;

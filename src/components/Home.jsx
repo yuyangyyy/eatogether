@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Display from './Display';
+// import Display from './Display';
+import Displayanimation from'./Displayanimation';
 import RecipeCard from './RecipeCard';
 import GuestSearch from './GuestSearch';
 import './GuestSearch2.css';
@@ -14,7 +15,8 @@ class Home extends React.Component {
     return (
       <div className="home">
         <GuestSearch />
-        <Display />
+        {/* <Display /> */}
+        <Displayanimation />
         <RecipeCard />
       </div>
     );
