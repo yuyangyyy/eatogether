@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 import SearchRecipe from "./SearchRecipe/SearchRecipe";
 import SearchRecipeLeft from "./SearchRecipe/SearchRecipeLeft";
@@ -10,11 +10,12 @@ import RandomUser from "./Random-user"
 
 
 
+
 class Host extends React.Component {
   state = {
     recipeResult: [],
-    selectRecipe: "", 
-    dateCity : [],   
+    selectRecipe: "",
+    dateCity: [],
   };
 
   getRecipeResult = (result) => {
@@ -28,10 +29,10 @@ class Host extends React.Component {
   };
 
   getDateCity = (date) => {
-    this.setState({ dateCity : date });
+    this.setState({ dateCity: date });
   }
 
- 
+
   key = "995f2d7e6b424d9790384fc8a1ee0b2f";
 
   render() {
@@ -58,7 +59,7 @@ class Host extends React.Component {
           {this.state.selectRecipe &&
             <RecapResult selectRecipe={this.state.selectRecipe} dateCity={this.state.dateCity} />
           }
-          <RandomUser dateCity={this.state.dateCity} /> 
+          <RandomUser dateCity={this.state.dateCity} />
         </SearchLocalisation>
 
       </div>

@@ -7,7 +7,10 @@ import Host from "./components/Host";
 import Guest from "./components/Guest";
 import Footer from "./components/Footer"
 
+
 import "./App.css";
+import Video from "./components/Video";
+
 
 export const UserContext = React.createContext({});
 
@@ -29,7 +32,6 @@ class App extends React.Component {
     this.setState({ userName: name });
   };
 
-
   render() {
     return (
       <div className="App">
@@ -39,9 +41,12 @@ class App extends React.Component {
             <Route exact path="/" component={Home} />
             <Route path="/Host" component={Host} />
             <Route path="/Guest" component={Guest} />
+            <Route path="/Messages" component={Video} />
           </UserContext.Provider>
         </Switch>
-        <Footer />
+        <div>
+          <Footer />
+        </div>
       </div>
     );
   }
