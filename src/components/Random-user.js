@@ -36,7 +36,7 @@ class RandomUser extends React.Component {
                   <h4>Name </h4>
                   <p>{para.name.first}</p>
                   <h4>City </h4>
-                  <p>{para.location.city}</p>
+                  <p>{this.props.dateCity[0]}</p>
                   <MediaQuery maxWidth={640}>
                     <input type="button" value="Message" />
                   </MediaQuery>

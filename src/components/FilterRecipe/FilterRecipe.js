@@ -5,7 +5,7 @@ import MediaQuery from "react-responsive";
 import PopRecipe from "../PopRecipe/PopRecipe";
 import Carroussel from "../Carroussel/Caroussel";
 
-import style from "./FilterRecipe.module.css";
+import style from './FilterRecipe.module.css';
 
 class FilterRecipe extends React.Component {
   state = {
@@ -68,6 +68,7 @@ class FilterRecipe extends React.Component {
             resume: data.summary,
             source: data.sourceUrl,
             idRecipe: data.id,
+            cuisine: data.cuisines,
             seeRecipe: false,
             style: false,
           };

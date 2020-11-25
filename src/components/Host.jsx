@@ -3,13 +3,19 @@ import React from "react";
 import SearchRecipe from "./SearchRecipe/SearchRecipe";
 import SearchRecipeLeft from "./SearchRecipe/SearchRecipeLeft";
 import SearchRecipeRight from "./SearchRecipe/SearchRecipeRight";
+import SearchLocalisation from "./SearchLocalisation"
 import FilterRecipe from "./FilterRecipe/FilterRecipe";
-import RandomUser from "./Random-user";
+import RecapResult from "./RecapResult";
+import RandomUser from "./Random-user"
+
+
+
 
 class Host extends React.Component {
   state = {
     recipeResult: [],
     selectRecipe: "",
+    dateCity: [],
   };
 
   getRecipeResult = (result) => {
@@ -22,9 +28,15 @@ class Host extends React.Component {
     });
   };
 
-  key = "d2dddea179a847adafce09d9a5a80de6";
+  getDateCity = (date) => {
+    this.setState({ dateCity: date });
+  }
+
+
+  key = "55866adbd1844c02bb066c6d0e7fcad1";
 
   render() {
+    console.log(this.state.dateCity)
     return (
       <div>
         <SearchRecipe>
@@ -37,12 +49,19 @@ class Host extends React.Component {
             keyApi={this.key}
           />
         </SearchRecipe>
+
         <FilterRecipe
           recipeId={this.state.recipeResult}
           selectRecipe={this.selectRecipe}
           keyApi={this.key}
         />
-        <RandomUser />
+        <SearchLocalisation dateCity={this.getDateCity} >
+          {this.state.selectRecipe &&
+            <RecapResult selectRecipe={this.state.selectRecipe} dateCity={this.state.dateCity} />
+          }
+          <RandomUser dateCity={this.state.dateCity} />
+        </SearchLocalisation>
+
       </div>
     );
   }

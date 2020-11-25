@@ -19,7 +19,7 @@ const PopRecipe = (props) => {
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
-        if (recipe) {
+        if (data) {
           setRecipe({
             name: data.title,
             img: data.image,

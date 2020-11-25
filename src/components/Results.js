@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Results = (props) => {
   return (
@@ -10,6 +11,9 @@ const Results = (props) => {
         <div>Date : {props.date.toLocaleDateString()}</div>
         <div>Meal : {props.plat}</div>
       </div>
+      <Link to="/Guest">
+        <input type="button" value="See more info" />
+      </Link>
     </div>
   );
 };
