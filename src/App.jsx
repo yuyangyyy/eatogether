@@ -5,7 +5,10 @@ import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import Host from "./components/Host";
 
+
 import "./App.css";
+import Video from "./components/Video";
+
 
 export const UserContext = React.createContext({});
 
@@ -31,8 +34,14 @@ class App extends React.Component {
           <UserContext.Provider value={this.state}>
             <Route exact path="/" component={Home} />
             <Route path="/Host" component={Host} />
+            <Route path="/Messages" component={Video} />
+            
+
           </UserContext.Provider>
         </Switch>
+        <div>
+       
+        </div>
       </div>
     );
   }
