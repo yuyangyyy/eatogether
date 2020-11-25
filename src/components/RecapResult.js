@@ -19,7 +19,7 @@ const RecapResult = ({ selectRecipe }) => {
       recipe: {
         recipeName: selectRecipe.name,
         recipeImage: selectRecipe.image,
-        date: '27 Nov 2020',
+        date: '27/11/2020',
         cuisine: selectRecipe.cuisine,
       },
     };

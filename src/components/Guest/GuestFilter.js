@@ -96,7 +96,7 @@ export default function GuestFilter() {
   }
 
   const onChange = (date) => {
-    setDate(date.toLocaleDateString());
+    setDate(date);
     setCalendar(false)
   }
 

@@ -36,12 +36,12 @@ function GuestList({ info }) {
               recipe.recipe.recipeName
                 .toLowerCase()
                 .includes(info.meal.toLowerCase())) &&
-            (!info.city || // if condition is OK it won't read instruction after
+            (!info.city ||
               recipe.user.city
                 .toLowerCase()
                 .includes(info.city.toLowerCase())) &&
-            (!info.date ||  // if condition is OK it won't read instruction after
-              recipe.recipe.date === info.date)
+            (!info.date
+            || recipe.recipe.date === info.date.toLocaleDateString())
         )
         .map((recipe, index) => (
           <GuestResults info={recipe} key={index} />
