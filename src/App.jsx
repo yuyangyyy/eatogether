@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import Host from "./components/Host";
 import Guest from "./components/Guest";
+import Footer from "./components/Footer"
 
 import "./App.css";
 
@@ -40,6 +41,7 @@ class App extends React.Component {
             <Route path="/Guest" component={Guest} />
           </UserContext.Provider>
         </Switch>
+        <Footer />
       </div>
     );
   }
