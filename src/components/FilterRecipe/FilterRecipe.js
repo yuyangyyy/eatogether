@@ -66,7 +66,7 @@ class FilterRecipe extends React.Component {
             resume: data.summary,
             source: data.sourceUrl,
             idRecipe: data.id,
-            cusine: data.cuisines,
+            cuisine: data.cuisines,
             seeRecipe: false,
             style: false,
           };

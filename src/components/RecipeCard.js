@@ -2,7 +2,7 @@ import React from 'react';
 
 import './RecipeCard.css';
 
-const key = 'd8b194b8239c4205a842268070e3dcc5';
+const key = '6a2c23c6d46444bcbb35720b7798fc74';
 const foods = ['chicken', 'noodles', 'olives', 'zucchini'];
 
 class RecipeCard extends React.Component {

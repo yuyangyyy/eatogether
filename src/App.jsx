@@ -13,23 +13,20 @@ export const UserContext = React.createContext({});
 class App extends React.Component {
   state = {
     userName: {},
-    result:'',
-    getInvitation: (info)=>{
-      this.setState({result:info})},
-    navHeight : "",
+    result: '',
+    getInvitation: (info) => {
+      this.setState({ result: info })
+    },
+    navHeight: "",
   };
 
   getNavHeight = (height) => {
-    this.setState({navHeight:height})
+    this.setState({ navHeight: height })
   }
 
   getName = (name) => {
     this.setState({ userName: name });
   };
-
-  componentDidUpdate(){
-    console.log(this.state.result);
-  }
 
 
   render() {

@@ -3,11 +3,11 @@ import { UserContext } from '../App';
 import './RecapResult.css';
 
 const RecapResult = ({ selectRecipe }) => {
-  // const [result, setResult] = useState('');
+
   const userInfo = useContext(UserContext);
 
   React.useEffect(() => {
-    console.log(selectRecipe);
+
     const info = {
       user: {
         firstName: userInfo.userName.firstName,
@@ -24,7 +24,7 @@ const RecapResult = ({ selectRecipe }) => {
       },
     };
     userInfo.getInvitation(info);
-  }, [userInfo.userName.firstName]);
+  }, [userInfo.userName.firstName,selectRecipe.name]);
 
   return (
     <div className="recap-container">
@@ -45,8 +45,8 @@ const RecapResult = ({ selectRecipe }) => {
               userInfo.userName.firstName + ' ' + userInfo.userName.lastName}
           </p>
           <p>Email:{userInfo.userName.email}</p>
-          <p>Date:{}</p>
-          <p>City:{}</p>
+          <p>Date:{ }</p>
+          <p>City:{ }</p>
         </div>
       </div>
     </div>

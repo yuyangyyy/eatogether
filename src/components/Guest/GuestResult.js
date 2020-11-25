@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-// import axios from "axios";
-
 import Reservation from "./Reservation";
 
 import style from "./GuestResult.module.css";
@@ -19,7 +17,7 @@ const GuestResult = ({ info }) => {
   const closeBooked = () => {
     setMessage(false);
   };
-  console.log(info)
+  
 
   return (
     <div className={style.guestContainer}>

@@ -112,8 +112,7 @@ export default function GuestFilter() {
   };
 
   const position = React.createRef()
-  console.log(calendar)
-
+  
   const reset = () => {
     const results = ({
       meal: "",
@@ -157,7 +156,7 @@ export default function GuestFilter() {
               }
               <div>
                 <input type="submit" value="Search" className="actions" />
-                <input type="button" onClick={reset} value="reset" />
+                <input type="button" onClick={reset} value="Reset" />
               </div>
             </form>
           </div>

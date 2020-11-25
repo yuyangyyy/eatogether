@@ -94,7 +94,10 @@ form {
     top: 300px;
 }
 
-input {
-    border:0 ;
-    border-bottom : 0 solid 1px ;
+.guest-filter-container input {
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    transition: 0.4s;
 }
+
