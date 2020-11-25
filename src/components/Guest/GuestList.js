@@ -8,7 +8,6 @@ import recipeList from "./RecipeList";
 
 function GuestList({ info }) {
  const [recipes] = useState(recipeList);
-
   
   //   useEffect(() => {
   //     if (info.send) {
@@ -22,7 +21,8 @@ function GuestList({ info }) {
   //     }
   //   }, [info]);
 
-  console.log(info);
+  console.log(recipes[1].recipe.recipeName.includes(info.meal))
+  console.log(info)
   return (
     <div className="recipe-list">
       {recipes

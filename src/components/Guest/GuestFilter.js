@@ -78,7 +78,7 @@ export default function GuestFilter() {
   const [calendar, setCalendar] = useState(false);
   const [cityChoice, setCityChoice] = useState("");
   const [restriction, setRestriction] = useState("");
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState("");
   const [result, setResult] = useState("");
 
   const cities = city;
@@ -102,22 +102,29 @@ export default function GuestFilter() {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log ("hello")
     const results = ({
       meal: restriction,
       city: cityChoice,
       date: date
     })
     setResult(results);
-    
-  };
 
+  };
 
   const position = React.createRef()
   console.log(calendar)
 
+  const reset = () => {
+    const results = ({
+      meal: "",
+      city: "",
+      date: ""
+    })
+    setResult(results)
+  }
+
   return (
-    
+
     <div>
       <div className="guest-filter-container">
         <h3 className="search-title">Find a host</h3>
@@ -148,7 +155,10 @@ export default function GuestFilter() {
               {calendar &&
                 <div className="filter-calendar-container"><Calendar onChange={onChange} value={date} /></div>
               }
-              <input type="submit" value="Search" className="actions" />
+              <div>
+                <input type="submit" value="Search" className="actions" />
+                <input type="button" onClick={reset} value="reset" />
+              </div>
             </form>
           </div>
         </div>

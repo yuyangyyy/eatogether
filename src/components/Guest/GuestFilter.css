@@ -93,3 +93,8 @@ form {
     position: absolute;
     top: 300px;
 }
+
+input {
+    border:0 ;
+    border-bottom : 0 solid 1px ;
+}
