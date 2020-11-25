@@ -1,0 +1,71 @@
+.search-localisation {
+
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-localisation-contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border: 1px solid black;
+    padding: 8em;
+}
+
+.search-localisation-city-select {
+
+   width: 10em;
+   padding-right: 5em;
+
+}
+.search-localisation-city-select select {
+    height: auto;
+    border: 0;
+    margin: 0;
+    padding: .75em;
+    border-radius: 0;
+    overflow: hidden;
+    border: 0;
+    outline: 1px solid grey;
+    
+}
+
+.search-localisation-btn {
+
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    padding: 0.2em;
+    transition: 0.4s;
+    color: tomato;
+    text-align: center;
+    align-items: center;
+    margin-top: 9em;
+
+}
+
+.search-localisation-calendar {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-localisation-h2 {
+    margin-bottom : 4em;
+}
+
+.guest-city {
+    margin-right : 5em;
+    margin-top : 8em;
+}
+
+.react-calendar {
+    margin-left : 10em;
+}

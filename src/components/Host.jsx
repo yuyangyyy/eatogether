@@ -3,6 +3,7 @@ import React from "react"
 import SearchRecipe from "./SearchRecipe/SearchRecipe";
 import SearchRecipeLeft from "./SearchRecipe/SearchRecipeLeft";
 import SearchRecipeRight from "./SearchRecipe/SearchRecipeRight";
+import SearchLocalisation from "./SearchLocalisation"
 import FilterRecipe from "./FilterRecipe/FilterRecipe";
 import RecapResult from "./RecapResult";
 import RandomUser from "./Random-user";
@@ -38,12 +39,15 @@ class Host extends React.Component {
             keyApi={this.key}
           />
         </SearchRecipe>
+        
         <FilterRecipe
           recipeId={this.state.recipeResult}
           selectRecipe={this.selectRecipe}
           keyApi={this.key}
         />
-        <RecapResult selectRecipe={this.state.selectRecipe} />
+        <SearchLocalisation />
+        {this.state.selectRecipe && 
+        <RecapResult selectRecipe={this.state.selectRecipe} /> }
         <RandomUser/>
       </div>
     );
