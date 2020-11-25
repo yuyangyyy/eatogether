@@ -32,7 +32,7 @@ class RandomUser extends React.Component {
               <div className="random-users2" key={index}>
                 <img src={para.picture.large} alt={para.picture} />
                 <h4>Name : {para.name.first}</h4>
-                <h5>City : {para.location.city}</h5>
+                <h5>City : {this.props.dateCity[0]}</h5>
               </div>
             );
           })}

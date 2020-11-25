@@ -10,7 +10,8 @@ const recipeList = [
     recipe: {
       recipeName: " Red Lentil Soup with Chicken and Turnips",
       recipeImage: "https://spoonacular.com/recipeImages/715415-556x370.jpg",
-      date : "27/11/2020"
+      date : "27/11/2020",
+      cuisine: ["Thai"],
     },
   },
   {
@@ -24,7 +25,8 @@ const recipeList = [
     recipe: {
       recipeName: " African Chicken Peanut Stew",
       recipeImage: "https://spoonacular.com/recipeImages/716268-556x370.jpg",
-      date : "28/11/2020"
+      date : "28/11/2020",
+      cuisine: ["African"],
     },
     
   },
@@ -39,7 +41,8 @@ const recipeList = [
     recipe: {
       recipeName: " Kimchi",
       recipeImage: "https://spoonacular.com/recipeImages/648910-556x370.jpg",
-      date : "28/11/2020"
+      date : "28/11/2020",
+      cuisine: ["Korean"],
     },
   },  
   {
@@ -53,7 +56,8 @@ const recipeList = [
     recipe: {
       recipeName: "Salmon Quinoa Risotto",
       recipeImage: "https://spoonacular.com/recipeImages/659109-556x370.jpg",
-      date : "27/11/2020"
+      date : "27/11/2020",
+      cuisine: ["Italian"],
     },
   },
   {
@@ -68,9 +72,11 @@ const recipeList = [
     recipe: {
       recipeName: "Falafel Burgers",
       recipeImage: "https://spoonacular.com/recipeImages/642540-556x370.jpg",
-      date : "28/11/2020"
+      date : "28/11/2020",
+      cuisine: ["American"],
     },
   },  
 ];
 
 export default recipeList;
+

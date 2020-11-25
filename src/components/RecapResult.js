@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { UserContext } from '../App';
 import './RecapResult.css';
 
-const RecapResult = ({ selectRecipe }) => {
-
+const RecapResult = ({ selectRecipe, dateCity}) => {
+const [city,date] = dateCity
   const userInfo = useContext(UserContext);
 
   React.useEffect(() => {
@@ -14,17 +14,17 @@ const RecapResult = ({ selectRecipe }) => {
         lastName: userInfo.userName.lastName,
         email: userInfo.userName.email,
         photo: userInfo.userName.photo,
-        city: 'paris',
+        city: city,
       },
       recipe: {
         recipeName: selectRecipe.name,
         recipeImage: selectRecipe.image,
-        date: '27/11/2020',
+        date: date,
         cuisine: selectRecipe.cuisine,
       },
     };
     userInfo.getInvitation(info);
-  }, [userInfo.userName.firstName,selectRecipe.name]);
+  }, [userInfo.userName]);
 
   return (
     <div className="recap-container">
@@ -45,8 +45,8 @@ const RecapResult = ({ selectRecipe }) => {
               userInfo.userName.firstName + ' ' + userInfo.userName.lastName}
           </p>
           <p>Email:{userInfo.userName.email}</p>
-          <p>Date:{ }</p>
-          <p>City:{ }</p>
+          <p>Date:{date}</p>
+          <p>City:{city}</p>
         </div>
       </div>
     </div>

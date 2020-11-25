@@ -64,7 +64,7 @@ class GuestSearch extends React.Component {
                 value="Search"
                 onClick={() => this.setState({ search: !this.state.search })}
               />
-
+              
               <div>{this.state.search && <Results {...this.state} />}</div>
             </div>
           </div>

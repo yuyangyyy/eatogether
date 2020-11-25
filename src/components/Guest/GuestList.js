@@ -25,7 +25,7 @@ function GuestList({ info }) {
 
   }, [userInfo]);
 
-
+  console.log(recipes)
 
   return (
     <div className="recipe-list">
@@ -33,9 +33,8 @@ function GuestList({ info }) {
         .filter(
           (recipe) =>
             (!info.meal ||  // if condition is OK it won't read instruction after
-              recipe.recipe.recipeName
-                .toLowerCase()
-                .includes(info.meal.toLowerCase())) &&
+              recipe.recipe.cuisine              
+                .includes(info.meal) ) &&
             (!info.city ||
               recipe.user.city
                 .toLowerCase()
@@ -45,7 +44,8 @@ function GuestList({ info }) {
         )
         .map((recipe, index) => (
           <GuestResults info={recipe} key={index} />
-        ))}
+        ))
+      }
     </div>
   );
 }
