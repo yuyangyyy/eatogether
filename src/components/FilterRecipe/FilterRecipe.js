@@ -1,16 +1,16 @@
-import React from "react";
-import axios from "axios";
-import ReactHtmlParser from "react-html-parser";
+import React from 'react';
+import axios from 'axios';
+import ReactHtmlParser from 'react-html-parser';
 
-import PopRecipe from "../PopRecipe/PopRecipe";
+import PopRecipe from '../PopRecipe/PopRecipe';
 
-import style from "./FilterRecipe.module.css";
+import style from './FilterRecipe.module.css';
 
 class FilterRecipe extends React.Component {
   state = {
     food: [],
     popDisplay: false,
-    idRecipe: "",
+    idRecipe: '',
   };
 
   componentDidMount = () => {
@@ -18,7 +18,7 @@ class FilterRecipe extends React.Component {
   };
 
   getRecipe = () => {
-    const random = "random?&number=6";
+    const random = 'random?&number=6';
     const url = `https://api.spoonacular.com/recipes/${random}&apiKey=${this.props.keyApi}`;
     axios
       .get(url)
@@ -66,6 +66,7 @@ class FilterRecipe extends React.Component {
             resume: data.summary,
             source: data.sourceUrl,
             idRecipe: data.id,
+            cusine: data.cuisines,
             seeRecipe: false,
             style: false,
           };
@@ -116,8 +117,8 @@ class FilterRecipe extends React.Component {
         )}
         <h2 className={style.suggetionTitle}>
           {this.props.recipeId.length > 0
-            ? "Search Results"
-            : "Popular Recipes"}
+            ? 'Search Results'
+            : 'Popular Recipes'}
         </h2>
         <div className={style.card}>
           {this.state.food.map((foods, index) => (
@@ -129,8 +130,8 @@ class FilterRecipe extends React.Component {
               <h2 className="cardTitle">{foods.name}</h2>
               <div className={style.button}>
                 <button onClick={this.showRecipe} id={foods.idRecipe}>
-                  {" "}
-                  See recipe{" "}
+                  {' '}
+                  See recipe{' '}
                 </button>
                 {
                   // I want to see the recipe only when I click on the button See the recipes
@@ -140,8 +141,8 @@ class FilterRecipe extends React.Component {
                   id={index}
                   value={this.state.food}
                 >
-                  {" "}
-                  Choose recipe{" "}
+                  {' '}
+                  Choose recipe{' '}
                 </button>
               </div>
               {foods.seeRecipe && (

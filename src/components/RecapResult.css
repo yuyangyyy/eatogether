@@ -1,0 +1,34 @@
+.recap-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: black;
+  padding: 3em;
+}
+.recap-result {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3em;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.recap-invit {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Cormorant', serif;
+  padding-bottom: 1em;
+}
+.Recap-img {
+  align-self: center;
+  height: auto;
+}
+
+.recap-info {
+  padding-top: 1em;
+  font-size: 25px;
+  font-family: 'Cormorant', serif;
+}
