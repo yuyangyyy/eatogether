@@ -30,7 +30,7 @@ class Navigation extends React.Component {
   }
 
   render() {
-    const menu = ["Home", "Guest", "Host", "Messages"];
+    const menu = ["Home", "Guest", "Host", "About us"];
 
     return (
       <nav ref={this.nav}>
