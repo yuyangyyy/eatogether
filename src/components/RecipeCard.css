@@ -37,9 +37,10 @@
   font-size: large;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   .item-card {
-    justify-content: flex-start;
+    justify-content: center;
+    
   }
   .recipe-items {
     margin: 0;
@@ -51,5 +52,7 @@
     justify-content: center;
     align-items: center;
   }
+
+
 }
   
