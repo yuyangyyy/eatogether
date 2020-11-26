@@ -39,7 +39,7 @@ class App extends React.Component {
             <Route exact path="/" component={Home} />
             <Route path="/Host" component={Host} />
             <Route path="/Guest" component={Guest} />
-            <Route path="/Messages" component={Video} />
+            <Route path="/About us" component={Video} />
           </UserContext.Provider>
         </Switch>
         <div>

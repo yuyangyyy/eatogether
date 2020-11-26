@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
-import { UserContext } from '../App';
-import './RecapResult.css';
+import React, { useContext } from "react";
+import { UserContext } from "../App";
+import "./RecapResult.css";
 
-const RecapResult = ({ selectRecipe, dateCity}) => {
-const [city,date] = dateCity
+const RecapResult = ({ selectRecipe, dateCity }) => {
+  const [city, date] = dateCity;
   const userInfo = useContext(UserContext);
 
   React.useEffect(() => {
-
     const info = {
       user: {
         firstName: userInfo.userName.firstName,
@@ -29,7 +28,7 @@ const [city,date] = dateCity
   return (
     <div className="recap-container">
       <div className="recap-result">
-        <p className="recap-invit">Your Invitation</p>
+        <h3 className="recap-invit">Your Invitation</h3>
 
         <img
           className="Recap-img"
@@ -39,14 +38,8 @@ const [city,date] = dateCity
 
         <div className="recap-info">
           <h3 className="recapnomplat">{selectRecipe.name}</h3>
-          <p>
-            Name :
-            {userInfo.userName.firstName &&
-              userInfo.userName.firstName + ' ' + userInfo.userName.lastName}
-          </p>
-          <p>Email:{userInfo.userName.email}</p>
-          <p>Date:{date}</p>
-          <p>City:{city}</p>
+          <p>{date}</p>
+          <p>{city}</p>
         </div>
       </div>
     </div>
