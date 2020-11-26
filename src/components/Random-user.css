@@ -70,4 +70,7 @@ input[type="button"]:hover {
   .random-users2 {
     width: 8em;
   }
+  input[type="button"] {
+    margin :2em;
+  }
 }

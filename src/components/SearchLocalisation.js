@@ -31,25 +31,28 @@ class SearchLocalisation extends React.Component {
 
     render() {
         return (
-            
+            <div>
+                <hr className="search-localisation-hr"/>
             <div className="search-localisation">
 
-                <div className="search-localisation-contain">
+
                     <h2 className="search-localisation-h2">Your Reservation</h2>
 
+                    
+
                     <div className="search-localisation-calendar">
+                        
                         <CitySelect className="search-localisation-city-select" changeCity={this.setCity} />
                         <Calendar onChange={this.onChange} value={this.state.date} />
+                        
+                        <input className="search-localisation-btn" type="button" value="Let's Go" onClick={this.onClick} />
                     </div>
-
-                    <input className="search-localisation-btn" type="button" value="Let's Go" onClick={this.onClick} />
-
-                </div>
+            </div>
                     {this.state.search && (
                         <div>
                            {this.props.children}                            
                         </div>)}
-            </div>
+        </div>
         )
     }
 }

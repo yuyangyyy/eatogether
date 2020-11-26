@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Reservation from "./Reservation";
 
 import style from "./GuestResult.module.css";

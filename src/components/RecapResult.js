@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "../App";
+
 import "./RecapResult.css";
 
 const RecapResult = ({ selectRecipe, dateCity }) => {

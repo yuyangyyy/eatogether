@@ -1,5 +1,4 @@
 .search-localisation {
-
     margin: 0;
     padding: 0;
     margin-bottom: 10em;
@@ -9,21 +8,11 @@
     justify-content: center;
 }
 
-.search-localisation-contain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    
-    padding: 8em;
-}
+
 
 .search-localisation-city-select {
-
    width: 10em;
    padding-right: 5em;
-
 }
 .search-localisation-city-select select {
     height: auto;
@@ -34,30 +23,53 @@
     overflow: hidden;
     border: 0;
     outline: 1px solid grey;
-    
 }
 
 .search-localisation-btn {
-
     font-family: "Montserrat", sans-serif;
     background-color: white;
     outline: 0;
     border-width: 0 0 2px;
     padding: 0.2em;
     transition: 0.4s;
-    color: tomato;
+    
     text-align: center;
     align-items: center;
     margin-top: 9em;
-
 }
 
 .search-localisation-calendar {
     display: flex;
-    flex-direction: row;
+    justify-content:space-evenly;
+    width:80%;
+   
+    align-items:center;
 }
+
+
 
 .search-localisation-h2 {
-    margin-bottom : 4em;
+    margin-bottom : 2em;
 }
 
+.search-localisation-hr {
+    width: 80%;
+    margin: 2em 2em 7em 10em;
+}
+
+ @media screen and (max-width: 768px) {
+
+    .search-localisation-hr {
+        display: none
+    }
+    .search-localisation-calendar {
+        flex-direction: column;
+    } 
+    .guest-city {
+        margin: 1em;
+    }
+    .search-localisation-btn {
+        margin-top: 2em;
+    }
+
+ }

@@ -28,7 +28,7 @@ function GuestList({ info }) {
       {recipes
         .filter(
           (recipe) =>
-            (!info.meal || // if condition is OK it won't read instruction after
+            (!info.meal || 
               recipe.recipe.cuisine.includes(info.meal)) &&
             (!info.city ||
               recipe.user.city

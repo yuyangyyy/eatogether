@@ -141,6 +141,10 @@
     width: 350px;
     height: 233px;
   }
+  .display-evening {
+    justify-content: center;
+    width:100%;
+  }
 
   .liena img {
     width: 351px;
@@ -159,4 +163,9 @@
   .display-host-planning {
     width: 100%;
   }
+
+  .display-container {
+    width: 80%;
+  }
+  
 }

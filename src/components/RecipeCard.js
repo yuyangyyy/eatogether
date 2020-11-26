@@ -1,10 +1,11 @@
 import React from "react";
-import MediaQuery from "react-responsive";
 
+import MediaQuery from "react-responsive";
 import Carroussel from "./Carroussel/Caroussel";
+
 import "./RecipeCard.css";
 
-const key = "4f0243689f5c4d3aaa5ff94d863e92fa";
+const key = "51cb8cce504049a1ad562a19be7476ad";
 const foods = ["chicken", "noodles", "mushrooms", "zucchini"];
 
 class RecipeCard extends React.Component {
