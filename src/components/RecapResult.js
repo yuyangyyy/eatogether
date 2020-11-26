@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../App";
 
 import "./RecapResult.css";
 
 const RecapResult = ({ selectRecipe, dateCity }) => {
   const [city, date] = dateCity;
+  const [anim, setAnim] = useState(false);
+
   const userInfo = useContext(UserContext);
 
   React.useEffect(() => {
@@ -26,8 +28,12 @@ const RecapResult = ({ selectRecipe, dateCity }) => {
     userInfo.getInvitation(info);
   }, [userInfo.userName]);
 
+  React.useEffect(() => {
+    setAnim(true);
+  }, []);
+
   return (
-    <div className="recap-container">
+    <div className={anim ? "recap-container rec-pop-on" : "recap-container"}>
       <div className="recap-result">
         <h3 className="recap-invit">Your Invitation</h3>
 

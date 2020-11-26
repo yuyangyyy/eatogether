@@ -107,17 +107,18 @@
 
 @media screen and (max-width: 640px) {
   .guest-handing {   
+    margin-top: 5.5em;
     background-size: cover;
     height: 250px;
   }
   .calendar-fixed-position {    
-    top: 9.5em;
+    top: 13.5em;
     left:0;
     right: 0;
     margin: auto;    
   }
   .guest-result {
-    top: 9em;
+    top: 13em;
     left: 0;
     right: 0;
     margin-left: auto;

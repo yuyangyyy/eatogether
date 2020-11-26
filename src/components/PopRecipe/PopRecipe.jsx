@@ -19,7 +19,7 @@ const PopRecipe = (props) => {
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
-        if (data) {
+        if (data.analyzedInstructions[0]) {
           setRecipe({
             name: data.title,
             img: data.image,
@@ -34,8 +34,8 @@ const PopRecipe = (props) => {
       className="pop-recipe-wrapper"
       onClick={() => props.closeRecipe()}
       style={{
-        top: `${navHeight.navHeight + window.scrollY + 28 + "px"}`,
-        height: `${window.innerHeight - navHeight.navHeight - 28 + "px"}`,
+        top: `${window.scrollY + "px"}`,
+        height: `${window.innerHeight - navHeight.navHeight + "px"}`,
       }}
     >
       <div className="pop-recipe-container">

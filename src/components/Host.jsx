@@ -29,7 +29,7 @@ class Host extends React.Component {
     this.setState({ dateCity: date });
   };
 
-  key = "51cb8cce504049a1ad562a19be7476ad";
+  key = "cac5a7cac7e04aecba3f7e0c618746f5";
 
   render() {
     return (
@@ -57,8 +57,10 @@ class Host extends React.Component {
               dateCity={this.state.dateCity}
             />
           )}
-          <RandomUser dateCity={this.state.dateCity} />
         </SearchLocalisation>
+        {this.state.dateCity.length && (
+          <RandomUser dateCity={this.state.dateCity} />
+        )}
       </div>
     );
   }

@@ -1,12 +1,13 @@
 import React from 'react';
+import {city} from './Guest/cityList'
 
 const CitySelect = (props) => {
-  const citys = ['Where', 'Paris', 'Lyon', 'Marseille', 'Nice', 'Lille'];
+
 
   return (
     <select className="guest-city" onChange={props.changeCity}>
-      {citys.map((city) => {
-        return <option key={city}>{city}</option>;
+      {city.map((citys) => {
+        return <option key={citys}>{citys}</option>;
       })}
     </select>
   );

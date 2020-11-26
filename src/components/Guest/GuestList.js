@@ -6,7 +6,6 @@ import recipeList from "./RecipeList";
 
 import "./GuestList.css";
 
-
 function GuestList({ info }) {
   const [recipes, setRecipes] = useState(recipeList);
   const userInfo = useContext(UserContext);
@@ -28,12 +27,8 @@ function GuestList({ info }) {
       {recipes
         .filter(
           (recipe) =>
-            (!info.meal || 
-              recipe.recipe.cuisine.includes(info.meal)) &&
-            (!info.city ||
-              recipe.user.city
-                .toLowerCase()
-                .includes(info.city.toLowerCase())) &&
+            (!info.meal || recipe.recipe.cuisine.includes(info.meal)) &&
+            (!info.city || recipe.user.city.includes(info.city)) &&
             (!info.date ||
               recipe.recipe.date === info.date.toLocaleDateString())
         )

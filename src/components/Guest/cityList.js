@@ -1,5 +1,6 @@
 
 const city = [
+    "Please Select a city",
     "Paris",
     "Lyon",
     "Bordeaux",

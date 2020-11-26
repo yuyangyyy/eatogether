@@ -82,7 +82,7 @@ class Signin extends React.Component {
             })}
           </div>
           <input
-            className={this.state.errorMessage && "disabled"}
+            className={this.state.errorMessage? "disabled" : null}
             id="submitInfo"
             type="button"
             value="send"
