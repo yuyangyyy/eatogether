@@ -1,16 +1,18 @@
 import React from "react";
 import axios from "axios";
-import ReactHtmlParser from "react-html-parser";
+import MediaQuery from "react-responsive";
 
 import PopRecipe from "../PopRecipe/PopRecipe";
+import Carroussel from "../Carroussel/Caroussel";
 
-import style from "./FilterRecipe.module.css";
+import style from './FilterRecipe.module.css';
 
 class FilterRecipe extends React.Component {
   state = {
     food: [],
     popDisplay: false,
     idRecipe: "",
+    foodRequest: 6,
   };
 
   componentDidMount = () => {
@@ -18,7 +20,7 @@ class FilterRecipe extends React.Component {
   };
 
   getRecipe = () => {
-    const random = "random?&number=6";
+    const random = `random?&number=${this.state.foodRequest}`;
     const url = `https://api.spoonacular.com/recipes/${random}&apiKey=${this.props.keyApi}`;
     axios
       .get(url)
@@ -66,6 +68,7 @@ class FilterRecipe extends React.Component {
             resume: data.summary,
             source: data.sourceUrl,
             idRecipe: data.id,
+            cuisine: data.cuisines,
             seeRecipe: false,
             style: false,
           };
@@ -104,59 +107,91 @@ class FilterRecipe extends React.Component {
     this.props.selectRecipe(result[event.target.id]);
   };
 
+  rCard = React.createRef();
+
   render() {
     return (
       <div className={style.suggestion}>
-        {this.state.popDisplay && (
-          <PopRecipe
-            popId={this.state.idRecipe}
-            keyApi={this.props.keyApi}
-            closeRecipe={this.closeRecipe}
-          />
-        )}
-        <h2 className={style.suggetionTitle}>
-          {this.props.recipeId.length > 0
-            ? "Search Results"
-            : "Popular Recipes"}
-        </h2>
-        <div className={style.card}>
-          {this.state.food.map((foods, index) => (
-            <div
-              key={foods.image}
-              className={foods.style ? style.cardResultOn : style.cardResult}
-            >
-              <img src={foods.image} alt={foods.name} />
-              <h2 className="cardTitle">{foods.name}</h2>
-              <div className={style.button}>
-                <button onClick={this.showRecipe} id={foods.idRecipe}>
-                  {" "}
-                  See recipe{" "}
-                </button>
-                {
-                  // I want to see the recipe only when I click on the button See the recipes
-                }
-                <button
-                  onClick={this.chooseRecipe}
-                  id={index}
-                  value={this.state.food}
+        <div className={style.frecipewrapper}>
+          {this.state.popDisplay && (
+            <PopRecipe
+              popId={this.state.idRecipe}
+              keyApi={this.props.keyApi}
+              closeRecipe={this.closeRecipe}
+            />
+          )}
+          <h2 className={style.suggetionTitle}>
+            {this.props.recipeId.length > 0
+              ? "Search Results"
+              : "Popular Recipes"}
+          </h2>
+          <div className={style.card}>
+            <MediaQuery minWidth={640}>
+              {this.state.food.map((foods, index) => (
+                <div
+                  key={foods.image}
+                  className={
+                    foods.style ? style.cardResultOn : style.cardResult
+                  }
+                  ref={this.rCard}
                 >
-                  {" "}
-                  Choose recipe{" "}
-                </button>
-              </div>
-              {foods.seeRecipe && (
-                <div>
-                  <a
-                    href={foods.source}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <p>{ReactHtmlParser(foods.resume)}</p>
-                  </a>
+                  <img src={foods.image} alt={foods.name} />
+                  <h2 className="cardTitle">{foods.name}</h2>
+                  <div className={style.button}>
+                    <button onClick={this.showRecipe} id={foods.idRecipe}>
+                      {" "}
+                      See recipe{" "}
+                    </button>
+                    {
+                      // I want to see the recipe only when I click on the button See the recipes
+                    }
+                    <button
+                      onClick={this.chooseRecipe}
+                      id={index}
+                      value={this.state.food}
+                    >
+                      {" "}
+                      Choose recipe{" "}
+                    </button>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+              ))}
+            </MediaQuery>
+
+            <MediaQuery maxWidth={640}>
+              <Carroussel>
+                {this.state.food.map((foods, index) => (
+                  <div
+                    key={foods.image}
+                    className={
+                      foods.style ? style.cardResultOn : style.cardResult
+                    }
+                    ref={this.rCard}
+                  >
+                    <img src={foods.image} alt={foods.name} />
+                    <h2 className="cardTitle">{foods.name}</h2>
+                    <div className={style.button}>
+                      <button onClick={this.showRecipe} id={foods.idRecipe}>
+                        {" "}
+                        See recipe{" "}
+                      </button>
+                      {
+                        // I want to see the recipe only when I click on the button See the recipes
+                      }
+                      <button
+                        onClick={this.chooseRecipe}
+                        id={index}
+                        value={this.state.food}
+                      >
+                        {" "}
+                        Choose recipe{" "}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </Carroussel>
+            </MediaQuery>
+          </div>
         </div>
       </div>
     );

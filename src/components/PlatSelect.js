@@ -1,11 +1,14 @@
 import React from 'react';
 
+import{foodType} from "./SearchRecipe/foodList"
+
 const PlatSelect = (props) => {
-  const plats = ['Meal', 'French', 'Indien', 'Italien', 'Mexican'];
+ 
 
   return (
     <select className="guest-plat" onChange={props.changePlat}>
-      {plats.map((plat) => {
+      <option>Type of meal</option>
+      {foodType.map((plat) => {
         return <option key={plat}>{plat}</option>;
       })}
     </select>

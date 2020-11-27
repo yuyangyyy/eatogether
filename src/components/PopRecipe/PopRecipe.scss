@@ -1,8 +1,6 @@
 .pop-recipe-wrapper {
   position: absolute;
-  top: var(--navH);
   left: 0;
-  height: 100%;
   width: 100%;
   z-index: 10;
   display: flex;
@@ -59,5 +57,11 @@
 
   hr {
     margin: 3em 10em 3em 10em;
+  }
+  @media screen and (max-width: 640px) {
+    .pop-recipe-container {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

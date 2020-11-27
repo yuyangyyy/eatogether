@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./Signin.scss";
 
 class Signin extends React.Component {
@@ -24,6 +25,8 @@ class Signin extends React.Component {
     errorMessage: true,
     sendAuthorisation: false,
   };
+
+  sign = React.createRef();
 
   inputHandler = (e) => {
     const inputsTemp = [...this.state.inputs];
@@ -55,34 +58,37 @@ class Signin extends React.Component {
   };
 
   componentDidMount() {
-    document.body.style.setProperty(
+    this.sign.current.style.setProperty(
       "--hauteur",
       this.props.navHeight + 10 + "px"
     );
   }
 
   render() {
-  
     return (
-      <div className="wrapper-signin">
-        {this.state.inputs.map((input, index) => {
-          return (
-            <input
-              type="text"
-              id={index}
-              placeholder={input.placeholder}
-              onChange={this.inputHandler}
-              key={index}
-            />
-          );
-        })}
-        <input
-          className={this.state.errorMessage && "disabled"}
-          id="submitInfo"
-          type="button"
-          value="send"
-          onClick={this.sendName}
-        />
+      <div className="sign-all" ref={this.sign}>
+        <div className="sign-in-container" >
+          <div className="wrapper-signin">
+            {this.state.inputs.map((input, index) => {
+              return (
+                <input
+                  type="text"
+                  id={index}
+                  placeholder={input.placeholder}
+                  onChange={this.inputHandler}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+          <input
+            className={this.state.errorMessage? "disabled" : null}
+            id="submitInfo"
+            type="button"
+            value="send"
+            onClick={this.sendName}
+          />
+        </div>
       </div>
     );
   }

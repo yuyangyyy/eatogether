@@ -1,121 +1,131 @@
 .guest-handing {
-  margin-top: 60px;
-  background: url('../assets/bann.jpg');
+  margin-top: 65px;
+  background: url("../assets/bann.jpg");
   background-size: cover;
   width: 100%;
-  height: 600px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .guest-handing select {
   background-color: white;
   border-width: 0 0 2px;
+  font-family: "Cormorant", serif;
+  font-size: medium;
+  padding: 0.5em;
 }
 .guest-handing select:focus {
   outline: none;
 }
 
 .guest-header {
-  position: relative;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.guest-header .guest-header-nav {
+  padding: 1em;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  flex-wrap: wrap;
   width: 80%;
-  height: 70px;
   background-color: white;
   border: 1px solid black;
-}
-
-.calendar-container {
   position: relative;
-  background-color: black;
-  border-width: 0 0 2px;
 }
 
-.guest-handing input[type='button'] {
+.guest-header > * {
+  margin: 0.5em;
+}
+
+.guest-handing input[type="button"] {
+  padding: 0.5em;
+  font-family: "Cormorant", serif;
+  font-size: medium;
   background-color: white;
   border-width: 0 0 2px;
   transition: 0.2s;
 }
 
-.guest-handing input[type='button']:focus {
+.guest-handing input[type="button"]:focus {
   outline: none;
 }
-.guest-handing input[type='button']:hover {
+.guest-handing input[type="button"]:hover {
   background-color: black;
   color: white;
 }
 
-.calendar-container div.calendar-fixed-position {
+.calendar-fixed-position {
   position: absolute;
-  width: 300px;
-  height: 200px;
+  top: 5.5em;
+  left: var(--calendar);
 }
 
-.calendar-container div.calendar-fixed-position > div.react-calendar {
-  position: absolute;
-}
-
-.guest-city {
-  font-family: 'Cormorant', serif;
-  font-size: medium;
-  width: 100px;
-  height: 40px;
-}
-
-input.guest-calendar {
-  font-family: 'Cormorant', serif;
-  font-size: medium;
-  width: 100px;
-  height: 40px;
-}
-
-.guest-plat {
-  font-family: 'Cormorant', serif;
-  font-size: medium;
-  width: 100px;
-  height: 40px;
-}
-
-.guest-search-container {
-  position: relative;
-}
-
-input.guest-search {
-  font-family: 'Cormorant', serif;
-  font-size: medium;
-  width: 100px;
-  height: 40px;
+.react-calendar {
+  padding: 1em;
+  border: solid 1px black;
+  font-family: "Cormorant", serif;
 }
 
 .guest-result {
   position: absolute;
-  right: -115px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-  font-size: 25px;
-  font-family: 'Cormorant', serif;
-  padding: 20px 0px;
+  font-size: medium;
+  font-family: "Cormorant", serif;
   background-color: white;
   border: 1px solid black;
   color: black;
-  top: 70px;
+  top: 5.5em;
 }
 
 .guest-result-affiche {
   background-color: white;
   font-size: medium;
-  font-family: 'Cormorant', serif;
+  font-family: "Cormorant", serif;
   width: 200px;
   height: 100px;
   padding: 6px;
   margin-top: 10px;
   color: black;
+}
+
+.my-result-enter {
+  opacity: 0;
+}
+.my-result-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-result-exit {
+  opacity: 1;
+}
+.my-result-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+@media screen and (max-width: 640px) {
+  .guest-handing {   
+    margin-top: 5.5em;
+    background-size: cover;
+    height: 250px;
+  }
+  .calendar-fixed-position {    
+    top: 13.5em;
+    left:0;
+    right: 0;
+    margin: auto;    
+  }
+  .guest-result {
+    top: 13em;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .guest-header{
+    justify-content: space-between;
+  }
 }

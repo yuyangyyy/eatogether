@@ -14,16 +14,12 @@ const PopRecipe = (props) => {
   const id = props.popId;
 
   useEffect(() => {
-    document.body.style.setProperty(
-      "--navH",
-      navHeight.navHeight + window.scrollY + "px"
-    );
     const key = props.keyApi;
     const url = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${key}`;
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
-        if (recipe) {
+        if (data.analyzedInstructions[0]) {
           setRecipe({
             name: data.title,
             img: data.image,
@@ -34,8 +30,14 @@ const PopRecipe = (props) => {
   }, []);
 
   return (
-    <div className="pop-recipe-wrapper" onClick={() => props.closeRecipe()}>
-
+    <div
+      className="pop-recipe-wrapper"
+      onClick={() => props.closeRecipe()}
+      style={{
+        top: `${window.scrollY + "px"}`,
+        height: `${window.innerHeight - navHeight.navHeight + "px"}`,
+      }}
+    >
       <div className="pop-recipe-container">
         <input
           type="button"
@@ -65,7 +67,6 @@ const PopRecipe = (props) => {
             );
           })}
         </div>
-
       </div>
     </div>
   );

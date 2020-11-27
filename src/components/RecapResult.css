@@ -1,0 +1,63 @@
+.recap-container{
+  display: flex;
+  justify-content: center;
+  background-color: indigo;
+}
+.recap-result {
+  width: 30em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.recap-invit {
+  text-align: center;
+  font-size: x-large;
+  font-family: "Cormorant", serif;
+  padding-bottom: 1em;
+}
+
+.Recap-img {
+  align-self: center;
+  height: auto;
+  max-width: 100%;
+}
+
+.recap-container p {
+  font-size: large;
+}
+
+.recap-info {
+  padding-top: 1em;
+  font-size: medium;
+  font-family: "Cormorant", serif;
+}
+
+.rec-pop-on{
+  animation: forwards 0.5s pop;
+}
+
+
+@keyframes pop {
+  0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+  75%{
+    opacity: 0.75;
+    transform: scale(1.05);    
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .recap-result {
+    width: 312px;
+  }
+}

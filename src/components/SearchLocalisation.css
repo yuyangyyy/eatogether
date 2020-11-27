@@ -1,0 +1,91 @@
+.search-localisation {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-localisation-city-select {
+  width: 10em;
+  padding-right: 5em;
+}
+.search-localisation-city-select select {
+  height: auto;
+  border: 0;
+  margin: 0;
+  padding: 0.75em;
+  border-radius: 0;
+  overflow: hidden;
+  border: 0;
+  outline: 1px solid grey;
+}
+
+.search-menu {
+  background-color: white;
+  border: solid 1px black;
+  height: 100%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-menu > * {
+  margin: 1em;
+}
+
+.search-localisation-btn {
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+  outline: 0;
+  border-width: 0 0 2px;
+  padding: 0.2em;
+  transition: 0.4s;
+  text-align: center;
+  align-items: center;
+  margin-top: 9em;
+}
+
+.search-localisation-calendar {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.search-localisation-h2 {
+  margin-bottom: 2em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-localisation-hr {
+  width: 80%;
+  margin: 5em;
+}
+
+@media screen and (max-width: 768px) {
+  .search-localisation-hr {
+    display: none;
+  }
+  .search-localisation-calendar {
+    justify-content: center;
+    align-items: center;
+  }
+  .guest-city {
+    margin: 1em;
+  }
+  .search-localisation-btn {
+    margin-top: 2em;
+  }
+
+  .search-menu {
+    width: 312px;
+    margin-bottom: 1em;
+  }
+
+  .search-localisation-calendar .react-calendar {
+    width: 250px;
+  }
+}
