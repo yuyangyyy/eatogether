@@ -1,0 +1,77 @@
+.random-users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  transform: scale(1);
+
+  width: 80%;
+}
+
+.random-users2:hover {
+  transform: scale(1.03);
+}
+
+.random-users2 {
+  border: 1px solid black;
+  margin: 1em 0 3em 0;
+  transition: 0.3s;
+  width: 13em;
+}
+
+.random-users-h2 {
+  font-family: "Cormorant", serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+.random-users-h2 h2 {
+  margin: 2em;
+  font-family: "Montserrat", sans-serif;
+}
+
+input[type="button"] {
+  align-self: flex-end;
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+  outline: 0;
+  border-width: 0 0 2px;
+  padding: 0.2em;
+  transition: 0.4s;
+  align-self: center;
+  margin-top: 0.5em;
+}
+
+input[type="button"]:hover {
+  color: white;
+  background-color: black;
+}
+
+.random-users2 img {
+  width: 100%;
+}
+
+.random-user-info {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.random-user-info > * {
+  margin: 0.1em;
+}
+
+@media screen and (max-width: 640px) {
+  .random-users2 {
+    width: 8em;
+  }
+  input[type="button"] {
+    margin :2em;
+  }
+}

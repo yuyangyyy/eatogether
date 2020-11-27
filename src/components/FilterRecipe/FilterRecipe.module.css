@@ -1,0 +1,113 @@
+.suggestion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.frecipewrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.suggetionTitle {
+  margin-top: 2em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card {
+  margin: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.cardTitle {
+  font-family: "Cormorant", serif;
+}
+
+.cardResult {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  border: 1px solid black;
+  transform: scale(1);
+  transition: transform 0.4s;
+  margin: 1em ;
+}
+.cardResult:hover {
+  transform: scale(1.03);
+  transition: transform 0.4s;
+}
+
+.cardResultOn {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  border: 1px solid black;
+  transform: scale(1.1);
+  transition: transform 0.4s;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin: 1em;
+  height: 100%;
+}
+
+.button button {
+  background-color: white;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  border-bottom: 2px solid black;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.button button:focus {
+  outline: none;
+}
+
+.button button:hover {
+  background-color: black;
+  color: white;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card h2 {
+  font-family: "Cormorant", serif;
+  text-align: center;
+  font-weight: 400;
+  margin-top: 0.5em;
+}
+
+@media screen and (max-width: 640px) {
+  .card {
+    justify-content: center;
+  }
+
+  .cardResult {
+    margin: 0;
+  }
+
+  .card img {
+    width: 310px;
+  }
+
+  .cardResultOn {
+    transition: transform 0.8s;
+    background-color: black;
+    transform: unset;
+    color: white;
+  }
+}

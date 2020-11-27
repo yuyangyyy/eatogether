@@ -1,9 +1,12 @@
 import React from "react";
 
+import MediaQuery from "react-responsive";
+import Carroussel from "./Carroussel/Caroussel";
+
 import "./RecipeCard.css";
 
-const key = "65762466b7104e4d92fda8a5f07dd86e";
-const foods = ["chicken", "noodles", "olives", "zucchini"];
+const key = "f2daf6ee4f4d4d489820351f2eb22529";
+const foods = ["chicken", "noodles", "mushrooms", "zucchini"];
 
 class RecipeCard extends React.Component {
   state = {
@@ -16,15 +19,17 @@ class RecipeCard extends React.Component {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          this.setState({
-            food: [
-              ...this.state.food,
-              {
-                image: data[0].image,
-                title: data[0].title,
-              },
-            ],
-          });
+          if (data[0]) {
+            this.setState({
+              food: [
+                ...this.state.food,
+                {
+                  image: data[0].image,
+                  title: data[0].title,
+                },
+              ],
+            });
+          }
         });
     });
   };
@@ -33,18 +38,45 @@ class RecipeCard extends React.Component {
     this.getRecipe();
   }
 
+  rCard = React.createRef();
+
   render() {
     return (
       <div className="recipe-card ">
-        {this.state.food.length > 0 &&
-          this.state.food.map((para, index) => {
-            return (
-              <div className="item-card" key={index}>
-                <img src={para.image} alt={para.name} />
-                <p>{para.title}</p>
-              </div>
-            );
-          })}
+        <div className="recipe-card-cont">
+          <h2>Our Hosts made those recipes</h2>
+          <div className="item-card">
+            <MediaQuery minWidth={640}>
+              {this.state.food.length > 0 &&
+                this.state.food.map((para, index) => {
+                  return (
+                    <div className="recipe-items" key={index} ref={this.rCard}>
+                      <img src={para.image} alt={para.name} />
+                      <h3>{para.title}</h3>
+                    </div>
+                  );
+                })}
+            </MediaQuery>
+
+            <MediaQuery maxWidth={640}>
+              <Carroussel>
+                {this.state.food.length > 0 &&
+                  this.state.food.map((para, index) => {
+                    return (
+                      <div
+                        className="recipe-items"
+                        key={index}
+                        ref={this.rCard}
+                      >
+                        <img src={para.image} alt={para.name} />
+                        <h3>{para.title}</h3>
+                      </div>
+                    );
+                  })}
+              </Carroussel>
+            </MediaQuery>
+          </div>
+        </div>
       </div>
     );
   }

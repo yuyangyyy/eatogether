@@ -1,0 +1,125 @@
+.search-recipe-right-wrapper {
+  width: 25em;
+  background-color: white;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  margin: 2em 2em 4em 2em ;
+  padding: 1em;
+  font-family: Montserrat;
+
+  input[type="text"] {
+    margin: 2em 2em 0 2em;
+    outline: 0;
+    border-width: 0 0 1px;
+    padding-bottom: 1em;
+    transition: 0.4s;
+    font-size: medium;
+    &:focus {
+      outline: none;     
+    }
+  }
+
+  span{
+    font-family: "Cormorant", serif;
+    margin: 1em 0 ;
+  }
+
+  .input-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;    
+  }
+
+  #all-select {
+    margin: 0 2em 0em 2em;
+    border-width: 0 0 1px;
+    padding-bottom: 1em;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  select {
+    font-size: medium;
+    margin: 0 2em 0em 2em;
+    outline: 0;
+    border-width: 0 0 1px;
+    padding: 0.5em 0 0.5em 0;    
+    transition: 0.4s;
+    background-color: white;
+    font-family: "Cormorant", serif;
+    &:focus {
+      outline: none;
+    }    
+  }
+
+  label {
+    font-family: "Cormorant", serif;
+    margin: 1em 0 1em 0;
+    font-weight: bold;    
+    text-align: center;
+  }
+
+  ::placeholder {
+    color: black;
+    font-family: "Cormorant", serif;
+  }
+  input[type="button"] {
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    padding: 0.2em;
+    transition: 0.4s;
+    &:hover{
+      color:white;
+      background-color: black;
+    }
+  }
+  p {
+    font-family: "Cormorant", serif;
+  }
+  .inputs-wraper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1em;
+    p {     
+      text-align: start;
+      margin-left: 2em;
+      padding: 0.4em;
+      transition: 0.2s;
+      &:hover {
+        color: red;
+      }
+      user-select: none;
+    }
+  }
+  .input-wraper {
+    width:88%;
+
+    p {
+      padding: 0.4em;
+      transition: 0.2s;
+      &:hover {
+        color: red;
+      }
+      user-select: none;
+    }
+  }
+  .errormessage {
+    color: red;
+    margin-bottom: 1em;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  transition: 0.4s;
+  color: tomato;
+}

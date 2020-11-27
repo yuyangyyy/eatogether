@@ -1,0 +1,67 @@
+.pop-recipe-wrapper {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cormorant", serif;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .pop-recipe-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    background-color: white;
+    border: solid 1px black;
+    width: 50%;
+    height: 45em;
+    overflow-y: scroll;
+  }
+  img {
+    width: 50%;
+    margin: 1em;
+    align-self: center;
+  }
+  h2 {
+    font-family: Montserrat;
+  }
+  h3 {
+    font-family: Montserrat;
+  }
+  input[type="button"] {
+    width: 3em;
+    align-self: flex-end;
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    padding: 0.2em;
+    transition: 0.4s;
+    &:hover {
+      color: white;
+      background-color: black;
+    }
+  }
+
+  .steps {
+    margin-top: 2em;
+  }
+
+  .step {
+    & > * {
+      margin-top: 0.5em;
+    }
+  }
+
+  hr {
+    margin: 3em 10em 3em 10em;
+  }
+  @media screen and (max-width: 640px) {
+    .pop-recipe-container {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.guest-handing {
+  margin-top: 65px;
+  background: url("../assets/bann.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guest-handing select {
+  background-color: white;
+  border-width: 0 0 2px;
+  font-family: "Cormorant", serif;
+  font-size: medium;
+  padding: 0.5em;
+}
+.guest-handing select:focus {
+  outline: none;
+}
+
+.guest-header {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+  background-color: white;
+  border: 1px solid black;
+  position: relative;
+}
+
+.guest-header > * {
+  margin: 0.5em;
+}
+
+.guest-handing input[type="button"] {
+  padding: 0.5em;
+  font-family: "Cormorant", serif;
+  font-size: medium;
+  background-color: white;
+  border-width: 0 0 2px;
+  transition: 0.2s;
+}
+
+.guest-handing input[type="button"]:focus {
+  outline: none;
+}
+.guest-handing input[type="button"]:hover {
+  background-color: black;
+  color: white;
+}
+
+.calendar-fixed-position {
+  position: absolute;
+  top: 5.5em;
+  left: var(--calendar);
+}
+
+.react-calendar {
+  padding: 1em;
+  border: solid 1px black;
+  font-family: "Cormorant", serif;
+}
+
+.guest-result {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: medium;
+  font-family: "Cormorant", serif;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  top: 5.5em;
+}
+
+.guest-result-affiche {
+  background-color: white;
+  font-size: medium;
+  font-family: "Cormorant", serif;
+  width: 200px;
+  height: 100px;
+  padding: 6px;
+  margin-top: 10px;
+  color: black;
+}
+
+.my-result-enter {
+  opacity: 0;
+}
+.my-result-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-result-exit {
+  opacity: 1;
+}
+.my-result-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+@media screen and (max-width: 640px) {
+  .guest-handing {   
+    margin-top: 5.5em;
+    background-size: cover;
+    height: 250px;
+  }
+  .calendar-fixed-position {    
+    top: 13.5em;
+    left:0;
+    right: 0;
+    margin: auto;    
+  }
+  .guest-result {
+    top: 13em;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .guest-header{
+    justify-content: space-between;
+  }
+}

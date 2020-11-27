@@ -1,0 +1,31 @@
+.video-prez {
+  display: flex;
+  background-color: rgb(224, 230, 224);
+  justify-content: center;
+  padding-top: 5em;
+  height: 85vh;
+}
+
+.video-prez iframe {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+iframe {
+  width: 960px;
+  height: 515px;
+}
+
+@media screen and (max-width: 768px) {
+  iframe {
+    width: 550px;
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  iframe {
+    width: 320px;
+    height: 220px;
+  }
+}

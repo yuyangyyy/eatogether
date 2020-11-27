@@ -1,33 +1,61 @@
 .recipe-card {
-    display: flex;
-    flex-wrap: wrap;  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 3em;
+}
+.recipe-card h2 {
+  font-family: "MontSerrat", serif;
+  text-align: center;
+  margin-bottom: 1em; 
+}
+.item-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.recipe-card-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%; 
+}
+
+.recipe-items {
+  margin: 1em 1em 1em 0;
+}
+
+.recipe-items img {
+  max-width: 100%;
+}
+
+.item-card h3 {
+  font-family: "Cormorant", serif;
+  font-weight: 400;
+  font-size: large;
+}
+
+@media screen and (max-width: 768px) {
+  .item-card {
     justify-content: center;
+    
   }
-  
-  .item-card {    
-    margin: 1em;    
-    width: fit-content;
-    display : flex ;
-    flex-direction : column ;
-    align-items: flex-start;
+  .recipe-items {
+    margin: 0;
   }
-  
-  .item-card p {
-    align-self: center;
-    font-family: Cormorant; 
-    font-size: 18px;  
-  
+  .recipe-items img {
+    max-width: unset;
   }
-  
-  .item-card img {
-    max-width: 100%;
-   
-  }
-  
-  .item-card h2 {
-    font-family: Montserrat;
-    font-size: 1em;
+  .recipe-card-cont{
+    justify-content: center;
+    align-items: center;
   }
 
-  
+
+}
   

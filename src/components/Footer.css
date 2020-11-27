@@ -1,0 +1,53 @@
+.footer {
+    width: 100%;
+}
+
+.footer-container {
+    width: 100%; 
+    background-color: black;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 5em;
+    
+}
+
+.footer-copyright {
+    color: white;    
+}
+
+.fab {
+    color: white;
+    font-size: x-large;
+    margin: 0 1em 0 1em;
+    transition: 0.3s;
+}
+
+.fab:hover {
+    color:gray;
+    transform: scale(1.1);
+}
+
+.footer-logo p {
+    color:white;
+    
+}
+
+.footer-logo img {
+    width: 3em;
+    height: 3em;
+    
+}
+
+.footer-icons {
+    display: flex;
+  
+}
+
+.copyright-container p {
+
+    text-align: center;
+  
+}
+

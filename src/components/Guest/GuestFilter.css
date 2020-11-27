@@ -1,0 +1,101 @@
+.guest-filter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4em;
+  border: 1px solid black;
+  align-items: center;
+  background-color: black;
+}
+
+.search-title {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 2em;
+
+  font-size: x-large;
+}
+
+.guest-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  width: 40%;
+  background-color: white;
+  margin: 3em;
+  align-items: center;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.city {
+  text-align: center;
+}
+
+.selects {
+  border: none;
+  margin: 1em;
+  border-bottom: 1px solid grey;
+  font-family: "Cormorant", serif;
+  font-size: medium;
+}
+
+.food-groups {
+  color: coral;
+  font-size: x-large;
+}
+
+.default-choice {
+  font-family: "Cormorant", serif;
+  font-size: medium;
+}
+
+.filter-sections {
+  font-family: "Cormorant", serif;
+  font-size: medium;
+}
+
+#date {
+  height: 3em;
+  transition: 0.3s;
+  text-align: center;
+}
+
+#date:hover {
+  background-color: black;
+  color: white;
+}
+
+.actions {
+  margin: 1em;
+  border: none;
+  background-color: white;
+  border-bottom: 2px solid black;
+}
+
+.filter-calendar-container {
+  position: absolute;
+  top: 300px;
+}
+
+.guest-filter-container input {
+  background-color: white;
+  outline: 0;
+  border-width: 0 0 2px;
+  transition: 0.4s;
+}

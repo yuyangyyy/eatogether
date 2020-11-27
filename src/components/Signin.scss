@@ -1,51 +1,72 @@
-.wrapper-signin {
-  border: 1px solid black;
-  padding: 1em;
+.sign-all {
   position: absolute;
   z-index: 1000;
-  width: 80%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
   top: var(--hauteur);
   left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  flex-wrap: wrap;
-  background-color: white;
-  & > * {
-    margin: 2.5em;
-  }
-  input[type="text"] {
-    outline: 0;
-    border-width: 0 0 1px;
-    padding-bottom: 1em;
-    transition: 0.4s;
-    &:focus {
-      outline: none;
-      padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .sign-in-container {
+    border: 1px solid black;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+    .wrapper-signin {
+      flex-grow: 4;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      & > * {
+        margin: 2.5em;
+      }
+      input[type="text"] {
+        outline: 0;
+        border-width: 0 0 1px;
+        padding-bottom: 1em;
+        transition: 0.4s;
+        &:focus {
+          outline: none;
+          padding: 0;
+        }
+      }
+      ::placeholder {
+        color: black;
+        font-family: "Cormorant", serif;
+      }
+    }
+    input[type="button"] {
+      height: fit-content;
+      background-color: white;
+      outline: 0;
+      padding: 0.45em;
+      border-width: 0 0 2px;
+      transition: 0.4s;
+      margin: 2.5em;
+    }
+
+    .disabled {
+      pointer-events: none;
+      background-color: grey;
+      transition: 0.4s;
+      color: tomato;
+    }
+
+    #submitInfo {
+      font-family: "Montserrat", sans-serif;
     }
   }
-  ::placeholder {
-    color: black;
-    font-family: "Cormorant", serif;
-  }
-  input[type="button"] {
-    background-color: white;
-    outline: 0;
-    border-width: 0 0 2px;
-    transition: 0.4s;
-  }
 }
 
-.disabled {
-  pointer-events: none;
-  background-color: grey;
-  transition: 0.4s;
-  color: tomato;
-}
-
-#submitInfo {
-  font-family: "Montserrat", sans-serif;
+@media screen and (max-width: 640px) {
+  .sign-all {
+    .sign-in-container {
+      .wrapper-signin {
+        justify-content: center;
+      }
+    }
+  }
 }
