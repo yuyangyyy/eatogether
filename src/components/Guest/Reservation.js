@@ -3,7 +3,7 @@ import React from "react";
 import style from "./reservation.module.css";
 
 const Reservation = (props) => {
-  console.log(props);
+ 
   return (
     <div className={style.reservation} onClick={props.booked}>
       <div className={style.reservationApprouved}>

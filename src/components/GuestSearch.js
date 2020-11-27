@@ -1,12 +1,13 @@
 import React from "react";
 
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
 import { CSSTransition } from "react-transition-group";
 
 import CitySelect from "./CitySelect";
 import PlatSelect from "./PlatSelect";
 import Results from "./Results";
+
+import "react-calendar/dist/Calendar.css";
 
 class GuestSearch extends React.Component {
   state = {
