@@ -1,6 +1,5 @@
 
-const city = [
-    "Please Select a city",
+const city = [  
     "Paris",
     "Lyon",
     "Bordeaux",
