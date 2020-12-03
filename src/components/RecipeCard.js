@@ -5,7 +5,7 @@ import Carroussel from "./Carroussel/Caroussel";
 
 import "./RecipeCard.css";
 
-const key = "f2daf6ee4f4d4d489820351f2eb22529";
+const key = "08fbdf80e1814c14bbb55c1f1ce89e3f";
 const foods = ["chicken", "noodles", "mushrooms", "zucchini"];
 
 class RecipeCard extends React.Component {

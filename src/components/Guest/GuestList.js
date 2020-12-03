@@ -28,7 +28,7 @@ function GuestList({ info }) {
         .filter(
           (recipe) =>
             (!info.meal || recipe.recipe.cuisine.includes(info.meal)) &&
-            (!info.city || recipe.user.city.includes(info.city)) &&
+            (!info.city || recipe.user.city.toLowerCase().includes(info.city.toLowerCase())) &&
             (!info.date ||
               recipe.recipe.date === info.date.toLocaleDateString())
         )
